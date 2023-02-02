@@ -1,0 +1,68 @@
+// Нижняя панель управления для смартфонов
+.bar-bottom {
+  display: none;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // Высота, как у header
+  font-size: 0;
+  line-height: 0;
+  background-color: $white-color;
+  box-shadow: inset 0 1px 0 0 $border-color-black-light;
+  z-index: 5;
+
+  & > * {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    height: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // Высота, как у .bar-bottom
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.is-active {
+      background: $background-color-sub;
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .bar-bottom {
+    display: flex;
+
+    .dropdown__item {
+      position: fixed;
+      top: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // .bar-top height
+      left: 0;
+      right: 0;
+      bottom: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // .bar-bottom height
+      margin: 0;
+      max-height: 100%;
+
+      .modal {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .dropdown__item-indicator {
+        display: none;
+      }
+    }
+  }
+}
+
+// Аватар пользователя
+.bar-bottom__user-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $basic-value * 12;
+  height: $basic-value * 12;
+  border: 1px solid $border-color-black-light;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}

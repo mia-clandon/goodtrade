@@ -1,0 +1,311 @@
+.item-container {
+  position: relative;
+  border-bottom: 1px solid $border-color-black-very-light;
+}
+.item {
+  display: table;
+  height: 450px;
+  margin: 0 -15px;
+
+  .action {
+    margin-bottom: 18px;
+  }
+}
+.item-thumbnail {
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  background: $background-gray-color;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 450px;
+  }
+
+  // Блок слайдера
+  .slick-list {
+    display: inline-block;
+    vertical-align: middle;
+    width: 450px;
+  }
+
+  // Слайд
+  .slider-item {
+    height: 450px;
+    overflow: hidden;
+    text-align: center;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      height: 450px;
+    }
+  }
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+// Слайдер с кнопками
+.slick-dotted {
+  .slider-item {
+    &:hover {
+       @extend %grab;
+     }
+
+    &:active {
+      @extend %grabbing;
+      @include user-select(none);
+    }
+
+    img {
+      &:hover {
+        @extend %grab;
+      }
+
+      &:active {
+        @extend %grabbing;
+        @include user-select(none);
+      }
+    }
+  }
+
+  // Кнопки слайдера
+  .feedback-dots {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 450px;
+
+    li {
+      background: $white-color;
+
+      &.slick-active {
+        background: $base-color;
+        border-color: $white-color;
+      }
+    }
+  }
+}
+
+.item-price-date {
+  display: inline-block;
+  margin-left: 20px;
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+}
+.item-price-cost {
+  font: 35px/45px $font-bold;
+}
+.item-price-count {
+  color: $secondary-text-color-light-back;
+  font: 14px/45px $font-light;
+}
+.item-price-wholesale {
+  color: $secondary-text-color-light-back;
+  font: 11px/16px $font-light;
+  margin-left: 20px;
+}
+.item-header {
+  padding: 25px 15px 15px 15px;
+}
+.item-content {
+  padding: 15px 0;
+  margin: 0 15px;
+  border-top: 1px solid $border-color-black-very-light;
+}
+.item-title {
+  font: 22px/33px $font-light;
+  color: $primary-text-color-light-back;
+  padding: 4px 0;
+}
+.item-specs-container {
+  display: table-row;
+
+  .item-specs-container-inner {
+    display: table-cell;
+    height: 100%;
+    vertical-align: bottom;
+  }
+}
+.item-specs {
+  padding: 15px 15px 0 15px;
+  margin-bottom: -1px;
+  font-size: 0;
+  background: $background-gray-color;
+
+  small {
+    display: block;
+    font: 11px/16px $font-light;
+    color: $secondary-text-color-light-back;
+  }
+
+  strong {
+    font-family: $font-bold;
+  }
+  
+  dt {
+    display: inline-block;
+    vertical-align: top;
+    width: 130px;
+    min-height: 30px;
+    margin-bottom: 15px;
+    font: 11px/16px $font-light;
+    color: $primary-text-color-light-back;
+  }
+
+  dd {
+    display: inline-block;
+    vertical-align: top;
+    width: 320px;
+    min-height: 30px;
+    margin-bottom: 15px;
+    font: 14px/16px $font-light;
+    color: $primary-text-color-light-back;
+  }
+
+  .item-spec-light {
+    color: $secondary-text-color-light-back;
+    
+    strong {
+      color: $primary-text-color-light-back;
+    }
+  }
+  .item-spec-mdash {
+    display: inline-block;
+    width: 34px;
+    height: 4px;
+    border-top: 1px solid $border-color-black-light;
+  }
+}
+
+// Список товаров на странице настройки своих товаров после добавления новых товаров из каталога
+.product-settings {}
+.product-settings__item {
+  font-size: 0;
+  line-height: 0;
+}
+.product-settings__item-thumbnail {
+  display: inline-block;
+  vertical-align: top;
+  width: 145px;
+  height: 145px;
+  border: 1px solid $border-color-black-light;
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 143px;
+  }
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 143px;
+    max-height: 143px;
+  }
+}
+.product-settings__item-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  max-width: 785px;
+  padding-left: 15px;
+}
+.product-settings__item-title {
+  padding: 4px 0;
+  font-size: 0;
+  line-height: 0;
+
+  a {
+    font: #{$font-size-p}/#{$line-height-p} $font-light;
+  }
+}
+.product-settings__item-remove {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  font-size: 0;
+  line-height: 0;
+}
+.product-settings__item-remove-image {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  @include icons-sprite(sm-delete);
+  opacity: $q-middle;
+}
+.product-settings__item-remove-text {
+  display: inline-block;
+  vertical-align: middle;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $secondary-text-color-light-back;
+}
+.product-settings__item-categories {
+  margin-bottom: 5px;
+  font-size: 0;
+  line-height: 0;
+
+  span {
+    font: $smallFont;
+    color: $secondary-text-color-light-back;
+
+    &:after {
+      content: '→';
+      display: inline-block;
+      margin: 0 6px;
+      font: $smallFont;
+      color: $secondary-text-color-light-back;
+    }
+
+    &:last-of-type {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+.product-settings__item-inputs {
+  position: relative;
+}
+.product-settings__item-delivery {
+  padding: 0 20px;
+  font-size: 0;
+  line-height: 0;
+}
+.product-settings__item-delivery-title {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: 15px;
+  font: $smallFont;
+  color: $primary-text-color-light-back;
+}
+.product-settings__item-delivery-add-link {
+  display: inline-block;
+  vertical-align: baseline;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $secondary-text-color-light-back;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: 10px;
+    @include icons-sprite(xsm-add);
+    opacity: $q-middle;
+  }
+}

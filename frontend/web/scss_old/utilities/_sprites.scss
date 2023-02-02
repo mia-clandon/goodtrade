@@ -1,0 +1,10 @@
+// Категории
+@import "category/*.png";
+$category-sprite-dimensions: true;
+$category-sprite-layout: smart;
+
+
+// Интерфейс
+@import "icons/*.png";
+$icons-sprite-dimensions: true;
+$icons-sprite-layout: smart;

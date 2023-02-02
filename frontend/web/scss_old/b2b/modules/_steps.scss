@@ -1,0 +1,116 @@
+// Лента шагов на странице регистрации
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+  margin-left: -$basic-value * 10;
+  margin-right: -$basic-value * 10;
+  padding-bottom: $basic-value * 17 - rem-to-px($indent-difference-small) - rem-to-px($indent-difference-h2);
+}
+
+@include media-breakpoint-between(xs, md) {
+  .steps {
+    margin: 0;
+    padding-top: $basic-value * 7;
+  }
+}
+
+// Шаг
+.steps__step {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: $basic-value * 4;
+  margin-left: $basic-value * 17;
+  margin-right: $basic-value * 17;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .steps__step {
+    margin-left: $basic-value * 4;
+    margin-right: $basic-value * 4;
+  }
+}
+
+// Иконка шага
+.steps__step-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $basic-value * 10;
+  height: $basic-value * 10;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px $border-color-black-light;
+  @include user-select(none);
+}
+
+// Активный шаг
+.steps__step-circle_active {
+  background: $primary-color;
+  box-shadow: none;
+
+  .steps__step-number {
+    color: $primary-text-color-dark-back;
+  }
+}
+
+// Завершённый шаг
+.steps__step-circle_done {
+  &:before {
+    content: "";
+    display: block;
+    @include icons-sprite(progress-success);
+  }
+}
+
+// Номер внутри круга шага
+.steps__step-number {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-light-back;
+}
+
+// Название шага
+.steps__step-title {
+  max-width: $basic-value * 17 * 2 + $basic-value * 10; // Отступы слева и справа + ширина круга
+  margin-left: -$basic-value * 17;
+  margin-right: -$basic-value * 17;
+  padding-top: $basic-value * 3 - rem-to-px($indent-difference-small);
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-light-back;
+  text-align: center;
+}
+
+// Стрелка между шагами
+.steps__arrow {
+  flex: 1 0 auto;
+  position: relative;
+  height: 1px;
+  margin-top: $basic-value * 9;
+  margin-right: 7px;
+  background: $primary-color;
+  opacity: $q-middle;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: -7px;
+    width: 7px;
+    height: 5px;
+    border-top: 2.5px solid transparent;
+    border-bottom: 2.5px solid transparent;
+    border-left: 7px solid $primary-color;
+  }
+}

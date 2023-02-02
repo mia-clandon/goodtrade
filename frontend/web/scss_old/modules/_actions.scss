@@ -1,0 +1,129 @@
+.action {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+  + {
+    .action {
+      margin-left: 30px;
+    }
+  }
+  .dropdown-toggle {
+    vertical-align: top;
+  }
+  .action-icon{
+    &:before{
+      @extend %q-middle;
+    }
+  }
+  &:hover{
+    .action-icon{
+      &:before{
+        @extend %q-dark;
+      }
+    }
+    .action-text{
+      
+    }
+  }
+}
+.action-icon {
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  height: 16px;
+  //width: 18px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+  }
+  &:hover{
+    &:before{
+      @extend %icon-black-button;
+    }
+  }
+  &:after {
+    content: '';
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+    right: -5px;
+    bottom: -8px;
+    opacity: 0;
+    @include icons-sprite(icon-success);
+    width: 15px;
+    height: 15px;
+    transition: all .2s;
+  }
+}
+.action-icon-faq {
+  &:before {
+    @include icons-sprite(sm-help);
+  }
+}
+.action-icon-compare {
+  &:before {
+    @include icons-sprite(sm-scales);
+  }
+}
+.action-icon-hold {
+  &:before {
+    @include icons-sprite(sm-bookmark);
+  }
+}
+.action-icon-share {
+  &:before {
+    @include icons-sprite(sm-share);
+  }
+}
+.action-icon-favorite {
+  &:before {
+    @include icons-sprite(sm-star);
+  }
+}
+.action-icon-notify {
+  &:before {
+    @include icons-sprite(sm-reminder);
+  }
+}
+.action.is-active {
+  .action-icon {
+    &:after {
+      visibility: visible;
+      opacity: 1;
+      bottom: -5px;
+    }
+  }
+}
+.action-count {
+  display: none;
+  position: absolute;
+  right: -7px;
+  bottom: -7px;
+  height: 15px;
+  width: 15px;
+  text-indent: -1px;
+  text-align: center;
+  font: 9px/10px 'Neris-Light', sans-serif;
+  color: #fff;
+  @include border-radius(50%);
+  border: 2px solid #fff;
+  background: $base-color;
+}
+.action-text {
+  display: inline-block;
+  font: $smallFont;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: 14px;
+  height: 16px;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #cbcbcb;
+  color: rgba(0, 0, 0, 0.45);
+}

@@ -1,0 +1,163 @@
+// main-slider-block - это отдельный блок по БЭМ, просто я не стал его выносить в отдельный файл!
+.main-slider-block {
+  position: relative;
+  height: $basic-value * 160;
+  background-color: #2f2f2f;
+  overflow: hidden;
+}
+
+// Стрелка слайдера
+.main-slider-block__arrow {
+  @extend .slider-arrow;
+}
+
+.main-slider-block__arrow_left {
+  @extend .slider-arrow_left;
+}
+
+.main-slider-block__arrow_right {
+  @extend .slider-arrow_right;
+}
+
+.main-slider-block__container {
+  height: 100%;
+}
+
+.main-slider {
+  position: relative;
+  height: 100%;
+
+  .slick-list {
+    overflow: visible;
+  }
+}
+
+.main-slider__dots {
+  position: absolute;
+  left: $basic-value * 4;
+  bottom: $basic-value * 6;
+
+  li {
+    button {
+      padding: 0;
+      box-shadow: inset 0 0 0 1px $border-color-white-light;
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .main-slider__dots {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.main-slider__slide {
+  position: relative;
+  padding-top: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // Высота шапки, объяснение в соответствующем файле
+  height: 100%;
+}
+
+// Ниже следующие манипуляции с классами и селекторами нужны для плавного изменения размера текущего слайда
+@include media-breakpoint-between(xs, md) {
+  .main-slider__slide.slick-current,
+  .main-slider__slide.slick-shrink {
+    .main-slider__slide-bg {
+      margin: 0 -30px;
+    }
+
+    & + .main-slider__slide {
+      .main-slider__slide-bg {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .main-slider__slide.slick-shrink:first-child {
+    .main-slider__panel {
+      width: auto;
+      margin-left: -30px;
+      padding-left: 45px;
+    }
+  }
+}
+
+// Контейнер с изображением слайда
+.main-slider__slide-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  @include user-select(none);
+  transition: all .5s linear;
+  background-color: #2f2f2f;
+}
+
+.main-slider__slide-content {
+  position: relative;
+  padding-top: $basic-value * 9;
+  height: 100%;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .main-slider__slide-content {
+    .button {
+      display: flex;
+      margin: 0 auto;
+    }
+  }
+}
+
+.main-slider__slide-title {
+  max-height: rem-to-px($line-height-h1) * 3;
+  padding-top: $basic-value * 17 - rem-to-px($indent-difference-h1);
+  padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-h1) - rem-to-px($indent-difference-p);
+  font: #{$font-size-h1}/#{$line-height-h1} $font-bold;
+  color: $accidental-text-color-dark-back;
+  overflow: hidden;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .main-slider__slide-title {
+    max-height: rem-to-px($line-height-h2) * 3;
+    padding-top: $basic-value * 10 - rem-to-px($indent-difference-h2);
+    font-size: $font-size-h2;
+    line-height: $line-height-h2;
+    text-align: center;
+  }
+}
+
+.main-slider__slide-text {
+  padding-bottom: $basic-value * 14 - rem-to-px($indent-difference-p);
+  color: $primary-text-color-dark-back;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .main-slider__slide-text {
+    padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-p);
+    text-align: center;
+  }
+}
+
+.main-slider__slide-button-desc {
+  padding-top: $basic-value * 3 - rem-to-px($indent-difference-small);
+  padding-left: $basic-value * 5;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-dark-back;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .main-slider__slide-button-desc {
+    padding-left: 0;
+    text-align: center;
+  }
+}

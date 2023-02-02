@@ -1,0 +1,17 @@
+// Колонка, находящаяся внутри контейнера, внутри сетки
+.inner-bar {
+  padding-top: $basic-value * 6 - rem-to-px($indent-difference-small);
+}
+
+@include media-breakpoint-between(xs, md) {
+  .inner-bar {
+    .filter-form {
+      display: none;
+    }
+  }
+}
+
+.page-bar {
+  // Имитируем выравнивание по базовой линии между ссылкой в списке страниц и заголовком страницы
+  padding-top: $indent-difference-h2 - $indent-difference-p + $line-height-h2-nowrap - $line-height-p-nowrap;
+}

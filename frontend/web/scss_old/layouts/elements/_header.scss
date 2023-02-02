@@ -1,0 +1,28 @@
+#top-controls {
+  position: fixed;
+  z-index: 15;
+  background: #fff;
+  top: 0;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  right: 0;
+  padding: 0 15px;
+  transition: left, right .5s ease-out;
+  nav{
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+  .company-info {
+    padding-top: 20px;
+  }
+  .logo-blue {
+    position: absolute;
+    left: 15px;
+    top: 17px;
+  }
+}
+#top-controls.is-shifted-right-more {
+  right: 400px;
+}

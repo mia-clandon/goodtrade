@@ -1,0 +1,854 @@
+.form-heading {
+  text-transform: uppercase;
+  padding-bottom: $basic-value * 5 - rem-to-px($indent-difference-h2);
+}
+
+@include media-breakpoint-between(xs, md) {
+  .form-heading {
+    padding-left: $basic-value * 5;
+    padding-right: $basic-value * 5;
+
+  }
+}
+
+fieldset + fieldset > legend {
+  padding-top: $basic-value * 15 - rem-to-px($indent-difference-small);
+}
+
+.filter-form {
+  padding-bottom: $basic-value * 7 - rem-to-px($indent-difference-small);
+  background: rgba($primary-color, $q-x-light);
+  border-radius: $basic-value;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .filter-form {
+    padding-bottom: 0;
+  }
+}
+
+legend {
+  margin: 0;
+  padding-top: $basic-value * 7 - rem-to-px($indent-difference-small);
+  padding-left: $basic-value * 5;
+  padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-small);
+  font: #{$font-size-small}/#{$line-height-small} $font-bold;
+  text-transform: uppercase;
+  color: $secondary-text-color-light-back;
+}
+
+// Контейнер для элемента формы
+.form-control {
+  padding-bottom: $basic-value * 8 - rem-to-px($indent-difference-small);
+  font-size: 0;
+  line-height: 0;
+
+  //&:last-child {
+  //  padding-bottom: 0;
+  //}
+}
+
+.form-control_required {
+  .form-control__label {
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin-left: -$basic-value - 4px;
+      margin-right: $basic-value;
+      background: $danger-color;
+      border-radius: 50%;
+    }
+  }
+}
+
+
+// Группа названий элемента
+.form-control__top-text-group {
+  display: flex;
+
+  .form-control__top-text {
+    flex: 1 0 0px;
+  }
+}
+
+// Контейнер для текста над элементом формы
+.form-control__top-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: $basic-value * 2 - rem-to-px($indent-difference-small);
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+}
+
+// Название элемента формы
+.form-control__label {
+  position: relative;
+  padding: 0 $basic-value*5;
+  color: $primary-text-color-light-back;
+}
+
+// Пояснение для элемента формы
+.form-control__tip {
+  padding: 0 $basic-value*5;
+  text-align: right;
+  color: $secondary-text-color-light-back;
+  font-style: italic;
+}
+
+// Контейнер для текста под элементом формы
+.form-control__bottom-text {
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  color: $secondary-text-color-light-back;
+}
+
+// Сообщение под элементом формы
+.form-control__message {
+  display: block;
+  padding-top: 0;
+  padding-left: $basic-value * 5;
+  padding-right: $basic-value * 5;
+  padding-bottom: $basic-value * 5 - (rem-to-px($indent-difference-small) * 2);
+  font-style: italic;
+
+  &:first-child {
+    padding-top: $basic-value * 3 - rem-to-px($indent-difference-small);
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  a {
+    &:after {
+      content: "";
+      display: inline-block;
+      margin-left: $basic-value;
+      @include icons-sprite(sm-new-tab);
+      opacity: $q-middle;
+      transition: all .2s;
+    }
+
+    &:hover:after {
+      opacity: $q-dark;
+    }
+  }
+}
+
+.form-control__message_warning {
+  color: $warning-color;
+}
+
+.form-control__message_danger {
+  color: $danger-color;
+}
+
+// Группа контейнеров текстовых полей
+.input-group {
+  display: flex;
+
+  .input {
+    flex: 1 0 0px;
+    margin-right: -1px;
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: $basic-value 0 0 $basic-value;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      border-radius: 0 $basic-value $basic-value 0;
+    }
+
+    &:first-child:last-child {
+      border-radius: $basic-value;
+    }
+  }
+}
+
+// Контейнер для текстового поля
+.input {
+  @extend %basic-entity;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: all .2s;
+
+  & > *:not(input):not(.tips) {
+    margin-right: $basic-value * 3;
+    flex-shrink: 0;
+  }
+
+  input {
+    width: 100%;
+    height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;
+    line-height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;
+    border: none;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+    & ~ *:not(.tips) {
+      margin-left: $basic-value * 6;
+      margin-right: 0;
+    }
+
+    // IE
+    &:-ms-input-placeholder {
+      color: $secondary-text-color-light-back;
+    }
+
+    /*
+    // Edge
+    &::-ms-input-placeholder {
+      color: $secondary-text-color-light-back;
+    }
+    */
+
+    // FF
+    &::-moz-placeholder {
+      color: $secondary-text-color-light-back;
+    }
+
+    // Opera, Chrome, Safari и webkit
+    &::-webkit-input-placeholder {
+      color: $secondary-text-color-light-back;
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .input {
+    .tumbler {
+      display: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .input {
+    .icon_delete {
+      display: none;
+    }
+  }
+}
+
+.input_white {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px $border-color-white-light;
+
+  input {
+    color: $primary-text-color-dark-back;
+
+    // Цвет текста в Google Chrome при использовании автозаполнения
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $primary-text-color-dark-back !important;
+    }
+
+    // IE
+    &:-ms-input-placeholder {
+      color: $secondary-text-color-dark-back;
+    }
+
+    /*
+    // Edge
+    &::-ms-input-placeholder {
+      color: $secondary-text-color-dark-back;
+    }
+    */
+
+    // FF
+    &::-moz-placeholder {
+      color: $secondary-text-color-dark-back;
+    }
+
+    // Opera, Chrome, Safari и webkit
+    &::-webkit-input-placeholder {
+      color: $secondary-text-color-dark-back;
+    }
+  }
+}
+
+.input_inline {
+  display: inline-flex;
+}
+
+.input_sm {
+  input {
+    width: $basic-value * 16;
+  }
+
+  .tumbler {
+    display: none;
+  }
+}
+
+.input_md {
+  width: 113px;
+  max-width: 113px;
+}
+
+.input_no-borders {
+  box-shadow: none;
+}
+
+// Контейнер, у которого сфокусировано текстовое поле (класс появляется средствами js)
+.input_focus {
+  z-index: 1;
+  outline: none;
+  box-shadow: inset 0 0 0 1px $border-color-black-light, 0 0 6px 0 rgba($primary-color, $q-middle);
+}
+
+// Контейнер, у которого сфокусировано текстовое поле, но без внешнего свечения
+.input_no-focus {
+  box-shadow: inset 0 0 0 1px $border-color-black-light;
+
+  &.input_white {
+    box-shadow: inset 0 0 0 1px $border-color-white-light;
+  }
+}
+
+// Контейнер текстового поля с ошибкой
+.input_danger {
+  z-index: 1;
+  outline: none;
+  box-shadow: inset 0 0 0 1px $danger-color;
+
+  &.input_focus {
+    box-shadow: inset 0 0 0 1px $danger-color, 0 0 6px 0 rgba($danger-color, $q-middle);
+  }
+}
+
+// Контейнер текстового поля с подтверждением
+.input_confirmation {
+  box-shadow: inset 0 0 0 1px $success-color;
+
+  &.input_focus {
+    box-shadow: inset 0 0 0 1px $success-color, 0 0 6px 0 rgba($success-color, $q-middle);
+  }
+}
+
+// Контейнер с неактивным (заблокированным) текстовым полем
+.input_disabled {
+  @include user-select(none);
+  background-color: rgba($black-color, $q-light);
+  opacity: $q-middle;
+}
+
+// Поясняющий текст внутри текстового поля
+.input__text {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: $basic-value * 4;
+  height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;
+  font: #{$font-size-p}/#{$line-height-p-nowrap} $font-light;
+  color: $secondary-text-color-light-back;
+}
+
+.input__text_small {
+  font: #{$font-size-small}/#{$line-height-small-nowrap} $font-light;
+}
+
+// Список флажков
+.checkbox-list {
+  margin-bottom: -($basic-value * 6 - rem-to-px($indent-difference-p) * 2);
+
+  .checkbox {
+    padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-p) * 2;
+  }
+}
+
+// Флажок
+.checkbox {
+  position: relative;
+  display: inline-flex;
+}
+
+// Активный флажок
+.checkbox_checked {
+  .checkbox__check-mark {
+    &:before {
+      content: "";
+      display: block;
+      @include icons-sprite(sm-check-mark-blue);
+    }
+  }
+}
+
+.checkbox__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+
+  &:focus + .checkbox__label {
+    .checkbox__check-mark {
+      box-shadow: inset 0 0 0 1px $border-color-black-light, 0 0 6px 0 rgba($primary-color, $q-middle);
+    }
+  }
+
+  &:disabled + .checkbox__label {
+    color: $secondary-text-color-light-back;
+    pointer-events: none;
+
+    .checkbox__check-mark {
+      background-color: rgba($black-color, $q-light);
+      opacity: $q-middle;
+    }
+  }
+}
+
+.checkbox__input_danger {
+  & + .checkbox__label {
+    .checkbox__check-mark {
+      box-shadow: inset 0 0 0 1px $danger-color;
+    }
+  }
+
+  &:focus + .checkbox__label {
+    .checkbox__check-mark {
+      box-shadow: inset 0 0 0 1px $danger-color, 0 0 6px 0 rgba($danger-color, $q-middle);
+    }
+  }
+}
+
+.checkbox__label {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  @include user-select(none);
+  cursor: pointer;
+}
+
+.checkbox__label_small {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+
+  & > .checkbox__check-mark {
+    margin-top: round((rem-to-px($line-height-small) - 14px) / 2);
+  }
+}
+
+.checkbox__check-mark {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  margin-top: round((rem-to-px($line-height-p) - 14px) / 2);
+  margin-right: $basic-value * 3;
+  background: $white-color;
+  box-shadow: inset 0 0 0 1px $border-color-black-light;
+  border-radius: $basic-value;
+}
+
+// Текстовая область
+textarea {
+  @extend %basic-entity;
+  padding-top: $basic-value * 4 - rem-to-px($indent-difference-p);
+  padding-bottom: $basic-value * 4 - rem-to-px($indent-difference-p);
+  width: 100%;
+  min-height: $basic-value * 25;
+
+  &:focus {
+    outline: none;
+  }
+
+  // IE
+  &:-ms-input-placeholder {
+    color: $secondary-text-color-light-back;
+  }
+
+  /*
+  // Edge
+  &::-ms-input-placeholder {
+    color: $secondary-text-color-light-back;
+  }
+  */
+
+  // FF
+  &::-moz-placeholder {
+    color: $secondary-text-color-light-back;
+  }
+
+  // Opera, Chrome, Safari и webkit
+  &::-webkit-input-placeholder {
+    color: $secondary-text-color-light-back;
+  }
+}
+
+// Контрол загрузки фотографий
+.input-photo {
+  text-align: center;
+  border: 1px solid $border-color-black-light;
+  border-radius: 3px;
+  padding: 11px 20px;
+
+  input[type="file"] {
+    display: none;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+
+// Начальный блок с выбором способа загрузки фотографии
+.input-photo-placeholder {
+  display: inline-block;
+  text-align: left;
+  &:before {
+    content: '';
+    display: block;
+    background: url("#{$url-img}/sprite.png") 0 -1415px;
+    width: 42px;
+    height: 35px;
+    float: left;
+    margin-top: 4px;
+  }
+}
+
+.input-photo-del {
+  display: none;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  line-height: 0;
+  z-index: 2;
+
+  &:after {
+    content: '';
+    display: block;
+    background: url("#{$url-img}/sprite.png") 0 -43px;
+    width: 7px;
+    height: 7px;
+  }
+}
+
+.input-photo-btn {
+  display: inline-block;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-light-back;
+  margin-left: 15px;
+  cursor: pointer;
+  vertical-align: middle;
+  border: 0;
+  background: 0;
+  outline: 0;
+}
+
+.input-photo-drop-text {
+  display: inline-block;
+  width: 135px;
+  margin-right: 15px;
+  text-align: right;
+  vertical-align: middle;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-light-back;
+}
+
+.input-photo-single {
+  .input-photo-thumbnails {
+    text-align: center !important;
+    display: block !important;
+
+    li {
+      width: auto;
+      height: auto;
+      max-width: 150px;
+    }
+  }
+}
+
+.input-photo-thumbnails {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+
+  li {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    padding: 0;
+    overflow: hidden;
+    line-height: 50px;
+    cursor: pointer;
+
+    &:first-of-type {
+      &:after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 3px solid #39B222;
+      }
+    }
+
+    &:before {
+      content: '';
+      display: none;
+      position: absolute;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      opacity: .5;
+      background: #000;
+      padding: 1px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    &:hover {
+      &:before {
+        display: block;
+      }
+
+      a {
+        display: block;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      vertical-align: top;
+    }
+  }
+
+  li.is-selected {
+    border: 1px solid #2abf1d;
+  }
+}
+
+.input-photo-thumbnails-wrap {
+  position: relative;
+  display: none;
+  text-align: left;
+  font-size: 0;
+  line-height: 0;
+}
+
+.input-photo-text {
+  padding-left: 60px;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+}
+
+// Стиль для главного фото у элемента загрузки фотографий
+.input-photo-thumbnail-main {
+  &:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px solid #39B222;
+  }
+}
+
+// Выпадающий список
+.select {
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.is-active {
+    .select__dropdown {
+      opacity: 1;
+      z-index: 1;
+      transition: opacity .2s, z-index 0s ease 0s;
+    }
+  }
+
+  select {
+    @extend %basic-entity;
+    width: 100%;
+    min-height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;
+    padding-top: $basic-value * 4 - rem-to-px($indent-difference-p);
+    padding-bottom: $basic-value * 4 - rem-to-px($indent-difference-p);
+    font: #{$font-size-p}/#{$line-height-p} $font-light;
+  }
+}
+
+.select__button {
+  @extend %basic-entity;
+  display: block;
+  position: relative;
+  min-height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;
+  padding-top: $basic-value * 4 - rem-to-px($indent-difference-p);
+  padding-bottom: $basic-value * 4 - rem-to-px($indent-difference-p);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: $basic-value * (5 - 3 / 2) + 1; // 5 базовых величин - половина высоты + ширина границы
+    right: $basic-value * 5;
+    width: $basic-value * 3;
+    height: $basic-value * 3;
+    border-right: 1px solid $border-color-black-light;
+    border-bottom: 1px solid $border-color-black-light;
+    transform: rotate(45deg);
+  }
+}
+
+.select__placeholder {
+  color: $secondary-text-color-light-back;
+}
+
+.select__text {
+  color: $primary-text-color-light-back;
+}
+
+.select__dropdown {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin-top: $basic-value * 2;
+  opacity: 0;
+  z-index: -1;
+  touch-action: none;
+  @include user-select(none);
+  transition: opacity .2s, z-index 0s ease .2s;
+
+  .modal {
+    min-height: 100%;
+    padding-top: $basic-value * 7 - rem-to-px($indent-difference-p);
+    padding-bottom: $basic-value * 7 - rem-to-px($indent-difference-p);
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: (-$basic-value * 2) / 2;
+    left: $basic-value * 5;
+    width: $basic-value * 2;
+    height: $basic-value * 2;
+    border-left: 1px solid $border-color-black-light;
+    border-top: 1px solid $border-color-black-light;
+    background-color: $white-color;
+    transform: rotate(45deg);
+  }
+}
+
+.select__list {
+  padding: 0;
+}
+
+.select__list-item {
+  padding-left: 0;
+  padding-bottom: $basic-value * 7 - rem-to-px($indent-difference-p * 2);
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &:before {
+    display: none;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+// Переключатель
+.tumbler {
+  display: flex;
+  align-items: center;
+}
+
+.tumbler_full {
+  .tumbler__buttons {
+    width: 100%;
+  }
+}
+
+// Поясняющая надпись к переключателю
+.tumbler__text {
+  margin-right: $basic-value * 3;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+}
+
+// Контейнер для кнопок переключателя
+.tumbler__buttons {
+  display: flex;
+}
+
+// Кнопка переключателя
+.tumbler__button {
+  @extend %basic-entity-small;
+  flex: 1 0 auto;
+  position: relative;
+  padding-top: $basic-value * 3 - rem-to-px($indent-difference-small);
+  padding-bottom: $basic-value * 3 - rem-to-px($indent-difference-small);
+  padding-left: $basic-value * 4;
+  padding-right: $basic-value * 4;
+  margin-right: -1px;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  text-align: center;
+  color: $primary-text-color-light-back;
+  cursor: pointer;
+  border-radius: 0;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:hover, &:focus, &:active {
+    color: $secondary-text-color-light-back;
+  }
+
+  &:first-child {
+    border-radius: $basic-value 0 0 $basic-value;
+  }
+
+  &:last-child {
+    margin-right: 0;
+    border-radius: 0 $basic-value $basic-value 0;
+  }
+
+  &:first-child:last-child {
+    border-radius: $basic-value;
+  }
+}
+
+.tumbler__button_active {
+  z-index: 1;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($primary-color, .3);
+  }
+}

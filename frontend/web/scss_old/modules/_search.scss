@@ -1,0 +1,224 @@
+.search {
+  margin: 20px 0 30px;
+  position: relative;
+  >.input-group-search {
+    padding-right: 100px;
+  }
+  >.input {
+    padding-right: 100px;
+  }
+  >.btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+// Блок поиска на странице добавления товара
+.search-product-add {
+  display: table;
+  position: relative;
+  margin: 20px 0 30px;
+
+  .search-product-add__search-row {
+    display: table-row;
+
+    .input {
+      display: table-cell;
+      vertical-align: top;
+      width: 100%;
+    }
+    .search-product-add__buttons {
+      display: table-cell;
+      vertical-align: top;
+      position: relative;
+      white-space: nowrap;
+      font-size: 0;
+
+      button {
+        margin: 0 10px;
+
+        &:last-of-type {
+          display: none;
+          margin-right: 0;
+        }
+      }
+    }
+    .search-product-add__buttons_has-added {
+      button {
+        &:last-of-type {
+          display: inline-block;
+        }
+      }
+      .search-product-add__counter {
+        display: block;
+      }
+    }
+    .search-product-add__counter {
+      display: none;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 21px;
+      height: 21px;
+      text-align: center;
+      font-size: $font-size-small;
+      line-height: 21px;
+      font-family: $font-light;
+      color: $white-color;
+      background-color: $error-color;
+      @include border-radius(50%);
+      z-index: 2;
+    }
+  }
+
+  .search-product-add__menu-row {
+    font-size: 0;
+    line-height: 0;
+
+    span {
+      vertical-align: middle;
+      margin-left: 20px;
+      font: #{$font-size-p}/0px $font-light;
+      color: $primary-text-color-light-back;
+    }
+  }
+}
+
+// Строка сортировки под строкой поиска
+.sort {
+  display: inline-block;
+  vertical-align: top;
+  padding: 12px 10px 0 20px;
+  font-size: 0;
+
+  a {
+    font: $smallFont;
+  }
+}
+.sort-text {
+  display: inline-block;
+  font: $smallFont;
+  color: $primary-text-color-light-back;
+}
+.sort-list {
+  display: inline-block;
+  vertical-align: top;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+  }
+
+  small {
+    margin-left: 3px;
+    color: $secondary-text-color-light-back;
+  }
+
+  li.is-active {
+    &:after {
+      content: "";
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      margin-top: 6px;
+      margin-left: 5px;
+    }
+
+    a {
+      color: $primary-text-color-light-back;
+    }
+  }
+}
+.sort-list-item-up {
+  &:after {
+    @include icons-sprite(sort-up-xsm);
+  }
+}
+.sort-list-item-down {
+  &:after {
+    @include icons-sprite(sort-down-xsm);
+  }
+}
+
+// Панель под поиском
+.search-panel {
+  font-size: 0;
+  line-height: 0;
+}
+
+.search-panel__link {
+  display: inline-block;
+  vertical-align: top;
+  padding: 8px 10px 0 20px;
+}
+
+// Строка фильтров поиска
+.search-filters {
+  display: inline-block;
+  vertical-align: top;
+  padding: 12px 10px 0 20px;
+  font-size: 0;
+
+  .search-filters__filter{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+  }
+
+  .search-filters__title {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    font: $smallFont;
+    color: $primary-text-color-light-back;
+  }
+
+  .search-filters__list {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+  }
+
+  .search-filters__list-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    font-size: 0;
+    line-height: 0;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    span {
+      font: $smallFont;
+      color: $primary-text-color-light-back;
+    }
+
+    .search-filters__list-item-remove {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 5px;
+      margin-top: 5px;
+      opacity: $q-middle;
+      @include icons-sprite(xxsm-delete);
+    }
+  }
+
+  .search-filters__link-container {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .search-filters__link {
+    display: inline-block;
+    vertical-align: top;
+    font: $smallFont;
+    color: $base-color;
+  }
+  .search-filters__link_add {
+    color: $secondary-text-color-light-back;
+  }
+}

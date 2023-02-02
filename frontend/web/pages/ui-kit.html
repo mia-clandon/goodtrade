@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Main-Page</title>
+    <!-- inject:css-->
+    <!-- endinject-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <link href="../css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <div class="logo-wrap">
+          <div class="sidebar-btn"></div>
+          <div class="logo logo-sm"><a></a></div>
+        </div>
+        <div class="breadcrumbs">
+          <div class="breadcrumbs-item"><a>UI-Kit</a></div>
+          <div class="breadcrumbs-item"><a>Компоненты</a></div>
+        </div>
+      </nav>
+    </header>
+    <aside id="sidebar">
+      <div class="sidebar-head">
+        <button class="menu menu-white"></button>
+        <div class="logo logo-sm outline"><a></a></div>
+      </div>
+      <div class="sidebar-body">
+        <ul class="sidebar-links">
+          <li><a>О компании</a></li>
+          <li><a>СМИ о нас</a></li>
+          <li><a>Отзывы</a></li>
+          <li><a>Реклама на сайте</a></li>
+        </ul>
+        <ul class="sidebar-links sidebar-links-small">
+          <li><a>Пользовательское соглашение</a></li>
+          <li><a>Безопасность</a></li>
+          <li><a>Правила</a></li>
+          <li><a>Справка и FAQ</a></li>
+          <li><a>Контакты</a></li>
+        </ul>
+      </div>
+    </aside>
+    <main id="page-wrap" class="has-sidebar">
+      <div class="wrap-sidebar">
+        <ul class="sidebar-links">
+          <div class="sidebar-links-item"><a href="#btn">Кнопки</a></div>
+          <div class="sidebar-links-item"><a href="#label">Лейбл</a></div>
+          <div class="sidebar-links-item"><a href="#dots">Точки</a></div>
+          <div class="sidebar-links-item"><a href="#paginator">Пагинатор</a></div>
+          <div class="sidebar-links-item"><a href="#modal">Модальное окно</a></div>
+          <div class="sidebar-links-item"><a href="#form">Формы</a></div>
+          <div class="sidebar-links-item"><a href="#tab">Табы</a></div>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 id="btn" class="sub-title">Кнопки</h2>
+                <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ui">
+                  <div class="ui-title">Стандартные кнопки</div>
+                  <div class="ui-components">
+                    <button class="btn">кнопка</button>
+                    <button class="btn btn-blue">кнопка</button>
+                    <button class="btn btn-red">кнопка</button>
+                  </div>
+                  <div class="ui-code">&lt;button class="btn {btn-blue|btn-red}"&gt; кнопка &lt;/button&gt;</div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Маленькие</div>
+                  <div class="ui-components">
+                    <button class="btn btn-sm">кнопка</button>
+                    <button class="btn btn-sm btn-blue">кнопка</button>
+                    <button class="btn btn-sm btn-red">кнопка</button>
+                  </div>
+                  <div class="ui-code">&lt;button class="btn btn-sm {btn-blue|btn-red}"&gt; кнопка &lt;/button&gt;</div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">С иконками</div>
+                  <div class="ui-components">
+                    <button class="btn btn-blue btn-icon btn-icon-right btn-icon-tel">кнопка<br></button>
+                    <button class="btn btn-red btn-icon btn-icon-right btn-icon-tel">кнопка</button>
+                  </div>
+                  <div class="ui-code">&lt;button class="btn btn-icon btn-icon-right btn-icon-tel {btn-blue|btn-red}"&gt; кнопка &lt;/button&gt;</div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Без фона</div>
+                  <div class="ui-components">
+                    <button class="btn btn-blue btn-outline">кнопка</button>
+                    <button class="btn btn-red btn-outline">кнопка</button>
+                  </div>
+                  <div class="ui-code">&lt;button class="btn {btn-blue|btn-red} btn-outline"&gt; кнопка &lt;/button&gt;</div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Неактивные</div>
+                  <div class="ui-components">
+                    <button disabled class="btn">кнопка</button>
+                    <button disabled class="btn btn-red">кнопка</button>
+                    <button disabled class="btn btn-blue">кнопка</button>
+                  </div>
+                  <div class="ui-code">&lt;button class="btn {btn-blue|btn-red}" disabled &gt; кнопка &lt;/button&gt;</div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Группа кнопок</div>
+                  <div class="ui-components">
+                    <div class="btn-group">
+                      <button class="btn">кнопка</button>
+                      <button class="btn">кнопка</button>
+                    </div>
+                  </div>
+                  <div class="ui-code">&lt;button class="btn {btn-blue|btn-red} btn-outline"&gt; кнопка &lt;/button&gt;</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 id="label" class="sub-title">Лейблы</h2>
+                <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ui">
+                  <div class="ui-title">Обычные</div>
+                  <div class="ui-components">
+                    <div class="label">Ориентировочно</div>
+                  </div>
+                  <div class="ui-code">&lt;div class="label"&gt; Ориентировочно &lt;/div&gt;</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 id="dots" class="sub-title">Точки</h2>
+                <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ui">
+                  <div class="ui-title">Обычные</div>
+                  <div class="ui-components">
+                    <ul class="dots">
+                      <li class="dots-dot"></li>
+                      <li class="dots-dot"></li>
+                      <li class="dots-dot is-active"></li>
+                      <li class="dots-dot"></li>
+                    </ul>
+                  </div>
+                  <div class="ui-code">
+                    &lt;ul class=&quot;dots&quot;&gt;
+                        &lt;li class=&quot;dots-dot&quot;&gt;&lt;/li&gt;
+                        &lt;li class=&quot;dots-dot&quot;&gt;&lt;/li&gt;
+                        &lt;li class=&quot;dots-dot is-active&quot;&gt;&lt;/li&gt;
+                        &lt;li class=&quot;dots-dot&quot;&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 id="paginator" class="sub-title">Пагинатор</h2>
+                <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ui">
+                  <div class="ui-title">Обычный</div>
+                  <div class="ui-components">
+                    <ul class="paginator">
+                      <li class="paginator-link"><a href="#1">1</a></li>
+                      <li class="paginator-link"><a href="#1">2</a></li>
+                      <li class="paginator-link"><a href="#1">3</a></li>
+                      <li class="paginator-link"><a href="#1"> Дальше</a></li>
+                    </ul>
+                  </div>
+                  <div class="ui-code">
+                    &lt;ul class=&quot;paginator&quot;&gt;
+                        &lt;li class=&quot;paginator-link&quot;&gt;&lt;a href=&quot;#1&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;paginator-link&quot;&gt;&lt;a href=&quot;#1&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;paginator-link&quot;&gt;&lt;a href=&quot;#1&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class=&quot;paginator-link&quot;&gt;&lt;a href=&quot;#1&quot;&gt; Дальше&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 id="modal" class="sub-title">Модальное окно</h2>
+                <p>Do more with buttons. Control button states or create groups of buttons for more components like toolbars.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ui">
+                  <div class="ui-title">Обычный</div>
+                  <div class="ui-components">
+                    <div class="notify"><a class="notify-toggle"> Открыть модальное окно</a>
+                      <div class="notify-modal">
+                        <div class="notify-head">
+                          <div class="notify-title">Уведомления</div>
+                          <div class="notify-more"><a href="#more">Смотреть все</a></div>
+                        </div>
+                        <div class="notify-body">
+                          <div class="notify-content">
+                            <div class="notify-company">
+                              <div class="notify-company-logo"><img src="../img/notify-logo.png"></div>
+                              <div class="notify-company-wrap">
+                                <div class="notify-company-date">3 дня назад</div>
+                                <div class="notify-company-message"><a href="#">ТОО СтройПром</a> запрашивает коммерческое предложение</div>
+                                <button class="notify-company-btn btn btn-blue">Ответить на запрос</button><a href="#more" class="notify-company-more">Подробнее...</a>
+                              </div>
+                            </div>
+                            <div class="notify-company">
+                              <div class="notify-company-logo"><img src="../img/notify-logo.png"></div>
+                              <div class="notify-company-wrap">
+                                <div class="notify-company-date">3 дня назад</div>
+                                <div class="notify-company-message"><a href="#">ТОО СтройПром</a> запрашивает коммерческое предложение</div>
+                                <button class="notify-company-btn btn btn-blue">Ответить на запрос</button><a href="#more" class="notify-company-more">Подробнее...</a>
+                              </div>
+                            </div>
+                            <div class="notify-company">
+                              <div class="notify-company-logo"><img src="../img/notify-logo.png"></div>
+                              <div class="notify-company-wrap">
+                                <div class="notify-company-date">3 дня назад</div>
+                                <div class="notify-company-message"><a href="#">ТОО СтройПром</a> запрашивает коммерческое предложение</div>
+                                <button class="notify-company-btn btn btn-blue">Ответить на запрос</button><a href="#more" class="notify-company-more">Подробнее...</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;notify&quot;&gt;&lt;a class=&quot;notify-toggle&quot;&gt; Открыть модальное окно&lt;/a&gt;
+                        &lt;div class=&quot;notify-modal&quot;&gt;
+                            &lt;div class=&quot;notify-head&quot;&gt;
+                                &lt;div class=&quot;notify-title&quot;&gt;Уведомления&lt;/div&gt;
+                                &lt;div class=&quot;notify-more&quot;&gt;&lt;a href=&quot;#more&quot;&gt;Смотреть все&lt;/a&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;notify-body&quot;&gt;
+                                &lt;div class=&quot;notify-content&quot;&gt;
+                                    &lt;div class=&quot;notify-company&quot;&gt;
+                                        &lt;div class=&quot;notify-company-logo&quot;&gt;&lt;img src=&quot;../img/notify-logo.png&quot;/&gt;&lt;/div&gt;
+                                        &lt;div class=&quot;notify-company-wrap&quot;&gt;
+                                            &lt;div class=&quot;notify-company-date&quot;&gt;3 дня назад&lt;/div&gt;
+                                            &lt;div class=&quot;notify-company-message&quot;&gt;&lt;a href=&quot;#&quot;&gt;ТОО СтройПром&lt;/a&gt; запрашивает коммерческое предложение&lt;/div&gt;
+                                            &lt;button class=&quot;notify-company-btn btn btn-blue&quot;&gt;Ответить на запрос&lt;/button&gt;&lt;a href=&quot;#more&quot; class=&quot;notify-company-more&quot;&gt;Подробнее...&lt;/a&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;/div&gt;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 id="form" class="sub-title">Формы</h2>
+                <p>Extend form controls by adding text or buttons before, after, or on both sides of any text-based input</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ui">
+                  <div class="ui-title">Обычные</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <label for="input1" class="form-control-label form-control-required">Лейбл<span class="form-control-label-tip">Подсказка</span></label>
+                      <div class="input">
+                        <input type="text" id="input1" placeholder="Введите ваш текст">
+                      </div>
+                      <div class="form-control-tip">Здесь ваша подсказка</div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;label for=&quot;input1&quot; class=&quot;form-control-label form-control-required&quot;&gt;E-mail&lt;span class=&quot;form-control-label-tip&quot;&gt;Для получения пароля&lt;/span&gt;&lt;/label&gt;
+                        &lt;div class=&quot;input input-mail&quot;&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;select1&quot; placeholder=&quot;mail@mail.ru&quot;/&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-control-tip&quot;&gt;Ваш электронный адрес не будет разглашаться&lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Электронная почта</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <label for="input2" class="form-control-label form-control-required">E-mail<span class="form-control-label-tip">Для получения пароля</span></label>
+                      <div class="input input-mail">
+                        <input type="text" id="input2" placeholder="mail@mail.ru">
+                      </div>
+                      <div class="form-control-tip">Ваш электронный адрес не будет разглашаться</div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;label for=&quot;input1&quot; class=&quot;form-control-label form-control-required&quot;&gt;E-mail&lt;span class=&quot;form-control-label-tip&quot;&gt;Для получения пароля&lt;/span&gt;&lt;/label&gt;
+                        &lt;div class=&quot;input input-mail&quot;&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;select1&quot; placeholder=&quot;mail@mail.ru&quot;/&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-control-tip&quot;&gt;Ваш электронный адрес не будет разглашаться&lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">БИН</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <label for="input3" class="form-control-label form-control-required">Ваш БИН<span class="form-control-label-tip">Подсказка</span></label>
+                      <div class="input input-bin">
+                        <input type="text" id="input3" placeholder="1234567890">
+                      </div>
+                      <div class="form-control-tip">Дополнительная подсказка</div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;label for=&quot;input2&quot; class=&quot;form-control-label form-control-required&quot;&gt;Бин&lt;span class=&quot;form-control-label-tip&quot;&gt;Подсказка&lt;/span&gt;&lt;/label&gt;
+                        &lt;div class=&quot;input input-bin&quot;&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;input2&quot; placeholder=&quot;1234567890&quot;/&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-control-tip&quot;&gt;Дополнительная подсказка&lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Телефон</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <label for="input4" class="form-control-label form-control-required">Ваш телефон<span class="form-control-label-tip">Подсказка</span></label>
+                      <div class="input input-tel">
+                        <input type="text" id="input4" placeholder="+7 (708) 544 64 00">
+                      </div>
+                      <div class="form-control-tip">Дополнительная подсказка</div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;label for=&quot;input4&quot; class=&quot;form-control-label form-control-required&quot;&gt;Ваш телефон&lt;span class=&quot;form-control-label-tip&quot;&gt;Подсказка&lt;/span&gt;&lt;/label&gt;
+                        &lt;div class=&quot;input input-tel&quot;&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;input4&quot; placeholder=&quot;+7 (708) 544 64 00&quot;/&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-control-tip&quot;&gt;Дополнительная подсказка&lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Группа инпутов</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <label for="input1" class="form-control-label form-control-required">Лейбл<span class="form-control-label-tip">Подсказка</span></label>
+                      <div class="input-group">
+                        <div class="input input-mail">
+                          <input type="text" id="input1" placeholder="Введите ваш текст">
+                        </div>
+                        <div class="input input-bin">
+                          <input type="text" id="input1" placeholder="Введите ваш текст">
+                        </div>
+                      </div>
+                      <div class="form-control-tip">Здесь ваша подсказка</div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;label for=&quot;input1&quot; class=&quot;form-control-label form-control-required&quot;&gt;E-mail&lt;span class=&quot;form-control-label-tip&quot;&gt;Для получения пароля&lt;/span&gt;&lt;/label&gt;
+                        &lt;div class=&quot;input input-mail&quot;&gt;
+                            &lt;input type=&quot;text&quot; id=&quot;select1&quot; placeholder=&quot;mail@mail.ru&quot;/&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;form-control-tip&quot;&gt;Ваш электронный адрес не будет разглашаться&lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Селект</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <div class="select dropdown">
+                        <input type="text" placeholder="Выберите что нибудь..." readonly>
+                        <ul class="dropdown-menu">
+                          <li class="dropdown-menu-item">штуку</li>
+                          <li class="dropdown-menu-item">килограмм</li>
+                          <li class="dropdown-menu-item">тонну</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;div class=&quot;select dropdown&quot;&gt;
+                            &lt;input type=&quot;text&quot; placeholder=&quot;Выберите что нибудь...&quot; readonly=&quot;readonly&quot;/&gt;
+                            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                                &lt;li class=&quot;dropdown-menu-item&quot;&gt;штуку&lt;/li&gt;
+                                &lt;li class=&quot;dropdown-menu-item&quot;&gt;килограмм&lt;/li&gt;
+                                &lt;li class=&quot;dropdown-menu-item&quot;&gt;тонну&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Баланс</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <div class="balance">
+                        <div class="balance-unit balance-unit-left">
+                          <input value="0%" id="range-input1"><span class="balance-unit-label">Предоплата</span>
+                        </div>
+                        <div class="balance-control">
+                          <div class="balance-control-track"><span class="balance-control-track-btn"></span></div>
+                        </div>
+                        <div class="balance-unit balance-unit-right">
+                          <input value="100%" id="range-input2"><span class="balance-unit-label">Постоплата</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;div class=&quot;balance&quot;&gt;
+                            &lt;div class=&quot;balance-unit balance-unit-left&quot;&gt;
+                                &lt;input value=&quot;0%&quot; id=&quot;range-input1&quot;/&gt;&lt;span class=&quot;balance-unit-label&quot;&gt;Предоплата&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;balance-control&quot;&gt;
+                                &lt;div class=&quot;balance-control-track&quot;&gt;&lt;span class=&quot;balance-control-track-btn&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;balance-unit balance-unit-right&quot;&gt;
+                                &lt;input value=&quot;100%&quot; id=&quot;range-input2&quot;/&gt;&lt;span class=&quot;balance-unit-label&quot;&gt;Постоплата&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Спиннер</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <div class="spinner"><span class="spinner-btn spinner-btn-minus"></span>
+                        <input type="text" value="0" id="input1" class="spinner-input"><span class="spinner-btn spinner-btn-plus"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;div class=&quot;spinner&quot;&gt;&lt;span class=&quot;spinner-btn spinner-btn-minus&quot;&gt;&lt;/span&gt;
+                            &lt;input type=&quot;text&quot; value=&quot;0&quot; id=&quot;input1&quot; class=&quot;spinner-input&quot;/&gt;&lt;span class=&quot;spinner-btn spinner-btn-plus&quot;&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div class="ui-title">Загрука фото</div>
+                  <div class="ui-components">
+                    <div class="form-control">
+                      <div id="dropzone" class="input-photo">
+                        <div class="input-photo-wrap">
+                          <input type="file" id="uploadfile">
+                          <div class="input-photo-text">Перетащите сюда фотографии или<br> <a> выберите их с вашего компьютера</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;form-control&quot;&gt;
+                        &lt;div id=&quot;dropzone&quot; class=&quot;input-photo&quot;&gt;
+                            &lt;div class=&quot;input-photo-wrap&quot;&gt;
+                                &lt;input type=&quot;file&quot; id=&quot;uploadfile&quot;/&gt;
+                                &lt;div class=&quot;input-photo-text&quot;&gt;Перетащите сюда фотографии или&lt;br&gt; &lt;a&gt; выберите их с вашего компьютера&lt;/a&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+                <div class="ui">
+                  <div id="collapse" class="ui-title">Спойлер</div>
+                  <div class="ui-components">
+                    <div class="collapse">
+                      <div class="collapse-title"><span class="collapse-toggle">Характеристики<span></span></span></div>
+                      <div class="collapse-content">Текст под спойлером</div>
+                    </div>
+                  </div>
+                  <div class="ui-code">
+                    &lt;div class=&quot;collapse&quot;&gt;
+                      &lt;div class=&quot;collapse-title&quot;&gt;&lt;span class=&quot;collapse-toggle&quot;&gt;Характеристики&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+                      &lt;div class=&quot;collapse-content&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 id="tab" class="sub-title">Табы</h2>
+                <p>Extend form controls by adding text or buttons before, after, or on both sides of any text-based input</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ui">
+                  <div class="ui-title">Обычные</div>
+                  <div class="ui-components">
+                    <div class="tabs">
+                      <div class="tabs-btn is-active"><a>Каталог</a></div>
+                      <div class="tabs-btn"><a>Описание span.tabs-btn-count 56</a></div>
+                      <div class="tabs-btn"><a>Каталог</a></div>
+                      <div class="tabs-content">
+                        <div class="tabs-content-item is-active">  Вкладка1</div>
+                        <div class="tabs-content-item">Вкладка2</div>
+                        <div class="tabs-content-item">Вкладка3</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <h2 id="tab" class="sub-title">Акшены</h2>
+                <p>Extend form controls by adding text or buttons before, after, or on both sides of any text-based input</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="ui">
+                  <div class="ui-title">Обычное состояние</div>
+                  <div class="ui-components">
+                    <div class="action">
+                      <div class="action-item action-item-hold">Отложить</div>
+                      <div class="action-item action-item-compare">Сравнить</div>
+                      <div class="action-item action-item-share">Поделиться</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="ui">
+                <div class="ui-title">Состояние ERROR</div>
+                <div class="ui-components">
+                  <div class="input">
+                    <input type="text" value="kek" class="input-field is-error">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="../js/for-static-pages/libs/require.js" data-main="../js/for-static-pages/pages/ui-kit/main.js"></script>
+  <!-- inject:js-->
+  <!-- endinject-->
+</html>

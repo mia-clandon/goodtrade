@@ -1,0 +1,89 @@
+// Новостной слайдер на базе плагина slick
+.video-slider {
+  padding-top: $basic-value * 10;
+  padding-bottom: $basic-value * 12;
+
+  .slick-list {
+    overflow: visible;
+  }
+}
+
+.video-slider__slide {}
+
+.video-slider__spec-slide.slick-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .video-slider__slide {
+    width: 100%;
+  }
+
+  .video-slider__spec-slide.slick-slide {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .video-slider__slide {
+    width: (map-get($container-max-widths, lg) - $grid-gutter-width) / $grid-columns * 3;
+  }
+
+  .video-slider__spec-slide.slick-slide {
+    width: (map-get($container-max-widths, lg) - $grid-gutter-width) / $grid-columns * 4;
+  }
+}
+
+.video-slider__spec-slide-title {
+  font: #{$font-size-h1}/#{$line-height-h1} $font-bold;
+  padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-h1) - rem-to-px($indent-difference-p);
+  color: $accidental-text-color-dark-back;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .video-slider__spec-slide-title {
+    font-size: $font-size-h2;
+    line-height: $line-height-h2;
+    text-align: center;
+  }
+}
+
+.video-slider__spec-slide-text {
+  padding-bottom: $basic-value * 14 - rem-to-px($indent-difference-p);
+  color: $primary-text-color-dark-back;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .video-slider__spec-slide-text {
+    padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-p);
+    text-align: center;
+  }
+}
+
+.video-slider__spec-slide-actions {
+  align-items: baseline;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .video-slider__spec-slide-actions > div:last-child {
+    padding-top: $basic-value * 3;
+    text-align: center;
+  }
+}
+
+.video-slider__dots {
+  position: absolute;
+  bottom: $basic-value * 4;
+  width: 100%;
+  text-align: center;
+
+  li {
+    button {
+      padding: 0;
+      box-shadow: inset 0 0 0 1px $border-color-white-light;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.cabinet {
+  padding: 29px 0;
+
+  .sub-title {
+    padding-bottom: 10px;
+
+    span {
+      padding-left: 9px;
+      font: #{$font-size-p}/#{$line-height-p} $font-light;
+      color: $secondary-text-color-light-back;
+      text-transform: none;
+    }
+  }
+
+  .cabinet-form {
+    padding-top: 20px;
+  }
+
+  .preview-items {
+    .row {
+      border: none;
+    }
+
+    .preview-small {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

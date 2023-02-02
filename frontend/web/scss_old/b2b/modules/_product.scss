@@ -1,0 +1,241 @@
+// Различные блоки, относящиеся к странице товара
+.product-info {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+// Блок с кнопками "назад", "в избранное" и "к сравнению"
+.product-control-buttons {
+  font-size: 0;
+
+  .button {
+    vertical-align: top;
+
+    & + .button {
+      margin-left: $basic-value * 6;
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-control-buttons {
+    margin-bottom: $basic-value * 10 - $basic-value * 3; // - нижний внутренний отступ малых кнопок
+  }
+}
+
+// Название товара
+.product-title {
+  padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-h2);
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-title {
+    padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-p);
+    font: #{$font-size-p}/#{$line-height-p} $font-bold;
+    color: $primary-text-color-light-back;
+  }
+}
+
+// Блок с хлебными крошками и меткой топового продавца
+.product-subdata {
+  display: flex;
+
+  .top-rated {
+    margin-left: $basic-value * 5;
+  }
+}
+
+// Блок с ценой товара и всё, что с ней связано
+.product-price {
+  padding-top: $basic-value * 10;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-price {
+    padding: 0;
+  }
+}
+
+// Дополнительная информация о цене (скидка, НДС и проч)
+.product-price__sub-data {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: $basic-value * 2;
+
+  * + * {
+    margin-left: $basic-value * 5;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-price__sub-data {
+    padding-bottom: $basic-value;
+  }
+}
+
+// Указание наличия НДС в цене
+.product-price__vat {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-light-back;
+}
+
+// Блок с ценой
+.product-price__price-row {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: $basic-value * 5 - rem-to-px($indent-difference-small);
+}
+
+// Цена товара
+.product-price__value {
+  font: #{$font-size-h1}/#{$line-height-h1-nowrap} $font-bold;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-price__value {
+    font: #{$font-size-h2}/#{$line-height-h2-nowrap} $font-bold;
+  }
+}
+
+// Единица измерения
+.product-price__unit {
+  font: #{$font-size-p}/#{$line-height-p-nowrap} $font-light;
+  margin-left: $basic-value * 2;
+  color: $primary-text-color-light-back;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-price__unit {
+    font: #{$font-size-small}/#{$line-height-small} $font-light;
+  }
+}
+
+// Блок истории цен
+.product-price__history-row {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: $basic-value * 3;
+
+  * + * {
+    margin-left: $basic-value * 5;
+  }
+}
+
+// Дата последней цены
+.product-price__date {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-light-back;
+}
+
+// Ссылка для открытия истории цен
+.product-price__history-link {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-light-back;
+
+  &:hover, &:focus, &:active {
+    color: $primary-text-color-light-back;
+  }
+}
+
+// Блок с ключевыми действиями с товаром
+.product-key-actions {
+  padding: $basic-value*4 0;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-key-actions {
+    [data-type="popup-wrapper"],
+    [data-action="popup-toggle"] {
+      width: 100%;
+    }
+  }
+}
+
+// Блок с первичными характеристиками товара
+.product-primary-specs {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+// Ряд с названием и значением характеристики
+.product-primary-specs__row {
+  display: flex;
+  align-items: baseline;
+  background-color: $background-color-sub;
+
+  & + .product-primary-specs__row {
+    padding-top: $basic-value * 7 - rem-to-px($indent-difference-p) * 2;
+  }
+
+  &:first-child {
+    padding-top: $basic-value * 6 - rem-to-px($indent-difference-p);
+  }
+
+  &:last-child {
+    padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-p);
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-primary-specs__row {
+    margin-left: -$basic-value * 15;
+    margin-right: -$basic-value * 15;
+    padding-left: $basic-value * 10;
+    padding-right: $basic-value * 10;
+
+    &:first-child {
+      padding-top: $basic-value * 6 - rem-to-px($indent-difference-small);
+    }
+  }
+}
+
+// Названия первичной характеристики
+.product-primary-specs__name {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-light-back;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .product-primary-specs__name {
+    padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-small) - rem-to-px($indent-difference-p);
+    font-family: $font-bold;
+    text-transform: uppercase;
+    color: $secondary-text-color-light-back;
+  }
+}
+
+// Значение первичной характеристики
+.product-primary-specs__value {
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $primary-text-color-light-back;
+
+  .small a {
+    margin-left: $basic-value * 6;
+  }
+
+  a {
+    color: $secondary-text-color-light-back;
+
+    &:hover, &:focus, &:active {
+      color: $primary-text-color-light-back;
+    }
+  }
+}
+
+// Характеристикая "Объёмы производства"
+.product-primary-specs__value_capacity {
+  color: $secondary-text-color-light-back;
+
+  strong {
+    color: $primary-text-color-light-back;
+  }
+}
+
+// Специальное "тире" между значениями объёмов
+.product-primary-specs__mdash {
+  letter-spacing: -$basic-value;
+  color: $border-color-black-light;
+}

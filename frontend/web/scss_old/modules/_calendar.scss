@@ -1,0 +1,726 @@
+/* Верхняя строка над календарём */
+.calendar-header {
+  position: relative;
+  height: 30px;
+  margin: 30px 30px 0 30px;
+  font-size: 0;
+  text-align: center;
+  
+  .btn {
+    padding: 0;
+    height: auto;
+  }
+}
+/* Блок даты в верхней строке над календарём */
+.calendar-date {
+  position: absolute;
+  left: 0;
+}
+/* Название месяца в верхней строке над календарём */
+.calendar-month {
+  display: inline-block;
+  font-size: $font-size-h2;
+  line-height: $font-size-h2;
+  text-transform: uppercase;
+  color: $primary-text-color-light-back;
+}
+/* Название года в верхней строке над календарём */
+.calendar-year {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: $font-size-small;
+  line-height: $font-size-small;
+  color: $secondary-text-color-light-back;
+}
+/* Блок с иконкой настроек календаря */
+.calendar-settings-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Таблица календаря */
+.calendar {
+  width: 100%;
+  table-layout: fixed;
+}
+/* Верхняя строка с указанием дней недели */
+.calendar-head {
+  .calendar-col {
+    height: 40px;
+  }
+  .calendar-day {
+    bottom: 10px;
+    color: $secondary-text-color-light-back;
+  }
+}
+/* Основное содержимое календаря с ячейками дней */
+.calendar-body {
+  .calendar-day {
+    top: 8px;
+  }
+  .calendar-col {
+    padding-top: 30px;
+    height: 120px;
+  }
+}
+.calendar-col {
+  padding: 0 15px;
+  position: relative;
+}
+.calendar-col-hour {
+  width: 65px;
+}
+.calendar-row {
+  border-bottom: 1px solid #f2f2f2;
+}
+.calendar-event {
+  display: block;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 5px 10px;
+  @include border-radius(3px);
+  border: 1px solid transparent;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+  }
+  
+  .ui-resizable-e {
+    z-index: 90;
+    cursor: e-resize;
+    width: 7px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+  }
+  + {
+    .calendar-event {
+      top: 60px;
+      + {
+        .calendar-event {
+          top: 90px;
+        }
+      }
+    }
+  }
+}
+.calendar-event-text {
+  color: $secondary-text-color-light-back;
+}
+.calendar-event-two {
+  right: -100%;
+}
+.calendar-event-three {
+  right: -200%;
+}
+.calendar-event-four {
+  right: -300%;
+}
+.calendar-event-five {
+  right: -400%;
+}
+.calendar-event-six {
+  right: -500%;
+}
+.calendar-event-sevent {
+  right: -600%;
+}
+/* Прошедшее событие */
+.calendar-event-expired {
+  background-color: #fff !important;
+}
+/* Различные цвета событий */
+.calendar-event-blue {
+  color: #fff;
+  background-color: $base-color;
+  border-color: $base-color;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(9,159,229,1) 50%,rgba(9,159,229,1) 100%));
+  }
+}
+.calendar-event-green {
+  color: #fff;
+  background-color: #2abf1d;
+  border-color: #2abf1d;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(42,191,29,1) 50%,rgba(42,191,29,1) 100%));
+  }
+}
+.calendar-event-magenta {
+  color: #fff;
+  background-color: #925b97;
+  border-color: #925b97;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(146,91,151,1) 50%,rgba(146,91,151,1) 100%));
+  }
+}
+/* Прошедшие события */
+.calendar-event-blue.calendar-event-expired {
+  color: $base-color;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%));
+  }
+}
+.calendar-event-green.calendar-event-expired {
+  color: #2abf1d;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%));
+  }
+}
+.calendar-event-magenta.calendar-event-expired {
+  color: #925b97;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%));
+  }
+}
+/* Недоступные события (например, дни следующего месяца) */
+.calendar-event-blue.calendar-event-disabled {
+  background-color: #90d4f3;
+  border-color: #90d4f3;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(144,212,243,1) 50%,rgba(144,212,243,1) 100%));
+  }
+}
+.calendar-event-green.calendar-event-disabled {
+  background-color: #9fe299;
+  border-color: #9fe299;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(159,226,153,1) 50%,rgba(159,226,153,1) 100%));
+  }
+}
+.calendar-event-magenta.calendar-event-disabled {
+  background-color: #ceb5d0;
+  border-color: #ceb5d0;
+  
+  &:after {
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%,rgba(206,181,208,1) 50%,rgba(206,181,208,1) 100%));
+  }
+}
+/* Кратковременное событие в начале часа */
+.calendar-event-hour {
+  top: 0;
+  white-space: normal;
+}
+/* Кратковременное событие в второй половине часа */
+.calendar-event-hour-half {
+  top: 40px;
+  white-space: normal;
+}
+/*
+В зависимости от продолжительности события (в минутах)
+нужно присваивать определённый класс
+*/
+.calendar-event-hour-min-60 {
+  height: 60px;
+}
+.calendar-event-hour-min-90 {
+  height: 90px;
+}
+.calendar-event-hour-min-120 {
+  height: 120px;
+}
+.calendar-event-hour-min-150 {
+  height: 150px;
+}
+.calendar-event-hour-min-180 {
+  height: 180px;
+}
+.calendar-event-hour-min-210 {
+  height: 210px;
+}
+.calendar-event-hour-min-240 {
+  height: 240px;
+}
+.calendar-event-hour-min-270 {
+  height: 270px;
+}
+.calendar-event-hour-min-300 {
+  height: 300px;
+}
+.calendar-event-hour-min-330 {
+  height: 330px;
+}
+.calendar-event-hour-min-360 {
+  height: 360px;
+}
+.calendar-event-hour-min-390 {
+  height: 390px;
+}
+.calendar-event-hour-min-420 {
+  height: 420px;
+}
+.calendar-event-hour-min-450 {
+  height: 450px;
+}
+.calendar-event-hour-min-480 {
+  height: 480px;
+}
+.calendar-event-hour-min-510 {
+  height: 510px;
+}
+.calendar-event-hour-min-540 {
+  height: 540px;
+}
+.calendar-event-hour-min-570 {
+  height: 570px;
+}
+.calendar-event-hour-min-600 {
+  height: 600px;
+}
+.calendar-event-hour-min-630 {
+  height: 630px;
+}
+.calendar-event-hour-min-660 {
+  height: 660px;
+}
+.calendar-event-hour-min-690 {
+  height: 690px;
+}
+.calendar-event-hour-min-720 {
+  height: 720px;
+}
+.calendar-event-hour-min-750 {
+  height: 750px;
+}
+.calendar-event-hour-min-780 {
+  height: 780px;
+}
+.calendar-event-hour-min-810 {
+  height: 810px;
+}
+.calendar-event-hour-min-840 {
+  height: 840px;
+}
+.calendar-event-hour-min-870 {
+  height: 870px;
+}
+.calendar-event-hour-min-900 {
+  height: 900px;
+}
+.calendar-event-hour-min-930 {
+  height: 930px;
+}
+.calendar-event-hour-min-960 {
+  height: 960px;
+}
+.calendar-event-hour-min-990 {
+  height: 990px;
+}
+.calendar-event-hour-min-1020 {
+  height: 1020px;
+}
+.calendar-event-hour-min-1050 {
+  height: 1050px;
+}
+.calendar-event-hour-min-1080 {
+  height: 1080px;
+}
+.calendar-event-hour-min-1110 {
+  height: 1110px;
+}
+.calendar-event-hour-min-1140 {
+  height: 1140px;
+}
+.calendar-event-hour-min-1170 {
+  height: 1170px;
+}
+.calendar-event-hour-min-1200 {
+  height: 1200px;
+}
+.calendar-event-hour-min-1230 {
+  height: 1230px;
+}
+.calendar-event-hour-min-1260 {
+  height: 1260px;
+}
+.calendar-event-hour-min-1290 {
+  height: 1290px;
+}
+.calendar-event-hour-min-1320 {
+  height: 1320px;
+}
+.calendar-event-hour-min-1350 {
+  height: 1350px;
+}
+.calendar-event-hour-min-1380 {
+  height: 1380px;
+}
+.calendar-event-hour-min-1410 {
+  height: 1410px;
+}
+.calendar-event-hour-min-1440 {
+  height: 1440px;
+}
+
+/* Если события накладываются друг на друга */
+/* Этот класс для первого события */
+.calendar-event-first {
+  margin-right: 15px;
+}
+/* Этот класс для второго события */
+.calendar-event-second {
+  margin-left: 15px;
+  border: 2px solid #fff;
+  @include border-radius(5px);
+}
+/* Этот класс для третьего события */
+.calendar-event-third {
+  margin-left: 30px;
+  border: 2px solid #fff;
+  @include border-radius(5px);
+}
+
+/* Если событие длится больше суток */
+/* Начало события */
+.calendar-event-start {
+  @include border-radius(3px 3px 0 0);
+}
+/* Продолжение события */
+.calendar-event-in-progress {
+  @include border-radius(0);
+}
+/* Окончание события */
+.calendar-event-finish {
+  @include border-radius(0 0 3px 3px);
+}
+/* Временная метка */
+.calendar-timestamp {
+  position: absolute;
+  top: -9px;
+  left: 0;
+  font-size: 0;
+  display: block;
+  width: 100%;
+  height: 18px;
+  z-index: 2;
+  
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 8px;
+    background: #DA231A;
+    border: 1px solid #fff;
+    z-index: -1;
+  }
+  
+  span {
+    position: relative;
+    display: inline-block;
+    height: 18px;
+    margin-left: -13px;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    color: #fff;
+    background: #DA231A;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      display: block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #fff;
+      @include border-radius(50%);
+      background: #DA231A;
+      z-index: -1;
+    }
+    &:before {
+      left: -7px;
+    }
+    &:after {
+      right: -7px;
+    }
+  }
+}
+
+.calendar-day {
+  position: absolute;
+  left: 15px;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;;
+  color: $primary-text-color-light-back;
+}
+/* Текущий день в шапке календаря */
+.calendar-head {
+  .calendar-day.is-active {
+    span {
+      &:first-child {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        background-color: $base-color;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        line-height: 22px;
+        text-align: center;
+        margin-left: -8px;
+        color: #fff;
+      }
+    }
+  }
+}
+/* Текущий день в теле календаря */
+.calendar-body {
+  .calendar-day.is-active {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: $base-color;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 22px;
+    text-align: center;
+    margin-left: -8px;
+    color: #fff;
+  }
+}
+.calendar-day.calendar-day-disabled {
+  color: $secondary-text-color-light-back;
+}
+/* Особые стили для раздела "Неделя" */
+.calendar-week {
+  .calendar-col {
+    &:first-child {
+      width: 65px;
+    }
+  }
+  .calendar-day {
+    font: 14px/21px 'Neris-Light', sans-serif;
+    small {
+      font: 11px/21px 'Neris-Light', sans-serif;
+      margin-left: 5px;
+    }
+  }
+  .calendar-body {
+    .calendar-col {
+      height: 60px;
+    }
+  }
+  .calendar-event {
+    padding-right: 15px;
+    
+    span + span {
+      display: block;
+      color: $secondary-text-color-dark-back;
+    }
+  }
+  .calendar-event.calendar-event-expired {
+    span + span {
+      color: $secondary-text-color-light-back;
+    }
+  }
+}
+/* Указание первой половины времени в левой колонке */
+.calendar-hour {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  font: 11px/16px 'Neris-Light', sans-serif;
+  color: rgba(0, 0, 0, 0.45);
+}
+/* Указание второй половины времени в левой колонке */
+.calendar-hour-half {
+  top: 38px;
+}
+/*
+Выделение столбца цветом при наведении на него. Классы появляются у
+таблицы с помощью javascript, если подключить 'widgets/ui-calendar-month'
+*/
+.calendar-hover-0 {
+  .calendar-col {
+    &:first-child {
+      background-color: $background-gray-color;
+    }
+  }
+}
+.calendar-hover-1 {
+  .calendar-col {
+    &:first-child {
+      + {
+        .calendar-col {
+          background-color: $background-gray-color;
+        }
+      }
+    }
+  }
+}
+.calendar-hover-2 {
+  .calendar-col {
+    &:first-child {
+      + {
+        .calendar-col {
+          + {
+            .calendar-col {
+              background-color: $background-gray-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.calendar-hover-3 {
+  .calendar-col {
+    &:first-child {
+      + {
+        .calendar-col {
+          + {
+            .calendar-col {
+              + {
+                .calendar-col {
+                  background-color: $background-gray-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.calendar-hover-4 {
+  .calendar-col {
+    &:first-child {
+      + {
+        .calendar-col {
+          + {
+            .calendar-col {
+              + {
+                .calendar-col {
+                  + {
+                    .calendar-col {
+                      background-color: $background-gray-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.calendar-hover-5 {
+  .calendar-col {
+    &:first-child {
+      + {
+        .calendar-col {
+          + {
+            .calendar-col {
+              + {
+                .calendar-col {
+                  + {
+                    .calendar-col {
+                      + {
+                        .calendar-col {
+                          background-color: $background-gray-color;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.calendar-hover-6 {
+  .calendar-col {
+    &:first-child {
+      + {
+        .calendar-col {
+          + {
+            .calendar-col {
+              + {
+                .calendar-col {
+                  + {
+                    .calendar-col {
+                      + {
+                        .calendar-col {
+                          + {
+                            .calendar-col {
+                              background-color: $background-gray-color;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.calendar-hover-7 {
+  .calendar-col {
+    &:first-child {
+      + {
+        .calendar-col {
+          + {
+            .calendar-col {
+              + {
+                .calendar-col {
+                  + {
+                    .calendar-col {
+                      + {
+                        .calendar-col {
+                          + {
+                            .calendar-col {
+                              + {
+                                .calendar-col {
+                                  background-color: $background-gray-color;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

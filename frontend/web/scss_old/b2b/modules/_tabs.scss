@@ -1,0 +1,24 @@
+// Панель вкладок-переключателей. Например, между описанием и характеристиками товара.
+.tabs {
+  display: flex;
+  box-shadow: inset 0 -1px 0 0 $border-color-black-light;
+  background-color: $white-color;
+}
+
+.tabs__item {
+  padding: $basic-value*7 0;
+  font: #{$font-size-small}/#{$line-height-small_nowrap} $font-light;
+
+  & + .tabs__item {
+    margin-left: $basic-value * 7;
+  }
+
+  &.is-active {
+    color: $primary-text-color-light-back;
+    box-shadow: inset 0 -1px 0 0 $border-color-black-middle;
+
+    &:hover, &:focus, &:active {
+      color: $primary-text-color-light-back;
+    }
+  }
+}

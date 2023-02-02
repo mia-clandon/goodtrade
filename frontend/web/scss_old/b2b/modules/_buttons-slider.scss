@@ -1,0 +1,16 @@
+// Слайдер с кнопками на базе плагина slick
+.buttons-slider {
+  position: relative;
+
+  .slick-list {
+    margin-left: -$basic-value * 15;
+    margin-right: -$basic-value * 15;
+    padding-left: $basic-value * 15;
+    padding-right: $basic-value * 15;
+  }
+
+  .slick-slide {
+    display: inline-flex;
+    height: auto;
+  }
+}

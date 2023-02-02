@@ -1,0 +1,28 @@
+// Страница регистрации
+.registration-page {
+  height: 100%;
+
+  body {
+    height: 100%;
+  }
+}
+
+.registration-page__top-part {
+  flex-shrink: 0;
+}
+
+.registration-page__middle-part {
+  flex-grow: 1;
+}
+
+.registration-page__bottom-part {
+  flex-shrink: 0;
+}
+
+.registration-page__bottom-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: $basic-value * 3;
+  padding-bottom: $basic-value * 3;
+}

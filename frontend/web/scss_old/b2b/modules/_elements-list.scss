@@ -1,0 +1,219 @@
+// Список элементов
+.elements-list {
+  margin-top: -($basic-value * 9 - rem-to-px($indent-difference-small));
+}
+
+// Элемент списка
+.elements-list__item {
+  display: flex;
+  padding-top: $basic-value * 9 - rem-to-px($indent-difference-small);
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &:hover {
+    .elements-list__item-actions {
+      opacity: 1;
+    }
+  }
+}
+
+// Изображение элемента
+.elements-list__item-image {
+  flex: 0 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: $basic-value * 5;
+  width: $basic-value * 12;
+  height: $basic-value * 12;
+  overflow: hidden;
+  border-radius: 50%;
+  @include user-select(none);
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 1px $border-color-black-light;
+    border-radius: 50%;
+  }
+
+  img {
+    flex: 0 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.elements-list__item-image_gray {
+  background-color: rgba($black-color, $q-x-light);
+
+  &:before {
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: $q-middle;
+  }
+}
+
+.elements-list__item-image_agriculture { &:before { @include category-sprite(icon-category-md-01); } }
+.elements-list__item-image_forest { &:before { @include category-sprite(icon-category-md-02); } }
+.elements-list__item-image_textile_and_clothing { &:before { @include category-sprite(icon-category-md-03); } }
+.elements-list__item-image_minerals_and_chemicals_metallurgy { &:before { @include category-sprite(icon-category-md-04); } }
+.elements-list__item-image_engineering { &:before { @include category-sprite(icon-category-md-05); } }
+.elements-list__item-image_instrumentation { &:before { @include category-sprite(icon-category-md-06); } }
+.elements-list__item-image_construction { &:before { @include category-sprite(icon-category-md-07); } }
+.elements-list__item-image_containers_and_packaging { &:before { @include category-sprite(icon-category-md-08); } }
+.elements-list__item-image_medicine { &:before { @include category-sprite(icon-category-md-09); } }
+.elements-list__item-image_energetics { &:before { @include category-sprite(icon-category-md-10); } }
+.elements-list__item-image_food { &:before { @include category-sprite(icon-category-md-11); } }
+
+// Содержимое элемента
+.elements-list__item-content {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0px;
+  min-width: 0; // Исправляем баг, когда элемент становится больше родителя из-за наличия потомков с white-space: nowrap;
+  font-size: 0;
+  line-height: 0;
+}
+
+// Блок-заголовок элемента
+.elements-list__item-title {
+  display: inline-block;
+  //max-height: rem-to-px($line-height-p) * 2 + ($basic-value * 3 - rem-to-px($indent-difference-p));
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  //overflow: hidden;
+
+  & + .elements-list__item-additional-text,
+  & + .elements-list__item-row {
+    padding-top: $basic-value * 4 - rem-to-px($indent-difference-p) - rem-to-px($indent-difference-small);
+  }
+
+  .label {
+    margin-left: $basic-value * 4;
+    margin-right: $basic-value * 4;
+
+    &:first-child {
+      margin-left: 0;
+      margin-right: $basic-value * 4;
+    }
+
+    &:last-child {
+      margin-left: $basic-value * 4;
+      margin-right: 0;
+    }
+  }
+}
+
+// Блок-заголовок элемента в одну строку с многоточием в конце
+.elements-list__item-title_one-line {
+  max-width: 100%;
+  max-height: rem-to-px($line-height-p);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Строка с количеством компаний и товаров. Используется в частности в слайдере сфер деятельнссти на главной сайта.
+.elements-list__item-counters {
+  font-size: 0;
+  line-height: 0;
+
+  span {
+    font: #{$font-size-small}/#{$line-height-small} $font-light;
+    color: $secondary-text-color-light-back;
+
+    & + span {
+      margin-left: $basic-value * 3;
+    }
+  }
+}
+
+.elements-list__item-row {
+  display: flex;
+
+  & > * + * {
+    padding-left: $basic-value * 6;
+  }
+
+  .top-rated {
+    &:before {
+      margin: 0;
+    }
+  }
+}
+
+// Ряд внутри элемента с дополнительным поясняющим текстом.
+// Используется в частности внутри выпадающих элементов сравнения и избранного в шапке сайта.
+.elements-list__item-additional-text {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+}
+
+// Блок с кнопками/ссылками для удаления элемента и прочего.
+.elements-list__item-actions {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: $line-height-p;
+  background-color: $white-color;
+  opacity: 0;
+  transition: opacity .2s;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -$basic-value * 6;
+    width: $basic-value * 6;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+  }
+
+  a {
+    display: block;
+    margin-bottom: rem-to-px($indent-difference-p);
+    font: #{$font-size-small}/#{$line-height-small-nowrap} $font-light;
+    color: $secondary-text-color-light-back;
+
+    &:hover, &:focus, &:active {
+      color: $primary-text-color-light-back;
+    }
+  }
+}
+
+// Блок с кнопками элемента. Используется в частности в выпадающем элемента уведомлений в шапке сайта.
+.elements-list__item-buttons-row {
+  display: flex;
+
+  * + & {
+    padding-top: $basic-value * 6 - rem-to-px($indent-difference-small);
+  }
+
+  .button_link {
+    &:first-child:last-child {
+      margin-top: -$basic-value * 3;
+    }
+  }
+}
+
+// Ссылка в конце списка элементов. Используется в частности в блоке "Возможно вас заинтересуют" на странице товара.
+.elements-list__small-link {
+  font: #{$font-size-small}/#{$line-height-small_nowrap} $font-light;
+  color: $secondary-text-color-light-back;
+
+  &:hover, &:focus, &:active {
+    color: $primary-text-color-light-back;
+  }
+}

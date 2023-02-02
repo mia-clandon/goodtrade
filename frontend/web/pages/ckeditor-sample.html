@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестирование визуального редактора</title>
+    <script src="../js/for-static-pages/libs/jquery-1.11.3.js"></script>
+    <script src="../js/for-static-pages/libs/ckeditor/ckeditor.js"></script>
+    <script src="../js/for-static-pages/libs/ckeditor/adapters/jquery.js"></script>
+    <style>
+        form {
+            width: 610px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <textarea class="editor"></textarea>
+    </form>
+    <script>
+        $( 'textarea.editor' ).ckeditor();
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+header {
+  min-height: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // Высота букв + высота внутренних отступов + расстояние от букв до отступов
+}
+
+@include media-breakpoint-between(xs, md) {
+  header {
+    margin-bottom: $basic-value * 3;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  header {
+    margin-bottom: $basic-value * 6;
+  }
+}
+
+.header-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.header-registration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .header-registration {
+    position: relative;
+  }
+}

@@ -1,0 +1,11 @@
+// КОСТЫЛИ
+
+// Набор костылей, чтобы нижний видимый вертикальный отсуп между буквам был кратным X (базовой величине)
+ul + .list-title { margin-top: -#{$indent-difference-small}; }
+ul + p { margin-top: -#{$indent-difference-p}; }
+ul + ul { margin-top: -#{$indent-difference-p}; }
+
+h2 + p { margin-top: -#{$indent-difference-p}; }
+h2 + h2 { margin-top: -#{$indent-difference-h2}; }
+
+.block + .block > h2 { margin-top: -#{$indent-difference-h2}; }

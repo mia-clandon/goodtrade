@@ -1,0 +1,47 @@
+.news-block {}
+
+// news-slider-block - это отдельный блок по БЭМ, просто не стал его выносить в отдельный файл
+.news-slider-block {
+  position: relative;
+  overflow: hidden;
+}
+
+// Стрелка слайдера
+.news-slider-block__arrow {
+  @extend .slider-arrow;
+  height: $basic-value * 110;
+
+  &:hover {
+    opacity: $q-dark;
+  }
+
+  &.slick-disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.news-slider-block__arrow_left {
+  @extend .slider-arrow_left;
+  background: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.news-slider-block__arrow_right {
+  @extend .slider-arrow_right;
+  background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.news-slider-block__container {
+  height: 100%;
+}
+
+// Новостной слайдер на базе плагина slick
+.news-slider {
+  .slick-list {
+    overflow: visible;
+  }
+}
+
+.news-slider__slide {
+  width: 100%;
+}

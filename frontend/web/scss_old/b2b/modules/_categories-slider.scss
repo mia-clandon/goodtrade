@@ -1,0 +1,25 @@
+.categories-block {}
+
+// categories-slider-block - это отдельный блок по БЭМ, просто я не стал его выносить в отдельный файл!
+.categories-slider-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.categories-slider-block__container {
+  height: 100%;
+}
+
+// Новостной слайдер на базе плагина slick
+.categories-slider {
+  .slick-list {
+    overflow: visible;
+  }
+  .slick-track {
+    margin: 0;
+  }
+}
+
+.categories-slider__slide {
+  width: 100%;
+}

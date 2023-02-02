@@ -1,0 +1,56 @@
+footer {
+  margin: 0;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  display: block;
+  transition: padding-left .5s ease-out;
+  background: $background-gray-color;
+  .container {
+    padding: 75px 0 60px 0;
+  }
+  .logo-md-black {
+    display: inline-block;
+  }
+}
+.info-wrap {
+  padding: 35px 0 0 0;
+}
+.copyright {
+  display: block;
+  font: 11px/16px Neris-Light, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+}
+.address {
+  display: block;
+  font: 11px/16px Neris-Light, sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*
+Нижняя плашка на страницах кабинета, коммерческого предложения и прочего.
+*/
+#bottom-controls {
+  position: fixed;
+  z-index: 15;
+  height: 60px;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 30px;
+  transition: left, right .5s ease-out;
+  .action {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+}
+#bottom-controls.has-border {
+  border-top: 1px solid $border-color-black-light;
+}
+#bottom-controls.is-shifted-right-more {
+  right: 400px;
+}

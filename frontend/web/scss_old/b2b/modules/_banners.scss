@@ -1,0 +1,21 @@
+// Различные виды баннеров
+.simple-banner {
+  @extend %basic-entity;
+}
+
+@include media-breakpoint-between(xd, md) {
+  .simple-banner {
+    margin: 0 (-$basic-value*5);
+  }
+}
+
+.simple-banner__title {
+  font: #{$font-size-p}/#{$line-height-p} $font-bold;
+  padding-bottom: $basic-value * 7 - (rem-to-px($indent-difference-p) * 2);
+  text-transform: uppercase;
+}
+
+.simple-banner__content {
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  padding-bottom: $basic-value * 7 - rem-to-px($indent-difference-p);
+}

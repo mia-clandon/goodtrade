@@ -1,0 +1,394 @@
+/* Общий класс тега body для страницы избранного */
+.favorites-page {
+  display: table;
+  width: 100%;
+  height: 100%;
+  
+  main {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+    
+    .inner-sidebar-favorites {
+      display: table-cell;
+      height: 100%;
+    }
+  }
+}
+
+/* Левая внутренняя колонка на странице избранного */
+.inner-sidebar-favorites {
+  width: 290px;
+  background: $background-gray-color;
+  transition: all .5s ease-out;
+}
+
+/* Переключатель между компаниями и товарами в левой колонке*/
+.inner-sidebar-favorites-tumbler {
+  margin: 20px 15px 15px 30px;
+}
+
+/* Пункте меню */
+.inner-sidebar-favorites-menu__item {
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  font-size: 0;
+  line-height: 0;
+
+  /* Активный пункт меню */
+  &.is-active {
+    background: $base-color;
+
+    .inner-sidebar-favorites-menu__item-name {
+      color: $primary-text-color-dark-back;
+
+      &:after {
+        @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%, rgba(9,159,229,1) 50%, rgba(9,159,229,1) 100%));
+      }
+    }
+
+    .inner-sidebar-favorites-menu__item-description {
+      color: $secondary-text-color-dark-back;
+    }
+
+    .inner-sidebar-favorites-menu__item-delete-link {
+      color: $secondary-text-color-dark-back;
+
+      &:hover, &:focus, &:active {
+        color: $primary-text-color-dark-back;
+      }
+    }
+  }
+
+}
+
+/* Контейнер логотипа компании */
+.inner-sidebar-favorites-menu__item-image-container {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  @include border-radius(50%);
+  border: 1px solid $border-color-black-light;
+  overflow: hidden;
+}
+
+/* Контейнер для названия пункта меню */
+.inner-sidebar-favorites-menu__item-name-container {
+  display: inline-block;
+  vertical-align: middle;
+  width: 205px;
+  margin-left: 15px;
+}
+
+/* Название пункта меню */
+.inner-sidebar-favorites-menu__item-name {
+  display: inline-block;
+  position: relative;
+  width: 205px;
+  font-size: $font-size-p;
+  line-height: $line-height-p;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    @include background-image(linear-gradient(left, rgba(255,255,255,0) 0%, rgba(242,242,242,1) 50%, rgba(242,242,242,1) 100%));
+  }
+}
+
+/* Небольшое дополнение к названию пункта меню */
+.inner-sidebar-favorites-menu__item-description {
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  color: $secondary-text-color-light-back;
+}
+
+/* Ссылка для удаления из избранного */
+.inner-sidebar-favorites-menu__item-delete-link {
+  display: inline-block;
+  vertical-align: top;
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+  transition: all .2s;
+
+  &:hover, &:focus, &:active {
+    color: $primary-text-color-light-back;
+  }
+}
+
+/* Блок со звездой, когда нет элементов или ни один из них не выбран */
+.favorites-star {
+  margin: 115px auto 0;
+  text-align: center;
+  font-size: 0;
+}
+.favorites-star__image {
+  width: 120px;
+  height: 114px;
+  margin: 0 auto;
+  background: transparent url(../../img/favorite-star.png) 0 0 no-repeat;
+  opacity: 0.1;
+}
+.favorites-star__text {
+  margin-bottom: 30px;
+  font-size: $font-size-p;
+  color: $secondary-text-color-light-back;
+}
+
+/* Блок "Заметки" */
+.favorites-note {
+  position: relative;
+  margin-top: 10px;
+}
+.favorites-note__inner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: $p0;
+  background: rgba($base-color, 0.11);
+}
+.favorites-note__title {
+  font: #{$font-size-small}/#{$line-height-small} $font-bold;
+  text-transform: uppercase;
+  color: $secondary-text-color-light-back;
+}
+.favorites-note__text {
+  height: auto;
+  min-height: 65px;
+  padding: 0;
+  margin: 3px 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  line-height: 21px;
+  color: $primary-text-color-light-back;
+  
+  &:focus {
+    box-shadow: none;
+  }
+}
+.favorites-note__description {
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+}
+
+/* Блок основной информации о компании */
+.favorites-company-description {
+  .top-rated {
+    color: $secondary-text-color-light-back;
+  }
+}
+.favorites-company-description__image {
+  height: 150px;
+  margin-top: -1px;
+  border: 1px solid $border-color-black-light;
+  border-top: none;
+  text-align: center;
+  font-size: 0;
+  line-height: 150px;
+  
+  img {
+    vertical-align: middle;
+  }
+}
+.favorites-company-description__title {
+  margin-top: 10px;
+  color: $primary-text-color-light-back;
+}
+.favorites-company-description__address {
+  margin-top: 15px;
+  
+  p {
+    padding: 0;
+    color: $primary-text-color-light-back;
+  }
+  small {
+    color: $secondary-text-color-light-back;
+  }
+  a {
+    margin-left: 14px;
+    font: #{$font-size-small}/#{$line-height-small} $font-light;
+    color: $secondary-text-color-light-back;
+  }
+}
+
+/* Вкладки */
+.favorites-tabs {
+  margin-right: 15px;
+}
+
+/* Общие стили для блоков на странице избранного */
+.favorites-block {
+  margin-top: 25px;
+}
+.favorites-block__header {
+  h2 {
+    display: inline-block;
+    max-width: 600px;
+    text-transform: uppercase;
+    color: $primary-text-color-light-back;
+  }
+  a {
+    float: right;
+    line-height: $line-height-h2;
+  }
+}
+.favorites-block__content {
+  margin: 15px 0;
+}
+
+/* Список товаров */
+.favorites-items-list {}
+.favorites-items-list__item {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.favorites-items-list__item-image {
+  width: 145px;
+  height: 100px;
+  text-align: center;
+  overflow: hidden;
+
+  img {
+    vertical-align: middle;
+  }
+}
+.favorites-items-list__item-title {
+  display: inline-block;
+  max-width: 420px;
+  margin-top: ($line-height-h2 - $line-height-p) / 2;
+}
+.favorites-items-list__item-price {
+  float: right;
+  text-align: right;
+}
+.favorites-items-list__buttons {
+  margin-top: 20px;
+}
+.favorites-items-list__more-link {}
+.favorites-items-list__more-link-space {
+  min-height: 1px;
+}
+
+/* Список документов */
+.favorites-documents-list {}
+.favorites-documents-list__item {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 45px;
+}
+.favorites-documents-list__item-image {
+  position: relative;
+  float: left;
+  width: 130px;
+  height: 185px;
+  margin-right: 30px;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba($black-color, $q-light);
+  }
+  
+  img {
+    box-shadow: 0 5px 10px 0 rgba($black-color, $q-light);
+  }
+}
+.favorites-documents-list__item-image_important {
+  &:after {
+    border-color: #ffbd38;
+  }
+}
+.favorites-documents-list__item-content {
+  position: relative;
+  float: right;
+  max-width: 210px;
+  height: 185px;
+}
+.favorites-documents-list__item-title {
+  margin-top: 10px;
+}
+.favorites-documents-list__item-text {
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+}
+.favorites-documents-list__item-state {
+  position: absolute;
+  bottom: 10px;
+  
+  span {
+    display: block;
+    font: $smallFont;
+    color: $secondary-text-color-light-back;
+  }
+}
+
+/* Старые стили заметок от Мадияра */
+.notes {
+  position: fixed;
+  right: 15px;
+  top: 70px;
+  background-color: #e4f4fc;
+  padding: 15px;
+  width: 160px;
+  height: 150px;
+}
+.notes-text {
+  display: none;
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  &:focus {
+    box-shadow: none;
+  }
+}
+.notes-focus {
+  .notes-placeholder {
+    display: none;
+  }
+  .notes-text {
+    display: block;
+  }
+}
+.notes.has-text {
+  .notes-placeholder {
+    display: none;
+  }
+  .notes-text {
+    display: block;
+  }
+}
+.notes-head {
+  padding: 5px 0;
+}
+.notes-placeholder {
+  cursor: text;
+}
+.notes-body {
+  font: #{$font-size-p}/#{$line-height-p} 'Neris-Light', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+}
+.notes-title {
+  font: #{$font-size-small}/#{$line-height-small} 'Neris-Black', sans-serif;
+  color: $secondary-text-color-light-back;
+  text-transform: uppercase;
+}

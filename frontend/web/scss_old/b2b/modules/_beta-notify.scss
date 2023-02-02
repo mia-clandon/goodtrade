@@ -1,0 +1,39 @@
+.beta-notify-sidebar {
+  width: $basic-value * 70;
+  margin-left: -($basic-value * 5);
+  margin-right: -($basic-value * 5);
+  margin-bottom: $basic-value * 18;
+  padding: $basic-value * 5;
+  box-shadow: inset 0 0 0 1px $border-color-white-light;
+  border-radius: 3px;
+}
+
+.beta-notify-sidebar__image {
+  position: relative;
+  width: $basic-value * 14;
+  height: $basic-value * 7;
+  margin-top: -($basic-value * 10);
+  margin-bottom: $basic-value * 3;
+  margin-left: auto;
+  margin-right: auto;
+  background: $primary-color url("#{$url-img}beta-notify__image-small.png") top center no-repeat;
+}
+
+.beta-notify-sidebar__message {
+  p, a {
+    padding: 0;
+    font: #{$font-size-small}/#{$line-height-small} $font-light;
+    color: $primary-text-color-dark-back;
+    text-align: center;
+  }
+
+  a {
+    color: $primary-link-color-blue-back;
+    text-decoration: underline;
+
+    &:hover, &:focus, &:active {
+      color: $primary-link-color-blue-back-hover;
+      text-decoration: none;
+    }
+  }
+}

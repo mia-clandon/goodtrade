@@ -1,0 +1,47 @@
+// Блок производителя товара
+.product-firm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: $basic-value * 7 + rem-to-px($line-height-small-nowrap);
+
+  .top-rated {
+    padding-bottom: $basic-value * 4 - rem-to-px($indent-difference-small) * 2;
+  }
+}
+
+.product-firm__logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 226px;
+  margin-bottom: $basic-value * 7 - rem-to-px($indent-difference-p);
+  overflow: hidden;
+  border-radius: $basic-value;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 1px $border-color-black-light;
+    border-radius: $basic-value;
+  }
+}
+
+.product-firm__info-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: $basic-value * 5 - rem-to-px($indent-difference-small);
+}
+
+.product-firm__title {}
+
+.product-firm__location {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-light-back;
+}

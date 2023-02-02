@@ -1,0 +1,33 @@
+/*
+.firms-slider-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.firms-slider-block__container {
+  height: 100%;
+}
+*/
+
+// Новостной слайдер на базе плагина slick
+.firms-slider {
+  margin-left: -$basic-value * 15;
+  margin-right: -$basic-value * 15;
+  padding-left: $basic-value * 15;
+  padding-right: $basic-value * 15;
+  overflow: hidden;
+
+  .slick-list {
+    overflow: visible;
+  }
+  .slick-track {
+    margin: 0;
+  }
+  .slick-dots {
+    padding-top: $basic-value * 9 - rem-to-px($indent-difference-small);
+  }
+}
+
+.firms-slider__slide {
+  width: 100%;
+}

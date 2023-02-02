@@ -1,0 +1,24 @@
+// Виджет плавающих вкладок
+// Основной контейнер
+[data-type="affix-container"] {
+  position: relative;
+}
+
+// Панель с кнопками
+[data-type="affix-panel"] {
+  &.is-absolute {
+    position: absolute;
+    z-index: 3;
+  }
+
+  &.is-fixed {
+    position: fixed;
+    z-index: 3;
+  }
+}
+
+// Кнопки
+[data-type="affix-button"] {}
+
+// Блок внутри контейнера
+[data-type="affix-spy"] {}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>BootStrap 4 Grid Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/b2b.css">
+
+    <style>
+        .row {
+            margin-bottom: 10px;
+        }
+        .row > div {
+            background-color: #1E88E5;
+            color: #fff;
+            height: 120px;
+            border: 1px solid #fff;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="card card-block">
+        <p class="card-text">In Bootstrap 3 we have to explicitly assign the size of every column.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">col-sm-2</div>
+        <div class="col-sm-2">col-sm-2</div>
+        <div class="col-sm-4">col-sm-4</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">.col-sm-8</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">.col-sm-4</div>
+        <div class="col-sm-4">.col-sm-4</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">.col-sm-6</div>
+        <div class="col-sm-1">.col-sm-1</div>
+        <div class="col-sm-1">.col-sm-1</div>
+    </div>
+
+</div>
+
+
+<div class="container">
+
+    <div class="card card-block">
+        <p class="card-text">Thanks to flexbox the Bootstrap 4 grid has the option of auto layout - columns share equally the available space in a row unless a specific size is assigned.</p>
+    </div>
+
+    <div class="row">
+        <div class="col">.col <br> 1 of 3 (33%)</div>
+        <div class="col">.col <br> 1 of 3 (33%)</div>
+        <div class="col">.col <br> 1 of 3 (33%)</div>
+    </div>
+    <div class="row">
+        <div class="col">.col <br> 1 of 1 (100%)</div>
+    </div>
+    <div class="row">
+        <div class="col">.col <br> 1 of 2 (50%)</div>
+        <div class="col">.col <br> 1 of 2 (50%)</div>
+    </div>
+    <div class="row">
+        <div class="col-6">.col-6 <br> Fixed 6 of 8 (75%), the other columns in the row will split the remaining 2 (25%) </div>
+        <div class="col">.col</div>
+        <div class="col">.col</div>
+    </div>
+
+</div>
+</body>
+</html>

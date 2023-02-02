@@ -1,0 +1,550 @@
+<!DOCTYPE html><!--[if lte IE 9]>
+<html class="no-js lte-ie9">
+<![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Register Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/libs/modernizr-custom.js" type="text/javascript"></script><!--[if lt IE 9]>
+    <script src="../js/libs/html5shiv.js"></script>
+    <script src="../js/libs/respond.min.js"></script>
+    <!-- <![endif] -->
+    <link href="../css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header id="top-controls">
+      <nav><a href="register.html" class="logo logo-blue pull-left"></a>
+        <div id="register-progress" class="progress">
+          <div class="progress-item is-success"><span class="progress-item-number">1</span><span class="progress-item-label">Пользователь</span></div>
+          <div class="progress-arrow"></div>
+          <div class="progress-item is-active"><span class="progress-item-number">2</span><span class="progress-item-label">Компания</span></div>
+          <div class="progress-arrow"></div>
+          <div class="progress-item"><span class="progress-item-number">3</span><span class="progress-item-label">Товары</span></div>
+        </div>
+      </nav>
+    </header>
+    <aside id="sidebar">
+      <div class="sidebar-head">
+        <button class="menu menu-white"></button>
+        <div class="logo logo-sm outline"><a></a></div>
+      </div>
+      <div class="sidebar-body">
+        <ul class="sidebar-links">
+          <li><a>О компании</a></li>
+          <li><a>СМИ о нас</a></li>
+          <li><a>Отзывы</a></li>
+          <li><a>Реклама на сайте</a></li>
+        </ul>
+        <ul class="sidebar-links sidebar-links-small">
+          <li><a>Пользовательское соглашение</a></li>
+          <li><a>Безопасность</a></li>
+          <li><a>Правила</a></li>
+          <li><a>Справка и FAQ</a></li>
+          <li><a>Контакты</a></li>
+        </ul>
+      </div>
+    </aside>
+    <main role="main" id="page-wrap" class="no-overflow has-bottom-control has-progress-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-4 col-sm-offset-1 col-md-4 col-md-offset-1 col-lg-4 col-lg-offset-1">
+            <form id="register">
+              <h3>Компания</h3>
+              <section>
+                <fieldset>
+                  <div class="form-control">
+                    <div class="form-control-label">Название компании / БИН</div>
+                    <div class="input">
+                      <input type="text" id="input-company" placeholder="Введите название компании или БИН">
+                    </div>
+                  </div>
+                  <div style="display: none" class="form-control-group">
+                    <div class="form-control">
+                      <div class="form-control-label">Название компании</div>
+                      <div class="input">
+                        <input type="text" placeholder="Введите название вашей компании" name="title" id="company-name" class="input-field">
+                      </div>
+                    </div>
+                    <div class="form-control">
+                      <div class="form-control-label">БИН</div>
+                      <div class="input">
+                        <input type="text" placeholder="Введите ваш БИН" maxlength="12" name="bin" id="company-id" class="input-field">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-control">
+                    <div class="form-control-label">Сфера деятельности</div>
+                    <div id="ui-category" class="ui-category">
+                      <div class="ui-tags"></div><a role="button" href="#" class="ui-category-button"><span class="ui-category-button-hidden">Выберите категорию</span><span class="ui-category-button-text">Выберите сферу деятельности</span></a>
+                      <div style="display: none" class="ui-category-menu"><a role="button" href="#" class="ui-category-menu-button"><span class="ui-category-menu-button-hidden">Скрыть другие категории</span><span class="ui-category-menu-button-text">Показать другие категории</span></a>
+                        <ul class="ui-category-menu-list">
+                          <li data-value="11" class="ui-category-menu-list-item">Сельское хозяйство</li>
+                          <li data-value="12" class="ui-category-menu-list-item">Лесозаготовки</li>
+                          <li data-value="13" class="ui-category-menu-list-item">Текстиль и одежда</li>
+                          <li data-value="14" class="ui-category-menu-list-item">Добыча и Химия, металлургия</li>
+                          <li data-value="15" class="ui-category-menu-list-item">Машино-строение</li>
+                          <li data-value="16" style="display: none" class="ui-category-menu-list-item">Приборо-строение</li>
+                          <li data-value="17" style="display: none" class="ui-category-menu-list-item">Строительство</li>
+                          <li data-value="18" style="display: none" class="ui-category-menu-list-item">Тара и упаковка</li>
+                          <li data-value="19" style="display: none" class="ui-category-menu-list-item">Медицина</li>
+                          <li data-value="20" style="display: none" class="ui-category-menu-list-item">Энергетика</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <fieldset>
+                    <legend>Контактные данные</legend>
+                    <div data-step-skip="true" class="form-control step">
+                      <div class="form-control-label">Регион</div>
+                      <div id="input-region" class="input-group input-group-region">
+                        <div class="input">
+                          <input type="text" placeholder="Ваша страна" size="12" disabled value="Казахстан" name="country" class="input-field">
+                        </div>
+                        <div id="input-city" class="input input-geo">
+                          <input type="hidden" name="cityID">
+                          <input type="text" placeholder="Ваш город" name="city" class="input-field">
+                          <div class="tips">
+                            <ul class="tips-body"></ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-step-skip="true" class="form-control">
+                      <div class="form-control-label">Юридический адрес</div>
+                      <div class="input input-geo">
+                        <input type="text" placeholder="Ваш юридический адрес" name="address" class="input-field">
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="form-control">
+                    <div class="form-control-label">Телефон</div>
+                    <ul id="multiply-phone" class="multiply">
+                      <li>
+                        <div class="input input-tel input-tel-main">
+                          <input type="tel" placeholder="+7 (777) 707 00 77" name="phone[]"/>
+                          <div class="label">Основной</div>
+                        </div><a href="#" role="button" data-action="add"></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="form-control">
+                    <div class="form-control-label">Email</div>
+                    <ul id="multiply-email" class="multiply">
+                      <li>
+                        <div class="input input-mail input-mail-main">
+                          <input type="email" placeholder="Введите ваш email" name="email[]" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"/>
+                          <div class="label">Основной</div>
+                        </div><a href="#" role="button" data-action="add"></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="collapse js-collapse"><a role="button" href="#" class="collapse-toggle js-collapse-toggle">Дополнительная информация</a>
+                    <div class="collapse-content js-collapse-content">
+                      <fieldset>
+                        <legend>Реквизиты</legend>
+                        <div class="form-control">
+                          <div id="input-logo" class="input-photo">
+                            <input type="file" name="files" class="input-photo-field">
+                            <div class="input-hidden-wrap"></div>
+                            <div class="input-photo-placeholder">
+                              <div class="input-photo-text">Перетащите сюда фотографии или<br> <a role="button" href="#" data-action="add"> выберите их с вашего компьютера</a></div>
+                            </div>
+                            <div class="input-photo-thumbnails-wrap">
+                              <div class="input-photo-drop-text">Выберите фото,<br> которое хотите сделать<br> главным</div>
+                              <ul class="input-photo-thumbnails"></ul><a role="button" href="#" data-action="add" class="input-photo-btn">Добавить фото</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-control">
+                          <div class="form-control-label">Банк</div>
+                          <div class="input">
+                            <input type="text" placeholder="Введите банк бенефицара" name="bank" class="input-field">
+                          </div>
+                        </div>
+                        <div class="form-control">
+                          <div class="form-control-label">БИК</div>
+                          <div class="input">
+                            <input type="text" placeholder="Введите ваш БИК" name="bik" class="input-field">
+                          </div>
+                        </div>
+                        <div class="form-control">
+                          <div class="form-control-label">ИИК</div>
+                          <div class="input">
+                            <input type="text" placeholder="Введите ваш ИИК" name="iik" class="input-field">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-3">
+                            <div class="form-control">
+                              <div class="form-control-label">КБЕ</div>
+                              <div class="input">
+                                <input type="text" placeholder="Введите КБЕ" name="kbe" class="input-field">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xs-3">
+                            <div class="form-control">
+                              <div class="form-control-label">КНП</div>
+                              <div class="input">
+                                <input type="text" placeholder="Введите КНП" name="knp" class="input-field">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </fieldset>
+              </section>
+              <h3>Товар</h3>
+              <section>
+                <fieldset>
+                  <div class="form-control">
+                    <div class="form-control-label">Категория товара</div>
+                    <div id="ui-product" class="ui-product">
+                      <div class="ui-tags"></div><!--<a role="button" href="#" class="ui-product-button">Добавить категорию товара</a>-->
+
+
+                      <div class="ui-product-menu-wrap" style="display: none">
+                        <!--<a role="button" href="#" class="ui-product-menu-back">Назад</a>-->
+
+                        <ul class="ui-product-menu">
+
+                          <li class="ui-product-menu-item forest ui-product-menu-item-active">
+                            <div class="ui-product-menu-item-wrap">
+                              <div class="ui-product-menu-item-icon"></div>
+                              <div class="ui-product-menu-item-label">Лесозаготовка</div>
+                            </div>
+                            <!--second-level-submenu-is-open-->
+                            <ul class="ui-product-submenu ">
+                              <!-- submenu-is-open-->
+                              <li class="ui-product-submenu-item with-submenu" ><span>Брус</span>
+                                <ul class="ui-product-submenu-submenu">
+                                  <li class="ui-product-submenu-submenu-item"><span>Буд</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Липа</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Лакированные</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Окрашенные</span></li>
+                                </ul>
+                              </li>
+                              <li class="ui-product-submenu-item"><span>Горбыль</span></li>
+                              <li class="ui-product-submenu-item"><span>Деревянный брус</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска для пола</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска необрезная</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска обрезная</span></li>
+                              <li class="ui-product-submenu-item"><span>Клееный брус</span></li>
+                              <li class="ui-product-submenu-item"><span>Лес, пиломатериалы</span></li>
+                              <li class="ui-product-submenu-item"><span>Столярные изделия</span></li>
+                              <li class="ui-product-submenu-item"><span>Шпалы</span></li>
+                              <li class="ui-product-submenu-item"><span>Прочее</span></li>
+
+                              <a role="button" href="#" class="ui-product-menu-back">← Назад</a>
+                            </ul>
+                          </li>
+
+
+
+                          <li class="ui-product-menu-item construction">
+                            <div class="ui-product-menu-item-wrap">
+                              <div class="ui-product-menu-item-icon"></div>
+                              <div class="ui-product-menu-item-label">Строительство</div>
+                            </div>
+                            <!--second-level-submenu-is-open-->
+                            <ul class="ui-product-submenu ">
+                              <!-- submenu-is-open-->
+                              <li class="ui-product-submenu-item with-submenu" ><span>Брус</span>
+                                <ul class="ui-product-submenu-submenu">
+                                  <li class="ui-product-submenu-submenu-item"><span>Буд</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Липа</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Лакированные</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Окрашенные</span></li>
+                                </ul>
+                              </li>
+                              <li class="ui-product-submenu-item"><span>Горбыль</span></li>
+                              <li class="ui-product-submenu-item"><span>Деревянный брус</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска для пола</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска необрезная</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска обрезная</span></li>
+                              <li class="ui-product-submenu-item"><span>Клееный брус</span></li>
+                              <li class="ui-product-submenu-item"><span>Лес, пиломатериалы</span></li>
+                              <li class="ui-product-submenu-item"><span>Столярные изделия</span></li>
+                              <li class="ui-product-submenu-item"><span>Шпалы</span></li>
+                              <li class="ui-product-submenu-item"><span>Прочее</span></li>
+
+                              <a role="button" href="#" class="ui-product-menu-back">← Назад</a>
+                            </ul>
+                          </li>
+
+                          <a role="button" href="#" class="ui-product-menu-back">Все категории</a>
+                        </ul>
+
+
+                      </div>
+
+
+
+
+                    </div>
+                  </div>
+                  <div class="form-control block">
+                    <div class="form-control-label">Добавление товара</div>
+                    <div id="input-product" class="input">
+                      <input type="text" placeholder="Введите название товара" class="input-field">
+                      <div class="tips">
+                        <div class="tips-body"></div>
+                        <div class="tips-foot"><a role="button" href="#" data-action="skip" class="tips-not-found">Я не нашел похожий товар</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-control block">
+                    <div class="form-control-label">Категория товара</div>
+                    <div id="product-category" class="pick">
+                      <input type="hidden" name="category" class="pick-input"><a data-action="open" class="pick-add">Выберите сферу деятельности</a>
+                      <ul class="pick-items">
+                        <li><a data-action="open" role="button" href="#" class="pick-plus"><i class="icon icon-plus"></i></a></li>
+                      </ul>
+                      <div class="tips">
+                        <div class="tips-body">
+                          <div class="product-category">
+                            <div class="product-category-controls">
+                              <ul class="product-category-tabs"></ul><a role="button" href="#" data-action="all" class="product-category-all">Все категории</a>
+                            </div>
+                            <div class="product-category-content"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-control">
+                    <div id="input-product-photo" class="input-photo">
+                      <input type="file" name="files[]" multiple class="input-photo-field">
+                      <div class="input-hidden-wrap"></div>
+                      <div class="files"></div>
+                      <div class="input-photo-placeholder">
+                        <div class="input-photo-text">Перетащите сюда фотографии или<br> <a role="button" href="#" data-action="add"> выберите их с вашего компьютера</a></div>
+                      </div>
+                      <div class="input-photo-thumbnails-wrap">
+                        <div class="input-photo-drop-text">Выберите фото,<br> которое хотите сделать<br> главным</div>
+                        <ul class="input-photo-thumbnails"></ul><a role="button" href="#" data-action="add" class="input-photo-btn">Добавить фото</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-control">
+                    <div class="form-control-label">Ориентировочная цена<span class="form-control-label-tip">Цену указывать не обязательно</span></div>
+                    <div class="input-group input-group-price">
+                      <div class="input input-price">
+                        <input type="text" class="input-field"><span class="input-unit input-unit-right">ТГ.</span>
+                      </div>
+                      <div id="input-select-unit" class="select has-units"><span class="select-unit select-unit-left">За</span>
+                        <select name="lol">
+                          <option value="штук">штуку</option>
+                          <option value="килограмм" selected>килограмм</option>
+                          <option value="тонн">тонну</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-control">
+                    <div class="form-control-label">Категория товара</div>
+                    <div id="ui-product" class="ui-product">
+                      <div class="ui-tags"></div><!--<a role="button" href="#" class="ui-product-button">Добавить категорию товара</a>-->
+
+
+                      <div class="ui-product-menu-wrap" style="display: none;">
+                        <!--<a role="button" href="#" class="ui-product-menu-back">Назад</a>-->
+
+                        <ul class="ui-product-menu">
+
+                          <li class="ui-product-menu-item forest ui-product-menu-item-active">
+                            <div class="ui-product-menu-item-wrap">
+                              <div class="ui-product-menu-item-icon"></div>
+                              <div class="ui-product-menu-item-label">Лесозаготовка</div>
+                            </div>
+                            <ul class="ui-product-submenu second-level-submenu-is-open">
+                              <li class="ui-product-submenu-item submenu-is-open" ><span>Брус</span>
+                                <ul class="ui-product-submenu-submenu">
+                                  <li class="ui-product-submenu-submenu-item"><span>Буд</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Липа</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Лакированные</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Окрашенные</span></li>
+                                </ul>
+                              </li>
+                              <li class="ui-product-submenu-item"><span>Горбыль</span></li>
+                              <li class="ui-product-submenu-item"><span>Деревянный брус</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска для пола</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска необрезная</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска обрезная</span></li>
+                              <li class="ui-product-submenu-item"><span>Клееный брус</span></li>
+                              <li class="ui-product-submenu-item"><span>Лес, пиломатериалы</span></li>
+                              <li class="ui-product-submenu-item"><span>Столярные изделия</span></li>
+                              <li class="ui-product-submenu-item"><span>Шпалы</span></li>
+                              <li class="ui-product-submenu-item"><span>Прочее</span></li>
+
+                              <a role="button" href="#" class="ui-product-menu-back">← Назад</a>
+                            </ul>
+                          </li>
+                          <li class="ui-product-menu-item construction">
+                            <div class="ui-product-menu-item-wrap">
+                              <div class="ui-product-menu-item-icon"></div>
+                              <div class="ui-product-menu-item-label">Строительство</div>
+                            </div>
+                            <!--second-level-submenu-is-open-->
+                            <ul class="ui-product-submenu ">
+                              <!-- submenu-is-open-->
+                              <li class="ui-product-submenu-item with-submenu" ><span>Брус</span>
+                                <ul class="ui-product-submenu-submenu">
+                                  <li class="ui-product-submenu-submenu-item"><span>Буд</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Липа</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Лакированные</span></li>
+                                  <li class="ui-product-submenu-submenu-item"><span>Окрашенные</span></li>
+                                </ul>
+                              </li>
+                              <li class="ui-product-submenu-item"><span>Горбыль</span></li>
+                              <li class="ui-product-submenu-item"><span>Деревянный брус</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска для пола</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска необрезная</span></li>
+                              <li class="ui-product-submenu-item"><span>Доска обрезная</span></li>
+                              <li class="ui-product-submenu-item"><span>Клееный брус</span></li>
+                              <li class="ui-product-submenu-item"><span>Лес, пиломатериалы</span></li>
+                              <li class="ui-product-submenu-item"><span>Столярные изделия</span></li>
+                              <li class="ui-product-submenu-item"><span>Шпалы</span></li>
+                              <li class="ui-product-submenu-item"><span>Прочее</span></li>
+
+                              <a role="button" href="#" class="ui-product-menu-back">← Назад</a>
+                            </ul>
+                          </li>
+
+                          <a role="button" href="#" class="ui-product-menu-back">Все категории</a>
+                        </ul>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <div class="form-control">
+                    <div class="form-control-label">Мощности</div>
+                    <div id="input-range" class="input-group">
+                      <div class="input has-units"><span class="input-unit input-unit-left">от</span>
+                        <input type="text" class="input-field"><span class="input-unit input-unit-right">штук</span>
+                      </div>
+                      <div class="input has-units"><span class="input-unit input-unit-left">до</span>
+                        <input type="text" class="input-field"><span class="input-unit input-unit-right">штук</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-control">
+                    <div class="form-control-label">Условия доставки</div>
+                    <div id="delivery-condition" class="delivery-condition">
+                      <input type="hidden" class="delivery-condition-field"/>
+                      <ul class="delivery-condition-list">
+                        <li data-value="EXW">EXW</li>
+                        <li data-value="FCA">FCA</li>
+                        <li data-value="FAS">FAS</li>
+                        <li data-value="FOB">FOB</li>
+                        <li data-value="CFR">CFR</li>
+                        <li data-value="CIF">CIF</li>
+                        <li data-value="CPT">CPT</li>
+                        <li data-value="CIP">CIP</li>
+                        <li data-value="DAT">DAT</li>
+                        <li data-value="DAP">DAP</li>
+                        <li data-value="DDP">DDP</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Старый контрол от Мадияра
+                  <div class="form-control">
+                    <div class="form-control-label">Технические характеристики</div>
+                    <div id="input-hash" class="input input-hash">
+                      <input type="text" placeholder="Новый пункт" class="input-hash-field"/><a class="input-hash-button"><i class="icon icon-plus"></i></a>
+                    </div>
+                  </div>
+                  -->
+
+                  <div class="form-control">
+                    <div class="form-control-label">Технические характеристики</div>
+                      <ul id="multiply-tech-specs" class="multiply">
+                        <li>
+                          <div class="input-group input-group-tech-specs">
+                            <div class="input input-tech-specs">
+                              <input type="text" name="tech-specs[]" placeholder="Новый пункт характеристик">
+                              <ul tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete input-menu ui-front">
+                                <li class="ui-autocomplete-item input-menu-item ui-menu-item">
+                                  <div class="ui-autocomplete-wrapper ui-menu-item-wrapper" tabindex="-1">
+                                    <strong class="ui-autocomplete-highlight">операционная система</strong>
+                                  </div>
+                                </li>
+                              </ul>
+                              <div class="form-control-message"></div>
+                            </div>
+                            <div class="input input-tech-specs">
+
+                              <div class="tags-container" style="display: none;">
+                                <span class="ui-tags-item">
+                                  <span class="ui-tags-item-label">Производство табачных изделий</span>
+                                  <input type="hidden" name="product_category[]" value="18">
+                                  <a role="button" href="#" class="ui-tags-item-close">
+                                    <i class="icon icon-close"></i>
+                                  </a>
+                                </span>
+                                <span class="ui-tags-item">
+                                  <span class="ui-tags-item-label">Производство одежды</span>
+                                  <input type="hidden" name="product_category[]" value="30">
+                                  <a role="button" href="#" class="ui-tags-item-close">
+                                    <i class="icon icon-close"></i>
+                                  </a>
+                                </span>
+                                <span class="ui-tags-item">
+                                  <span class="ui-tags-item-label">Остальное</span>
+                                  <input type="hidden" name="product_category[]" value="46">
+                                  <a role="button" href="#" class="ui-tags-item-close">
+                                    <i class="icon icon-close"></i>
+                                  </a>
+                                </span>
+                              </div>
+
+                              <input type="text" name="tech-specs[]" placeholder="Значения">
+                              <div class="form-control-message"></div>
+                            </div>
+                          </div>
+                          <a href="#" role="button" data-action="add"></a>
+                        </li>
+                      </ul>
+
+                    <div class="form-control-message common"></div>
+                  </div>
+
+                  <div class="form-control">
+                    <div class="form-control-label">Описание товара</div>
+                    <div class="input">
+                      <textarea placeholder="Введите описание вашего товара" class="input-field input-field-textarea"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+              </section>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/for-static-pages/pages/config.js"></script>
+    <script src="/js/for-static-pages/libs/require.js" data-main="/js/for-static-pages/pages/register/main.js"></script>
+    <noscript>
+      <div class="error">
+        <div class="error-text text-uppercase">Для работы с сайтом необходима поддержка <strong> JavaScript </strong> и  <strong>Cookies</strong>.</div>
+        <div class="error-solution">Чтобы использовать все возможности сайта, загрузите и установите один из этих браузеров:</div>
+        <ul class="error-browsers">
+          <li><img src="../img/chrome.png"/><a href="#chrome" class="block">Chrome</a></li>
+          <li><img src="../img/opera.png"/><a href="#chrome" class="block">Opera</a></li>
+          <li><img src="../img/firefox.png"/><a href="#chrome" class="block">Firefox</a></li>
+        </ul>
+        <ul class="error-links">
+          <li><a href="#gotoback">Вернуться назад</a></li>
+          <li><a href="#gotomain">Вернуться на главную</a></li>
+        </ul>
+      </div>
+    </noscript>
+  </body>
+</html>

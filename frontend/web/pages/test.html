@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Тестирование виджетов</title>
+    <link rel="stylesheet" href="../css/qunit-2.0.1.css"/>
+    <link href="../css/main.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+      <div id="checkbox-with-id">
+        <div class="ui-checkbox">
+          <input type="checkbox" id="checkbox-1337"/>
+          <label for="checkbox-1337" class="ui-checkbox-label">чекбокс</label>
+        </div>
+      </div>
+      <div id="checkbox-without-id">
+        <div class="ui-checkbox">
+          <input type="checkbox"/>
+          <label class="ui-checkbox-label">чекбокс</label>
+        </div>
+      </div>
+      <div id="checkbox-whithout-label">
+        <div class="ui-checkbox">
+          <input type="checkbox" id="checkbox-228"/>
+        </div>
+      </div>
+      <div id="checkbox-without-label-id">
+        <div class="ui-checkbox">
+          <input type="checkbox"/>
+        </div>
+      </div>
+      <div id="jskeeper"><a role="button" href="#" data-id="1337" data-key="compare" class="action js-keeper"><span class="action-icon action-icon-compare"></span></a>
+      </div>
+    </div>
+    <script src="../js/config.js"></script>
+    <script src="../js/require.js" data-main="../js/pages/test/main.js"></script>
+  </body>
+</html>

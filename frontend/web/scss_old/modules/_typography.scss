@@ -1,0 +1,58 @@
+.title {
+  color: #fff;
+  text-transform: uppercase;
+  font: 33px/45px Neris-Black, sans-serif;
+}
+.sub-title {
+  color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font: 1.375em/2.0625em 'Neris-Light', sans-serif;
+  small{
+    padding-left: 10px;
+    text-transform: none;
+  }
+}
+.slide-title {
+  color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font: 1.375em/2.0625em 'Neris-Light', sans-serif;
+  padding: 3px 0 25px;
+}
+
+.text-white {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.links {
+  height: 60px;
+  width: 640px;
+  font-size: 0;
+  li {
+    display: inline-block;
+    width: 160px;
+    a {
+      vertical-align: top;
+      font: 14px/30px Neris-Light, sans-serif;
+      text-decoration: none;
+      color: $base-color;
+    }
+  }
+}
+
+.label {
+  display: inline-block;
+  font: 11px/16px Neris-Light, sans-serif;
+  padding: 1px 11px;
+  color: #fff;
+  background: #ffbd38;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.more {
+  line-height: 45px;
+  vertical-align: bottom;
+  text-align: right;
+  white-space: nowrap;
+  padding-top: 4px;
+}

@@ -1,0 +1,114 @@
+// Контрол диапазона
+.range-wrapper {
+  font-size: 0;
+  line-height: 0;
+
+  .range-control-container {
+    padding: 0 15px;
+
+    .range-control {
+      float: none;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+
+      margin-top: -1px;
+      height: 1px;
+      background-color: $base-color;
+
+      span {
+        position: absolute;
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        top: 50%;
+        cursor: pointer;
+        margin-top: -8px;
+        background: #099fe5;
+        border: none;
+        border-radius: 8px;
+
+        &:hover, &:focus, &:active {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .ui-checkbox {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+// Новый контрол диапазона
+.range {
+  position: relative;
+}
+
+// Виджет диапазона типа "value", с одним текстовым полем и одним кругом
+// Виджет диапазона типа "balance", с двумя текстовыми полями и одним кругом
+.range_value, .range_balance {
+  .range__track-container {
+    padding-left: $basic-value * 2 + $basic-value * 5 / 2;
+    padding-right: $basic-value * 2 + $basic-value * 5 / 2;
+  }
+
+  .range__button {
+    &:first-child, &:first-child:last-child {
+      margin-left: -$basic-value * 5 / 2;
+      margin-right: 0;
+    }
+  }
+}
+
+.range__track-container {
+  position: absolute;
+  left: 0;
+  top: 40px - 1; // Высота текстового поля
+  width: 100%;
+  height: 1px;
+  padding-left: $basic-value * 2 + $basic-value * 5;
+  padding-right: $basic-value * 2 + $basic-value * 5;
+  @include user-select(none);
+  z-index: 5;
+}
+
+.range__track {
+  position: relative;
+  z-index: 1;
+}
+
+.range__button {
+  position: absolute;
+  top: -(floor($basic-value * 5 / 2));
+  left: 0;
+  margin-left: -$basic-value * 5;
+  margin-right: 0;
+  width: $basic-value * 5;
+  height: $basic-value * 5;
+  background-color: $base-color;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:last-child {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    margin-right: -$basic-value * 5;
+  }
+}
+
+.range__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: $base-color;
+}
+
+.range__checkbox {
+  margin-top: $basic-value * 4;
+}

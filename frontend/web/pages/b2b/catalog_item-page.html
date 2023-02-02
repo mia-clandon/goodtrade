@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог - страница товара</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/b2b.css">
+    <script type="text/javascript" src="/js/for-static-pages/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/libs/slick-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/libs/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/b2b/common.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/b2b/info-slider.js"></script>
+</head>
+<body>
+
+<aside class="nav-left">
+    <div class="nav-left__top-part">
+        <div class="nav-left__header">
+            <div class="nav-left__close-button-container">
+                <button class="nav-left__close-button"></button>
+            </div>
+            <a href="#" class="logo logo_sm-white" title="GoodTrade.kz"></a>
+        </div>
+
+        <div class="beta-notify-sidebar">
+            <div class="beta-notify-sidebar__image"></div>
+            <div class="beta-notify-sidebar__message">
+                <p>Сайт находится в стадии публичного beta-тестирования. Некоторые функции могут быть недоступны или работать некорректно. Любые вопросы по поводу работы сервиса можете отправлять на электронную почту: <a href="mailto:support@goodtrade.kz">support@goodtrade.kz</a></p>
+            </div>
+        </div>
+
+        <nav class="nav-left__menu">
+            <ul class="linear-list linear-list_white">
+                <li><a href="#">О проекте</a></li>
+                <li><a href="#">Юридическая информация</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-left__bottom-part">
+        <div class="nav-left__copyright">
+            <span class="nav-left__copyright-first-line">© GoodTrade.kz, 2017</span>
+            <div class="label label_white-invert">18+</div>
+            <p>Использование материалов<br>
+                GoodTrade.kz разрешено только<br>
+                с согласия правообладателей.</p>
+        </div>
+    </div>
+</aside>
+
+<header>
+    <div class="bar-top">
+        <div class="bar-top__left-part">
+            <div class="bar-top__menu-button-container">
+                <button class="bar-top__menu-button"></button>
+            </div>
+            <div class="bar-top__logo-container">
+                <a href="#" class="logo logo_sm-short" title="B2B"></a>
+            </div>
+            <div class="bar-top__breadcrumbs">
+                <div class="bar-top__breadcrumbs-item">
+                    <div class="bar-top__breadcrumbs-item-icon bar-top__breadcrumbs-item-icon_agriculture"></div>
+                </div>
+                <div class="bar-top__breadcrumbs-item">
+                    <div class="bar-top__breadcrumbs-item-title">
+                        <a href="#">Зерновые</a>
+                    </div>
+                </div>
+                <div class="bar-top__breadcrumbs-item">
+                    <div class="bar-top__breadcrumbs-item-title">
+                        <a href="#">Пшеница</a>
+                    </div>
+                </div>
+                <div class="bar-top__breadcrumbs-item">
+                    <div class="bar-top__breadcrumbs-item-title">
+                        <a href="#">Пшеница мягкая</a>
+                    </div>
+                </div>
+                <div class="bar-top__breadcrumbs-item">
+                    <div class="bar-top__breadcrumbs-item-title">Пшеница мягкая второй класс...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bar-top__search">
+            <form class="bar-top__search-form" action="">
+                <div class="input input_inline input_sm input_no-borders">
+                    <div class="icon icon_search"></div>
+                    <input type="text" placeholder="Поиск...">
+                </div>
+            </form>
+        </div>
+
+        <div class="bar-top__right-part">
+            <div class="bar-top__user-features">
+                <div class="dropdown">
+                    <div class="icon icon_favorite dropdown__toggle"></div>
+                    <div class="dropdown__item dropdown__item_bar-top-icon-center">
+                        <div class="dropdown__item-indicator"></div>
+                        <div class="modal">
+                            <div class="modal__title">Избранное</div>
+                            <div class="notification notification_shifted-down">
+                                <div class="notification__image notification__image_favorite"></div>
+                                <p class="notification__description">Вы пока не добавили в избранное<br>ни одну компанию или товар</p>
+                                <a href="#" class="notification__link">Зачем нужно избранное?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="icon icon_comparison dropdown__toggle"></div>
+                    <div class="dropdown__item dropdown__item_bar-top-icon-center">
+                        <div class="dropdown__item-indicator"></div>
+                        <div class="modal">
+                            <div class="modal__title">Сравнение</div>
+                            <div class="notification notification_shifted-down">
+                                <div class="notification__image notification__image_comparison"></div>
+                                <p class="notification__description">Вы не создали<br>ни одного сравнения</p>
+                                <a href="#" class="notification__link">Что такое сравнения?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="icon icon_deal dropdown__toggle"></div>
+                    <div class="dropdown__item dropdown__item_bar-top-icon-center">
+                        <div class="dropdown__item-indicator"></div>
+                        <div class="modal">
+                            <div class="modal__title">Сделки</div>
+                            <div class="notification notification_shifted-down">
+                                <div class="notification__image notification__image_deals"></div>
+                                <p class="notification__description">Вы не заключили ни одной<br>сделки на нашем сервисе</p>
+                                <a href="#" class="notification__link">Как заключить сделку?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bar-top__user-block">
+                <div class="dropdown">
+                    <div class="icon icon_notice dropdown__toggle"></div>
+                    <div class="dropdown__item dropdown__item_bar-top-icon-center">
+                        <div class="dropdown__item-indicator"></div>
+                        <div class="modal">
+                            <div class="modal__title">Уведомления</div>
+                            <div class="notification notification_shifted-down">
+                                <div class="notification__image notification__image_notices"></div>
+                                <p class="notification__description">Сейчас у вас нет новых<br>уведомлений</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="bar-top__user-avatar dropdown__toggle">
+                        <img src="/img/no-avatar.png" alt="Логотип компании">
+                    </div>
+                    <div class="dropdown__item dropdown__item_user-avatar">
+                        <div class="dropdown__item-indicator"></div>
+                        <div class="modal">
+                            <div class="modal__title">trade@goodtrade.kz</div>
+                            <ul class="profile-menu">
+                                <li class="profile-menu__item"><a href="/cabinet">Профиль</a></li>
+                                <li class="profile-menu__item"><a href="/cabinet/company">Компания</a></li>
+                                <li class="profile-menu__item">
+                                    <a href="/cabinet/product">Товары</a>
+                                    <button class="button button_small">
+                                        <a href="/cabinet/product/add" class="button__text">Добавить</a>
+                                    </button>
+                                </li>
+                                <li class="profile-menu__item profile-menu__item_small"><a href="#">Помощь</a></li>
+                                <li class="profile-menu__item profile-menu__item_small"><a href="/logout">Выход</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="wrapper">
+    <main>
+        <div class="container container_main">
+            <div class="row">
+                <div class="col-lg">
+                    <div class="block">
+                        <div class="block__title">
+                            <h2 class="block__title-heading">Другие товары компании</h2>
+                        </div>
+                        <div class="block__content">
+                            <div class="elements-grid">
+                                <div class="row">
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block__title">
+                            <h2 class="block__title-heading">Похожие товары</h2>
+                        </div>
+                        <div class="block__content">
+                            <div class="elements-grid">
+                                <div class="row">
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container container_main">
+            <div class="row">
+                <div class="col-lg-1 col-lg_no-right-gutter">
+                    <a href="#" class="logo logo_md logo_footer" title="GoodTrade.kz"></a>
+                </div>
+                <div class="col-lg-3">
+                    <nav class="multi-col-menu">
+                        <div class="row">
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">О компании</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Блог</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">СМИ о нас</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Тарифы</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Контакты</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Реклама на сайте</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Справка и FAQ</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Администрация</a></div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer__copyright">
+                        <p>© GoodTrade.kz, 2018<br>
+                            Использование материалов GoodTrade.kz разрешено только с согласия правообладателей.<br>
+                            Сайт имеет возрастное ограничение 18+</p>
+                        <p>ТОО «goodtrade.kz».<br>
+                            Юридический адрес: 110000, г. Костанай, ул. Карбышева, 16.  БИН 160340028349.<br>
+                            Счёт в АО «КАЗКОМЕРЦ Банк»,  ИИК KZ04926160119W579000, БИК KZKOKZKX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="../../js/for-static-pages/pages/config.js"></script>
+<script src="../../js/for-static-pages/libs/require.js" data-main="/js/for-static-pages/b2b/pages/catalog_main-category.js"></script>
+
+</body>
+</html>

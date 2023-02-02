@@ -1,0 +1,175 @@
+html {
+  font-size: $html-font-size;
+}
+
+body {
+  position: relative;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $black-color;
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: $basic-value * 10;
+  font: #{$font-size-h1}/#{$line-height-h1} $font-bold;
+}
+
+h2 {
+  margin: 0;
+  padding-bottom: $basic-value * 8;
+  font: #{$font-size-h2}/#{$line-height-h2} $font-light;
+}
+
+h3 {
+  font: #{$font-size-h3}/#{$line-height-h3} $font-bold;
+}
+
+h4 {
+  font: #{$font-size-h3}/#{$line-height-h3} $font-bold;
+}
+
+h5 {
+  font: #{$font-size-h3}/#{$line-height-h3} $font-bold;
+}
+
+h6 {
+  font: #{$font-size-h3}/#{$line-height-h3} $font-bold;
+}
+
+p {
+  margin: 0;
+  padding-bottom: $basic-value * 9 - rem-to-px($indent-difference-p) * 2;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+}
+
+a {
+  color: $primary-link-color;
+  text-decoration: none;
+  transition: all .2s;
+
+  &:hover {
+    color: $primary-link-color-hover;
+    text-decoration: none;
+  }
+}
+
+small, .small {
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+}
+
+strong {
+  font-family: $font-bold;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  padding-bottom: $basic-value * 15 - rem-to-px($indent-difference-p);
+  list-style: none;
+  color: $primary-text-color-light-back;
+
+  li {
+    position: relative;
+    padding-left: $basic-value * 7;
+    padding-bottom: $basic-value * 9 - (rem-to-px($indent-difference-p) * 2);
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    &:before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: $primary-text-color-light-back;
+    }
+
+    ul, ol {
+      padding-top: $basic-value * 7 - (rem-to-px($indent-difference-p) * 2);
+      padding-left: $basic-value * 3;
+      padding-bottom: 0;
+
+      li {
+        padding-bottom: $basic-value * 5 - (rem-to-px($indent-difference-p) * 2);
+
+        &:before {
+          content: "•";
+        }
+
+        a {
+          color: $secondary-text-color-light-back;
+
+          &:hover {
+            color: $primary-text-color-light-back;
+          }
+        }
+      }
+    }
+  }
+}
+
+ol {
+  counter-reset: list1; // Инициируем счётчик
+
+  li {
+    counter-increment: list1; // Увеличиваем значение счётчика
+
+    &:before {
+      content: counter(list1); // Выводим число
+    }
+
+    ol {
+      counter-reset: list2;
+
+      li {
+        counter-increment: list2;
+
+        &:before {
+          content: counter(list2);
+        }
+
+        ol {
+          counter-reset: list3;
+
+          li {
+            counter-increment: list3;
+
+            &:before {
+              content: counter(list3);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Убираем страшный жёлтый цвет у полей с автозаполнением в Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  transition: color, background-color 500000s ease-in-out 0s;
+}
+
+input[disabled] {
+  @include user-select(none);
+}
+
+// Убираем в IE10+, Edge большой X справа у некоторых полей. Он используется для очистки значения поля.
+input::-ms-clear {
+  width : 0;
+  height: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

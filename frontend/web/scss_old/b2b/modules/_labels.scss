@@ -1,0 +1,54 @@
+.label {
+  @extend %basic-entity-small;
+  @include user-select(none);
+  display: inline-block;
+  box-shadow: none;
+  line-height: $line-height-small-nowrap;
+  color: $primary-text-color-dark-back;
+}
+
+.label_primary-invert {
+  color: $primary-color;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px $primary-color;
+}
+
+.label_warning-invert {
+  color: $warning-color;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px $warning-color;
+}
+
+.label_success-invert {
+  color: $success-color;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px $success-color;
+}
+
+.label_white-invert {
+  color: $secondary-text-color-dark-back;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px $border-color-white-light;
+}
+
+.label_none {
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: rem-to-px($line-height-small) + ($basic-value * 2) * 2;
+  }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: $basic-value * 17;
+    height: 1px;
+    background-color: $primary-text-color-light-back;
+  }
+}

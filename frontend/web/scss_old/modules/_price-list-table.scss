@@ -1,0 +1,32 @@
+// Таблица прайс-листов
+.price-list-table {
+  width: 100%;
+  margin: 0 auto;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $primary-text-color-light-back;
+
+  thead {
+    td {
+      font-family: $font-bold;
+      color: $secondary-text-color-light-back;
+      border-bottom: 1px solid $border-color-black-light;
+    }
+  }
+  tbody {
+    tr:nth-child(even) {
+      background-color: rgba($black-color, 0.05);
+    }
+  }
+
+  td {
+    padding: $basic-value*3 $basic-value*5;
+
+    &:first-child {
+      width: 5%;
+    }
+
+    &:last-child {
+      width: 15%;
+    }
+  }
+}

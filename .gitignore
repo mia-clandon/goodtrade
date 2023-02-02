@@ -1,0 +1,86 @@
+# yii console command
+/ui
+/ui_old
+/frontend/web/fseoyinclk.box
+
+README.md
+
+/config/.env
+
+node_modules/
+deploy/
+deploy.sh
+sphinx.conf
+package-lock.json
+
+/frontend/web/storage
+/frontend/web/css_new
+/frontend/web/css/main.css
+/frontend/web/css/b2b.css
+/frontend/web/app/pages
+/frontend/web/css/print.css
+/backend/web/storage
+/common/web/storage
+/common/runtime/
+/backend/web/sign/css/
+/backend/web/js/components/form/controls/dist/
+/frontend/web/test.php
+/frontend/web/files
+/backend/web/files
+/backend/web/img/sprites/
+dist/
+.package-lock.json
+npm-debug.log
+
+# phpstorm project files
+.idea
+.sass-cache
+.vagrant
+composer.lock
+fseoyinclk.box
+/vagrant
+/file.csv
+/tests
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+/init
+/init.bat
+/init.txt
+/requirements.php
+/Vagrantfile
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+/vendor
+
+/frontend/web/templates_c
+/backend/web/templates_c
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
+# vagrant runtime
+/.vagrant
+backend/components/widgets/
+frontend/web/html/
+/backend/web/js/import/dist/
+
+/vagrant halt.bat
+/vagrant up.bat

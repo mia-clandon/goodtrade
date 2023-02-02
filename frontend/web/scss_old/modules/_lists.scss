@@ -1,0 +1,35 @@
+.linear-list {
+  margin: 0;
+  padding: 0;
+  padding-top: $basic-value * 5;
+  padding-bottom: $basic-value * 5;
+  //padding-bottom: $basic-value * 15 - $indent-difference-p;
+  list-style: none;
+  color: $primary-text-color-light-back;
+
+  li {
+    position: relative;
+    padding-bottom: $basic-value * 9 - ($indent-difference-p * 2);
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    ul, ol {
+      padding-top: $basic-value * 7 - ($indent-difference-p * 2);
+      padding-bottom: 0;
+
+      li {
+        padding-bottom: $basic-value * 5 - ($indent-difference-p * 2);
+
+        a {
+          color: $secondary-text-color-light-back;
+
+          &:hover {
+            color: $primary-text-color-light-back;
+          }
+        }
+      }
+    }
+  }
+}

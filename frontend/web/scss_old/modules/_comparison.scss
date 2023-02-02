@@ -1,0 +1,230 @@
+/* Контейнер для таблицы сравнения */
+.comparison-container {
+  margin: 0 -#{$p0};
+}
+/* Таблица сравнения */
+.comparison-table {
+  tr {
+    th, td {
+      width: 208px;
+      padding: 10px $p0;
+      font: #{$font-size-p}/#{$line-height-p} 'Neris-Light', sans-serif;
+      color: $primary-text-color-light-back;
+
+      /* Пояснения под графами */
+      span {
+        font: $smallFont;
+        color: $secondary-text-color-light-back;
+      }
+    }
+
+    /* Ячейки первого столбца */
+    th {
+      width: 224px;
+      padding-left: $p0*2;
+      background: $background-gray-color;
+    }
+    
+    /* Последний ряд с названиями производителей */
+    &:last-child {
+      th, td {
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  /* Строка с ценой */
+  tr[data-key=item-price] {
+    th {
+      &:after {
+        content: '';
+        font-size: $font-size-h2;
+        line-height: $line-height-h2;
+      }
+    }
+  }
+
+  /* Строка с указанием называнием и контактов производителя */
+  tr[data-key=item-manufacturer-info] {
+    th, td {
+      vertical-align: bottom;
+    }
+  }
+}
+
+/* Название продукции */
+.comparison-table__item-title {
+  max-height: $line-height-p * 3;
+  overflow: hidden;
+}
+
+/* Ссылка удаления из сравнения */
+.comparison-table__item-delete-link {
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+  transition: all .2s;
+
+  &:hover, &:focus, &:active {
+    color: $primary-text-color-light-back;
+  }
+}
+
+/* Ячейка мини-фото продукции */
+.comparison-table__item-photos {
+  position: relative;
+  height: 40px;
+}
+
+/* Мини-фото продукции */
+.comparison-table__item-photos-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 207px;
+  height: 40px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba($black-color, $q-light);
+  }
+}
+
+/* Количество фотографий продукции */
+.comparison-table__item-photos-text {
+  position: relative;
+  color: white;
+}
+
+/* Переключатель сворачиваемых строк */
+.comparison-table__tech-specs-title {
+  position: relative;
+  font: #{$font-size-small}/#{$line-height-small} $font-bold;
+  text-transform: uppercase;
+  color: $secondary-text-color-light-back;
+  cursor: pointer;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    border-right: 1px solid rgba($black-color, $q-middle);
+    border-bottom: 1px solid rgba($black-color, $q-middle);
+    transform: rotate(45deg);
+  }
+}
+
+/* Если переключатель в выключенном положении (блок свёрнут) */
+.comparison-table__tech-specs-title_closed {
+  &:after {
+    top: 6px;
+    transform: rotate(225deg);
+  }
+}
+
+/* Название производителя внизу таблицы */
+.comparison-table__item-manufacturer {
+  line-height: $line-height-small;
+  a {
+    line-height: $line-height-small;
+  }
+}
+
+/* Контакты производителя внизу таблицы */
+.comparison-table__item-manufacturer-contacts {
+  display: none;
+  
+  p {
+    padding: 0;
+    margin: 5px 0;
+    font: $smallFont;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Ссылка для показа/скрытия контактов производителя */
+.comparison-table__item-manufacturer-contacts-link {
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+}
+
+/* Сворачиваемый блок */
+.comparison-container__collapsible-container {
+  tr:last-child {
+    th, td {
+      vertical-align: top;
+    }
+  }
+}
+
+/* Большая кнопка добавления к сравнению */
+.comparison-add-btn {
+  // float временно, для отображения кнопки добавления справа. После внедрения
+  // скриптов, по идее, кнопка добавления должна будет отображаться по-другому
+  float: left;
+  width: 178px;
+  height: 368px;
+  margin: 10px $p0;
+  color: $secondary-text-color-light-back;
+  border: 1px solid $border-color-black-light;
+  @include border-radius($border-radius);
+  cursor: pointer;
+}
+
+/* Текст в кнопке добавления к сравнению */
+.comparison-add-btn__text {
+  position: relative;
+  z-index: -1;
+  margin-top: 130px;
+  font: $smallFont;
+  text-align: center;
+}
+
+/* Изображение в кнопке добавления к сравнению */
+.comparison-add-btn__image {
+  position: relative;
+  z-index: -1;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  @include icons-sprite(lg-add);
+  opacity: $q-light;
+}
+
+/* Блок поиска */
+.comparison-search {
+  // float временно, для отображения блока поиска справа. После внедрения
+  // скриптов, по идее, блок поиска должен будет отображаться по-другому
+  float: left;
+  width: 480px;
+  margin: 10px 15px;
+}
+
+/* Небольшое пояснение под строкой поиска */
+.comparison-search-description {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: -5px;
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+}
+
+/* Стили блоков, созданных скриптом */
+.comparison-container__fixed-column {
+  background-color: $background-gray-color;
+
+  table tr th {
+    background-color: transparent;
+  }
+}

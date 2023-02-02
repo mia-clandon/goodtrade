@@ -1,0 +1,92 @@
+// Базовый размер шрифта
+$html-font-size: 16px;
+
+// Базовая величина
+$basic-value: 3px;
+
+// Шрифтовая пара
+$font-light: 'Neris-Light', sans-serif;
+$font-bold: 'Neris-Black', sans-serif;
+
+// Размер шрифтов
+$font-size-base: 1rem;       // Значение в браузере по умолчанию, обычно это "16px"
+$font-size-h1: 2.1875rem;    // 35px
+$line-height-h1: 2.8125rem;  // 45px
+$font-size-h2: 1.375rem;     // 22px
+$line-height-h2: 2.0625rem;  // 33px
+$font-size-h3: 0.6875rem;    // 11px
+$line-height-h3: 1rem;       // 16px
+$font-size-p: 0.875rem;      // 14px
+$line-height-p: 1.3125rem;   // 21px
+$font-size-small: 0.6875rem; // 11px
+$line-height-small: 1rem;    // 16px
+
+// Особые переменные для построения вертикальных отступов относительно высоты букв, а не высоты строки
+$line-height-h1-nowrap: 1.625rem;  // 26px
+$line-height-h2-nowrap: 1rem;      // 16px
+$line-height-h3-nowrap: 0.5rem;    // 8px
+$line-height-p-nowrap: 0.625rem;   // 10px
+$line-height-small-nowrap: 0.5rem; // 8px
+$indent-difference-h1: ($line-height-h1 - $line-height-h1-nowrap) / 2;          // 0.84375rem = 13.5px
+$indent-difference-h2: ($line-height-h2 - $line-height-h2-nowrap) / 2;          // 0.53125rem = 8.5px
+$indent-difference-h3: ($line-height-h3 - $line-height-h3-nowrap) / 2;          // 0.25rem = 4px
+$indent-difference-p: ($line-height-p - $line-height-p-nowrap) / 2;             // 0.34375rem = 5.5px
+$indent-difference-small: ($line-height-small - $line-height-small-nowrap) / 2; // 0.25rem = 4px
+
+// Цвета
+$black-color: #000;
+$white-color: #fff;
+$primary-color: #099fe5; // Основной акцидентный цвет, используется в ссылках и кнопках
+$success-color: #2abf1d; // Цвет подтверждения. Применяется в кнопках, подтверждающих иконках, сообщениях об успехе и т.д.
+$warning-color: #ffbd38; // Предупреждающий цвет. Используется в лейблах и предупреждениях
+$danger-color: #da231a;  // Цвет ошибок. Используется в сообщениях об ошибках, кнопках удаления и т.д.
+
+// Оттенки / Уровни прозрачности
+$q-dark: .78;
+$q-middle: .45;
+$q-light: .2;
+$q-x-light: .1;
+$q-2x-light: .05;
+
+// Применение цветов и оттенков
+// Для белого фона
+$accidental-text-color-light-back: rgba($black-color, 1);        // Акцидентный. Применяется только в H1 и ценах
+$primary-text-color-light-back: rgba($black-color, $q-dark);     // Основной цвет текста
+$secondary-text-color-light-back: rgba($black-color, $q-middle); // Второстепенный цвет текста, плейсхолдеры
+
+// Для тёмного фона
+$accidental-text-color-dark-back: rgba($white-color, 1);         // Акцидентный. Применяется только в H1 и ценах
+$primary-text-color-dark-back: rgba($white-color, $q-dark);      // Основной цвет текста
+$secondary-text-color-dark-back: rgba($white-color, $q-middle);  // Второстепенный цвет текста
+
+// Ссылки
+$primary-link-color: rgba($primary-color, 1);                         // Цвет ссылки
+$primary-link-color-hover: rgba($primary-color, $q-dark);             // Цвет ссылки при наведении
+$secondary-link-color: rgba($primary-color, $q-middle);               // Цвет ссылки в дополнительном тексте, справках
+$secondary-link-color-hover: rgba($primary-color, $q-dark);           // Цвет ссылки в дополнительном тексте, справках при наведении
+
+$primary-link-color-dark-back: rgba($primary-color, $q-dark);         // Цвет ссылки на тёмном фоне
+$primary-link-color-dark-back-hover: rgba($primary-color, $q-middle); // Цвет ссылки на тёмном фоне при наведении
+$primary-link-color-blue-back: rgba($white-color, $q-dark);           // Цвет ссылки на голубом фоне
+$primary-link-color-blue-back-hover: rgba($white-color, $q-middle);   // Цвет ссылки на голубом фоне при наведении
+
+// Обводки, рамки, разделительные линии
+$border-color-black-light: rgba($black-color, $q-light);         // Цвет обводок и рамок
+$border-color-black-very-light: rgba($black-color, $q-x-light);  // Цвет разделительных линий
+$border-color-black-middle: rgba($black-color, $q-middle);       // Цвет обводки кнопок
+
+$border-color-white-light: rgba($white-color, $q-light);         // Цвет обводок и рамок на тёмном фоне
+$border-color-white-middle: rgba($white-color, $q-middle);       // Цвет обводки кнопок на тёмном фоне
+$border-color-white-dark: rgba($white-color, $q-dark);           // Цвет обводки кнопок на тёмном фоне при наведении
+
+// Фоны
+$background-color-sub: rgba($black-color, $q-2x-light);          // Фон подложек (футер, сайдбары)
+$background-color-info: rgba($primary-color, $q-middle);         // Фон информационных блоков, активных элементов и т.д.
+$background-color-success: rgba($success-color, $q-middle);      // Фон сообщений об успехе
+$background-color-warning: rgba($warning-color, $q-middle);      // Фон сообщений с предупреждением
+$background-color-danger: rgba($danger-color, $q-light);         // Фон сообщений об ошибках
+$background-color-note: rgba($primary-color, $q-light);          // Фон заметок
+$background-color-placeholder: rgba($black-color, $q-light);     // Фон заглушек
+
+// Путь к картинкам
+$url-img: '/img/';

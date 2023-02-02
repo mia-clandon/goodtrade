@@ -1,0 +1,21 @@
+{
+  "title":"Колпаковая цементационная печь СГЦМ-13,5.15.3/10",
+  "images":{
+    "count":12,
+    "bg":"../public/img/comparsion.png"
+  },
+  "price":{
+    "current":"380 000 тг.",
+    "summary":"1 900 000 тг."
+  },
+  "expires":28,
+  "count":"5 шт",
+  "exists":"14 дней до отправки",
+  "billing":{
+    "preBill":"70%",
+    "postBill":"30%"
+  },
+  "delivery":"FOB, CFR и CIF",
+  "address":"г. Алмата, мкр. Коктем-1, дом 15а, 4-й этаж.",
+  "power":"от 1 шт. — до 15 шт."
+}

@@ -1,0 +1,70 @@
+.wrapper {
+  transition: padding-left .8s;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .wrapper {
+    padding-bottom: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // Высота, как у .bar-bottom
+  }
+}
+
+.wrapper_shifted-right {
+  padding-left: $basic-value * 60 + $basic-value * 10 * 2;;
+}
+
+main {
+  padding-left: $basic-value * 5;
+  padding-right: $basic-value * 5;
+}
+
+// Модификатор для главного контейнера на сайте, чтобы у него после помещения внутри row оставались ещё отступы
+.container_main {
+  padding-left: $basic-value * 10;
+  padding-right: $basic-value * 10;
+}
+
+// Модификатор для контейнера на странице регистрации
+.container_registration-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: $basic-value * 10;
+  padding-right: $basic-value * 10;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .container_registration-page {
+    padding-left: $basic-value * 5;
+    padding-right: $basic-value * 5;
+  }
+}
+
+// Модификатор столбца создан, чтобы занимать одну треть,
+// т.к. сетку из 8 колонок на 3 части встроенными средствами не поделить
+@include media-breakpoint-up(xs) { .col_third { flex: 0 0 33.33334%; max-width: 33.33334%; } }
+@include media-breakpoint-up(sm) { .col-sm_third { flex: 0 0 33.33334%; max-width: 33.33334%; } }
+@include media-breakpoint-up(md) { .col-md_third { flex: 0 0 33.33334%; max-width: 33.33334%; } }
+@include media-breakpoint-up(lg) { .col-lg_third { flex: 0 0 33.33334%; max-width: 33.33334%; } }
+@include media-breakpoint-up(xl) { .col-xl_third { flex: 0 0 33.33334%; max-width: 33.33334%; } }
+
+// Модификатор столбца создан, чтобы занимать две трети,
+// т.к. сетку из 8 колонок на 3 части встроенными средствами не поделить
+@include media-breakpoint-up(xs) { .col_two-thirds { flex: 0 0 66.66667%; max-width: 66.66667%; } }
+@include media-breakpoint-up(sm) { .col-sm_two-thirds { flex: 0 0 66.66667%; max-width: 66.66667%; } }
+@include media-breakpoint-up(md) { .col-md_two-thirds { flex: 0 0 66.66667%; max-width: 66.66667%; } }
+@include media-breakpoint-up(lg) { .col-lg_two-thirds { flex: 0 0 66.66667%; max-width: 66.66667%; } }
+@include media-breakpoint-up(xl) { .col-xl_two-thirds { flex: 0 0 66.66667%; max-width: 66.66667%; } }
+
+// Модификатор столбца для удаления левого отступа.
+@include media-breakpoint-up(xs) { .col_no-left-gutter { padding-left: 0; } }
+@include media-breakpoint-up(sm) { .col-sm_no-left-gutter { padding-left: 0; } }
+@include media-breakpoint-up(md) { .col-md_no-left-gutter { padding-left: 0; } }
+@include media-breakpoint-up(lg) { .col-lg_no-left-gutter { padding-left: 0; } }
+@include media-breakpoint-up(xl) { .col-xl_no-left-gutter { padding-left: 0; } }
+
+// Модификатор столбца для удаления правого отступа.
+@include media-breakpoint-up(xs) { .col_no-right-gutter { padding-right: 0; } }
+@include media-breakpoint-up(sm) { .col-sm_no-right-gutter { padding-right: 0; } }
+@include media-breakpoint-up(md) { .col-md_no-right-gutter { padding-right: 0; } }
+@include media-breakpoint-up(lg) { .col-lg_no-right-gutter { padding-right: 0; } }
+@include media-breakpoint-up(xl) { .col-xl_no-right-gutter { padding-right: 0; } }

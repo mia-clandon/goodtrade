@@ -1,0 +1,441 @@
+// Сетка элементов
+.elements-grid {
+  margin-bottom: -$basic-value * 10; // Отнимаем нижний отступ ячеек.elements-grid__cell
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid {
+    margin-bottom: -$basic-value * 14;
+  }
+}
+
+// Сетка элементов, к которой не применяется скрипт masonry для абсолютного позиционирования
+.elements-grid_no-masonry {}
+
+.elements-grid__cell {
+  position: relative;
+  margin-bottom: $basic-value * 10;
+
+  &:hover {
+    .elements-grid__modal {
+      transition: opacity .2s, z-index 0s ease 0s;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid__cell {
+    margin-bottom: $basic-value * 14;
+
+    &:last-child {
+      //margin-bottom: 0;
+    }
+  }
+}
+
+// Выделенный элемент
+.elements-grid__cell_promo {
+  .elements-grid__cell-content {
+    padding: $basic-value*4 $basic-value*5;
+
+    .elements-grid__cell-bottom-container {
+      display: flex;
+    }
+  }
+
+  .elements-grid__modal {
+    box-shadow: none;
+    background: none;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid__cell_promo {
+    padding: 0;
+
+    .elements-grid__cell-title {
+      max-height: rem-to-px($line-height-p) * 2 + ($basic-value * 3 - rem-to-px($indent-difference-p));
+    }
+  }
+}
+
+// Выделенный элемент, имеющий двойную высоту
+.elements-grid__cell_promo-h2 {
+  height: 256px;
+
+  .elements-grid__cell-content {
+    padding: $basic-value*4 $basic-value*5;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid__cell_promo-h2 {
+    padding: 0;
+
+    .elements-grid__cell-title {
+      max-height: rem-to-px($line-height-p) * 2 + ($basic-value * 3 - rem-to-px($indent-difference-p));
+    }
+
+    .elements-grid__cell-content {
+      .elements-grid__cell-bottom-container {
+        display: flex;
+      }
+    }
+  }
+}
+
+.elements-grid__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: $basic-value;
+  background-color: black;
+  z-index: -1;
+  @include user-select(none);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $border-color-black-light;
+    border-radius: $basic-value;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, black 0%, black 50%, transparent 100%);
+    opacity: $q-dark;
+  }
+
+  img {
+    flex: 0 0 auto;
+  }
+}
+
+.elements-grid__bg_half {
+  align-items: flex-end;
+
+  &:after {
+    opacity: 1;
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
+// Изображение элемента (фото товара, логотип компании и т.д.)
+.elements-grid__cell-image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 113px;
+  overflow: hidden;
+  border-radius: $basic-value;
+  @include user-select(none);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $border-color-black-light;
+    border-radius: $basic-value;
+  }
+
+  img {
+    flex: 0 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid__cell-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+// Блок с содержимым элемента
+.elements-grid__cell-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0;
+  line-height: 0;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid__cell-content {
+    .elements-grid__cell-bottom-container {
+      display: none;
+    }
+
+    .elements-grid__cell-thumbs {
+      display: none;
+    }
+  }
+}
+
+.element-grid__cell-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 113px - ($basic-value * 4) * 2;
+}
+
+// Заголовок элемента
+.elements-grid__cell-title {
+  display: block;
+  max-height: rem-to-px($line-height-p) * 2 + ($basic-value * 3 - rem-to-px($indent-difference-p));
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  overflow: hidden;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid__cell-title {
+    max-height: rem-to-px($line-height-p) * 3 + ($basic-value * 3 - rem-to-px($indent-difference-p));
+  }
+}
+
+// Нижний блок элемента
+.elements-grid__cell-bottom-container {
+  flex: 1 0 auto;
+  font-size: 0;
+  line-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+// Строка текста наличия НДС в цене
+.elements-grid__cell-vat {
+  display: block;
+  padding-top: round($basic-value * 4 - rem-to-px($indent-difference-small) - rem-to-px($indent-difference-p));
+  padding-bottom: $basic-value * 3 - rem-to-px($indent-difference-small);
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-light-back;
+}
+
+.elements-grid__cell-vat_white {
+  color: $secondary-text-color-dark-back;
+}
+
+// Цена
+.elements-grid__cell-price {
+  display: inline-block;
+  padding-bottom: $basic-value * 2;
+  font: #{$font-size-h2}/#{$line-height-h2-nowrap} $font-bold;
+}
+
+.elements-grid__cell-price_white {
+  color: $accidental-text-color-dark-back;
+}
+
+.elements-grid__cell-price_no-price {
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $secondary-text-color-light-back;
+}
+
+.elements-grid__cell-price_no-price-white {
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $primary-text-color-dark-back;
+}
+
+// Единица измерения
+.elements-grid__cell-price-unit {
+  display: inline-block;
+  padding-left: $basic-value * 2;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-light-back;
+}
+
+.elements-grid__cell-price-unit_white {
+  color: $secondary-text-color-dark-back;
+}
+
+// Нижняя часть элемента
+.elements-grid__cell-footer-container {
+  padding-top: $basic-value * 4 - rem-to-px($indent-difference-small);
+
+  .elements-grid__cell-vat {
+    padding-top: 0;
+  }
+
+  .elements-grid__cell-footer {
+    margin-top: 0;
+    padding-top: $basic-value * 6 - rem-to-px($indent-difference-small);
+    border: none;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .elements-grid__cell-footer-container {
+    display: none;
+  }
+}
+
+.elements-grid__cell-footer {
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  margin-top: $basic-value * 4 - 1;
+  margin-left: -($basic-value * 5) + 1;
+  margin-right: -($basic-value * 5) + 1;
+  padding-top: $basic-value * 4 - 1;
+  padding-left: $basic-value * 5 - 1;
+  padding-right: $basic-value * 5 - 1;
+  border-top: 1px solid $border-color-black-very-light;
+
+  .button {
+    vertical-align: middle;
+  }
+
+  .modal-wrapper + .button {
+    margin-left: $basic-value * 5;
+  }
+}
+
+.elements-grid__cell-footer_white-border {
+  border-top-color: $border-color-white-light;
+}
+
+// Модальное окно при наведении
+.elements-grid__modal {
+  position: absolute;
+  top: -($basic-value * 4);
+  left: 0;
+  width: 100%;
+  padding: $basic-value*4 $basic-value*5;
+  box-shadow: inset 0 0 0 1px $border-color-black-light, 0 6px 9px 0 $border-color-black-light;
+  background-color: $white-color;
+  border-radius: $basic-value;
+  transition: opacity .2s, z-index 0s ease .2s;
+  opacity: 0;
+  z-index: -1;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid__modal {
+    display: none;
+  }
+}
+
+// Кнопка у сетки
+.elements-grid__button {
+  margin-top: $basic-value * 4;
+  margin-bottom: $basic-value * 10;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .elements-grid__button {
+    margin-top: 0;
+  }
+}
+
+// Блок с миниатюрами
+.elements-grid__cell-thumbs {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+// Миниатюра
+.elements-grid__cell-thumb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: $basic-value * 4 - rem-to-px($indent-difference-small);
+  width: $basic-value * 14;
+  height: $basic-value * 14;
+  border-radius: $basic-value;
+  overflow: hidden;
+
+  & + .elements-grid__cell-thumb {
+    margin-left: $basic-value * 3;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+    border-radius: $basic-value;
+  }
+
+  &:last-child {
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($black-color, $q-middle);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      @include icons-sprite(sm-bc-direction-to-right-white);
+
+      // Правка бага позиционирования в IE11. Отступы зависят от размера изображения.
+      top: 50%;
+      left: 50%;
+      margin-top: -3.5px;
+      margin-left: -2.5px;
+    }
+  }
+
+  img {
+    flex: 0 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.elements-grid__cell-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 113px; // высота как и у .elements-grid__cell-image
+  color: $secondary-text-color-light-back;
+  box-shadow: inset 0 0 0 1px $border-color-black-light;
+  border-radius: $basic-value;
+
+  &:hover {
+    color: $primary-text-color-light-back;
+    box-shadow: inset 0 0 0 1px $border-color-black-middle;
+  }
+}

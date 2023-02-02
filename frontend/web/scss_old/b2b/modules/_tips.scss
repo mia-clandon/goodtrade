@@ -1,0 +1,59 @@
+// Виджет подсказок у текстового поля (например, у поля "Регион")
+.tips {
+  @extend .modal;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: $basic-value * 2;
+  width: 100%;
+  z-index: 10;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: (-$basic-value * 2) / 2;
+    left: $basic-value * 5;
+    display: block;
+    width: $basic-value * 2;
+    height: $basic-value * 2;
+    border-left: 1px solid $border-color-black-light;
+    border-top: 1px solid $border-color-black-light;
+    background-color: $white-color;
+    transform: rotate(45deg);
+  }
+}
+
+// Список элементов
+.tips__list {
+  padding-bottom: 0;
+
+  li {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+
+    a {
+      display: block;
+
+      strong {
+        font-family: $font-bold;
+      }
+
+      small {
+        margin-left: $basic-value * 5;
+        color: $secondary-text-color-light-back;
+        transition: all .2s;
+      }
+
+      &:hover, &:focus, &:active {
+        small {
+          color: $primary-text-color-light-back;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.has-top-controls {
+  #page-wrap {
+    margin-top: 60px;
+  }
+}
+.is-shifted.has-settings {
+  #page-wrap {
+    padding-right: 400px;
+  }
+}
+.has-bottom-control {
+  #page-wrap {
+    margin-bottom: 60px;
+  }
+}
+
+.has-sidebar {
+  #page-wrap {
+    position: relative;
+    padding-left: 250px;
+  }
+  #bottom-controls {
+    left: 250px;
+  }
+}
+.has-sidebar.is-shifted {
+  #page-wrap {
+    padding-left: 500px;
+  }
+  #bottom-controls {
+    left: 500px;
+  }
+}
+.is-shifted {
+  #page-wrap {
+    padding-left: 250px;
+    .inner-sidebar {
+      left: 250px;
+    }
+  }
+  footer {
+    padding-left: 250px;
+  }
+  #bottom-controls {
+    left: 250px;
+  }
+  #bottom-controls-right {
+    right: 250px;
+  }
+  .breadcrumbs {
+    margin-left: 117px;
+    transition-delay: .3s;
+    
+    // Временные стили, для публичного бета-тестирования
+    margin-left: 84px;
+  }
+  .control {
+    right: 250px;
+  }
+}
+.has-bottom-controls {
+  footer {
+    padding-bottom: 60px;
+  }
+}
+
+/* Для страницы избранного */
+.has-sidebar.favorites-page {
+  #page-wrap {
+    padding-left: 290px;
+  }
+  #bottom-controls {
+    left: 290px;
+  }
+}
+.has-sidebar.is-shifted.favorites-page {
+  #page-wrap {
+    padding-left: 540px;
+
+    .inner-sidebar-favorites {
+      position: relative;
+      width: 540px;
+      padding-left: 250px;
+    }
+  }
+  #bottom-controls {
+    left: 540px;
+  }
+}

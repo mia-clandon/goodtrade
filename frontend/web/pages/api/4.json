@@ -1,0 +1,65 @@
+{
+  "title" : {
+    "url" : "#",
+    "text" : "Лабораторные муфельные печи СНОЛ до 1360°C"
+  },
+  "photos" : {
+    "count" : 5,
+    "bg" : "../img/comparison-page/comparison-4.png"
+  },
+  "price" : {
+    "per-one" : 380000,
+    "total" : 1900000,
+    "is-base" : 0
+  },
+  "modifications" : "Все модификации",
+  "commerce-validity" : 14,
+  "commerce-batch-size" : {
+    "quantity" : 3,
+    "unit" : "шт"
+  },
+  "commerce-stock-availability" : "В наличии",
+  "commerce-terms-of-payment" : {
+    "pre-payment" : 50,
+    "post-payment" : 50
+  },
+  "delivery-conditions" : "FOB, CFR и CIF",
+  "delivery-address" : {
+    "address" : "г. Алмата, мкр. Коктем-1, дом 15а, 4-й этаж.",
+    "distance" : 1950
+  },
+  "power" : "от 1 шт. — до 15 шт.",
+  "tech-rated-power" : {
+    "specTitle" : "Номинальная мощность, кВт",
+    "specValue" : "280, 360"
+  },
+  "tech-other-value1" : {
+    "specTitle" : "Новая техническая характеристика 1, кг",
+    "specValue" : 14
+  },
+  "tech-work-place-size" : {
+    "specTitle" : "Размеры рабочего пространства",
+    "specValue" : "3000х2000х1000"
+  },
+  "tech-other-value2" : {
+    "specTitle" : "Новая техническая характеристика 2, шт",
+    "specValue" : 500
+  },
+  "tech-boxing-in-quantity" : {
+    "specTitle" : "Садка корзин, шт",
+    "specValue" : 9
+  },
+  "tech-other-value3" : {
+    "specTitle" : "Новая техническая характеристика 3, л",
+    "specValue" : 1
+  },
+  "tech-other-value4" : {
+    "specTitle" : "Новая техническая характеристика 4, км",
+    "specValue" : 10000
+  },
+  "manufacturer-info" : {
+    "name" : "ТОО Семипалатинский машиностроительный завод",
+    "url" : "#",
+    "contacts" : ""
+  }
+}

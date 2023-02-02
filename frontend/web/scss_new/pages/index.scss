@@ -1,0 +1,363 @@
+/**
+  Шрифты
+**/
+@font-face {
+  font-family: Geometria; /* Гарнитура шрифта */
+  src: url(./../../fonts/Geometria/Geometria.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: Montserrat; /* Гарнитура шрифта */
+  src: url(./../../fonts/Montserrat/Montserrat-Regular.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: Montserrat-Bold; /* Гарнитура шрифта */
+  src: url(./../../fonts/Montserrat/Montserrat-Bold.ttf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+  font-family: Mont; /* Гарнитура шрифта */
+  src: url(./../../fonts/Mont/Mont-Regular.ttf); /* Путь к файлу со шрифтом */
+}
+
+/**
+  Файл для стилей главной страницы.
+ */
+
+main > .container > .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+main > .container_main > .content_info > .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+main > .container > .row > .col > .block,
+main > .container > .row > .col > .block > .block__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main > .container > .row > .col > .block > .block__content > span {
+  font-family: Mont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 32px;
+  color: #099FE5;
+  white-space: nowrap;
+}
+
+main > section.features {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+main > section.features > .item_feature {
+  background: #27ABE8;
+  padding: 50px;
+  margin: 20px;
+}
+
+
+main > section.features > .item_feature_one {
+  padding: 50px;
+}
+
+main > section.features > .item_feature_two {
+  padding-bottom: 26px;
+}
+
+
+.item_feature_main_info {
+  font-weight: bold;
+  color: white;
+}
+
+main > section.features_top > .item_feature {
+  flex: 1 1 0;
+  width: 0;
+}
+
+main > section.features_bottom > .item_feature {
+  min-width: 50%;
+  margin-top: 0;
+}
+
+main > section.features > .item_feature > .item_feature_header {
+  display: flex;
+  flex-direction: row;
+  //flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+main > section.features > .item_feature > .item_feature_header > .header_feature {
+  font-size: 34px;
+  font-family: Montserrat-Bold;
+  font-weight: 900;
+  line-height: 44px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+main > section.features > .item_feature > .item_feature_medium {
+  font-family: Geometria;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-top: 42px;
+}
+
+main > section.features > .item_feature > .item_feature_header > span > img:not(:last-child) {
+  margin-top: 41px;
+  margin-left: 45px;
+}
+
+main > section.features > .item_feature > .item_feature_footer {
+  font-family: Geometria;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  margin-top: 11px;
+}
+
+
+main > section.options {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main > section.options > .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 200px;
+}
+
+main > section.options > .content > .item_options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+main > section.options > .content > .item_options p {
+  font-family: Mont;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #099FE5;
+}
+
+main > section.step_by_step > .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+main > section.step_by_step > .content > .item_steps:not(:last-child) {
+  padding: 0;
+  margin-right: -25px;
+}
+
+main > section.step_by_step > .content > .step_one img {
+  width: 100%;
+}
+
+main > section.step_by_step > .content > .step_two img {
+  width: 100%;
+}
+
+main > section.step_by_step > .content > .step_three img {
+  width: 100%;
+}
+
+main > section.step_by_step > .content > .step_four img {
+  width: 100%;
+}
+
+main > section.step_by_step > .content > .item_steps > .item_step_desktop {
+  display: flex;
+}
+
+main > section.step_by_step > .content > .item_steps > .item_step_adaptive, .item_step_adaptive_tablet, .item_step_mobile {
+  display: none;
+}
+
+@media screen and (max-device-width: 1025px) {
+  main > .container_main > .content_info > .row {
+    margin: 40px;
+  }
+
+  main > .container > .row > .col > .block > .block__content > span {
+    font-family: Mont;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #099FE5;
+  }
+
+  main > section.features {
+    padding: 0;
+  }
+
+  main > section.features_top > .item_feature {
+    flex: 1;
+  }
+  main > section.features > .item_feature_one, main > section.features_top > .item_feature {
+    padding: 20px;
+  }
+
+  main > section.features_bottom > .item_feature {
+    margin-top: auto;
+  }
+
+  main > section.features > .item_feature > .item_feature_header > .header_feature {
+    font-size: 26px;
+    line-height: 38px;
+    letter-spacing: 0.02em;
+  }
+
+  main > section.features > .item_feature > .item_feature_medium {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+  }
+
+  main > section.features > .item_feature > .item_feature_footer {
+    font-size: 18px;
+  }
+
+  .down_arrow {
+    margin: 20px 0;
+  }
+
+  main > section.step_by_step > .content > .item_steps > .item_step_desktop, .item_step_mobile {
+    display: none;
+  }
+  main > section.step_by_step > .content > .item_steps > .item_step_adaptive, .item_step_adaptive_tablet {
+    display: flex;
+  }
+
+  main > section.step_by_step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  main > section.step_by_step > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+
+}
+
+//@media screen and (width: 768px) {
+//  main > section.features > .item_feature > .item_feature_header {
+//    flex-wrap: wrap;
+//  }
+//}
+
+@media screen and (max-device-width: 560px) {
+  main > section.features {
+    padding: 0;
+  }
+
+  main > section.features > .item_feature {
+    min-width: 100%;
+    margin: 20px 0;
+  }
+
+  main > section.features > .item_feature > .item_feature_header {
+    flex-wrap: wrap;
+  }
+
+  main > section.features > .item_feature > .item_feature_header > .header_feature {
+    font-size: 26px;
+    line-height: 33px;
+    letter-spacing: 0.02em;
+  }
+
+  main > section.step_by_step > .content > .item_steps > .item_step_desktop {
+    display: none;
+  }
+
+  main > .container > .row > .col > .block > .block__content {
+    overflow-wrap: break-word;
+  }
+  main > .container > .row > .col > .block > .block__content > span {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  main > section.step_by_step > .content > .item_steps:not(:last-child) {
+    padding: 0;
+    margin-right: 0;
+  }
+
+  main > section.step_by_step > .content > .item_steps > .item_step_adaptive_tablet {
+    display: none;
+  }
+
+  main > section.step_by_step > .content > .item_steps > .item_step_mobile {
+    display: flex;
+  }
+  main > .container > .row {
+    flex-wrap: wrap;
+  }
+
+  .col_desktop {
+    display: none;
+  }
+
+  main > section.features:first-child {
+    margin-top: 100px;
+  }
+
+  main > section.features > .item_feature {
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-device-width: 1850px) {
+  main > section.features {
+    flex-wrap: nowrap;
+  }
+}

@@ -1,0 +1,66 @@
+// Отступы
+$p0: 15px; //стандартный отступ
+
+$container: 960px; //ширина сайта
+$columns: 6; //колличество колонок
+
+// Шрифтовая пара
+$font-light: 'Neris-Light', sans-serif;
+$font-bold: 'Neris-Black', sans-serif;
+
+// Размер шрифтов
+$font-size-h1: 35px;
+$line-height-h1: 45px;
+$font-size-h2: 22px;
+$line-height-h2: 33px;
+$font-size-h3: 11px;
+$line-height-h3: 16px;
+$font-size-p: 14px;
+$line-height-p: 21px;
+$font-size-small: 11px;
+$line-height-small: 16px;
+
+//базовые значения
+$q-dark: .78;
+$q-middle: .45;
+$q-light: .2;
+$q-very-light: .1;
+
+// Цвета
+$black-color: #000;
+$white-color: #fff;
+$base-color: #099fe5;
+$error-color: #da231a;
+
+$primary-text-color-light-back: rgba($black-color, $q-dark);
+$secondary-text-color-light-back: rgba($black-color, $q-middle);
+$primary-text-color-dark-back: rgba($white-color, $q-dark);
+$secondary-text-color-dark-back: rgba($white-color, $q-middle);
+
+$background-gray-color: rgba($black-color, .05);
+$background-light-blue-color: rgba($base-color, .1);
+
+$border-color-black-light: rgba($black-color, $q-light);
+$border-color-black-very-light: rgba($black-color, $q-very-light);
+
+// Путь к картинкам
+$url-img: '../img/';
+
+$smallFont: #{$font-size-small}/#{$line-height-small} $font-light;
+
+$border-radius: 3px;
+
+// Добавлено для того, чтобы можно было быстрее копировать новые стили в старую вёрстку
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@function rem-to-px($size) {
+  $value: parseInt($size) * 16px;
+  @return $value;
+}
+
+$basic-value: 3px;
+
+$line-height-p-nowrap: 10px;
+$indent-difference-p: ($line-height-p - $line-height-p-nowrap) / 2; // 5.5px

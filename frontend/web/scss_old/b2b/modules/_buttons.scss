@@ -1,0 +1,444 @@
+// Кнопки
+.button {
+  @extend %basic-entity;
+  @include user-select(none);
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  line-height: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $border-color-black-middle;
+    color: $primary-text-color-light-back;
+  }
+
+  &:active {
+    background-color: rgba($black-color, $q-light);
+    color: $primary-text-color-light-back;
+  }
+
+  &:focus {
+    z-index: 1;
+    outline: none;
+    box-shadow: inset 0 0 0 1px $border-color-black-light, 0 0 6px 0 rgba($primary-color, $q-middle);
+    color: $primary-text-color-light-back;
+  }
+
+  & + .button {
+    margin-left: $basic-value * 5;
+  }
+}
+
+// Маленькая кнопка
+.button_small {
+  @extend %basic-entity;
+  padding: $basic-value*3 $basic-value*4;
+  text-transform: none;
+
+  .button__text {
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+    margin-top: -$indent-difference-small;
+    margin-bottom: -$indent-difference-small;
+  }
+
+  .button__icon {
+    margin-top: -#{$basic-value * 3};
+    margin-bottom: -#{$basic-value * 3};
+  }
+
+  .button__icon_arrow-left {
+    &:before {
+      font: #{$font-size-small}/#{$line-height-small} $font-light;
+    }
+  }
+
+  .button__icon_arrow-right {
+    &:before {
+      font: #{$font-size-small}/#{$line-height-small} $font-light;
+    }
+  }
+}
+
+.button[disabled], .button_disabled {
+  opacity: $q-middle;
+  pointer-events: none;
+}
+
+.button_primary {
+  background-color: $primary-color;
+  box-shadow: none;
+  color: $primary-text-color-dark-back;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $border-color-black-light;
+    color: $primary-text-color-dark-back;
+  }
+
+  &:active {
+    background-color: darken($primary-color, 5%);
+    color: $primary-text-color-dark-back;
+  }
+
+  &:focus {
+    color: $primary-text-color-dark-back;
+  }
+}
+
+.button_primary-invert {
+  background-color: $white-color;
+  box-shadow: inset 0 0 0 1px $primary-color;
+  color: rgba($primary-color, $q-dark);
+
+  &:hover {
+    background-color: $primary-color;
+    box-shadow: inset 0 0 0 1px $border-color-black-light;
+    color: rgba($white-color, $q-dark);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 5%);
+    color: rgba($white-color, $q-dark);
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px $primary-color, 0 0 6px 0 rgba($primary-color, $q-middle);
+    color: rgba($primary-color, $q-dark);
+  }
+  &:active:focus {
+    color: rgba($white-color, $q-dark);
+  }
+}
+
+.button_danger {
+  background-color: $danger-color;
+  box-shadow: none;
+  color: $primary-text-color-dark-back;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $border-color-black-light;
+    color: $primary-text-color-dark-back;
+  }
+
+  &:active {
+    background-color: darken($danger-color, 5%);
+    color: $primary-text-color-dark-back;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px $border-color-black-light, 0 0 6px 0 rgba($danger-color, $q-middle);
+    color: $primary-text-color-dark-back;
+  }
+}
+
+.button_success {
+  background-color: $success-color;
+  box-shadow: none;
+  color: $primary-text-color-dark-back;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $border-color-black-light;
+    color: $primary-text-color-dark-back;
+  }
+
+  &:active {
+    background-color: darken($success-color, 5%);
+    color: $primary-text-color-dark-back;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px $border-color-black-light, 0 0 6px 0 rgba($success-color, $q-middle);
+    color: $primary-text-color-dark-back;
+  }
+}
+
+.button_white {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 1px $border-color-white-middle;
+  color: $secondary-text-color-dark-back;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $border-color-white-dark;
+    color: $primary-text-color-dark-back;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 0 1px $border-color-white-dark, 0 0 6px 0 rgba($white-color, $q-middle);
+    background-color: transparent;
+    color: $primary-text-color-dark-back;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px $border-color-white-dark, 0 0 6px 0 rgba($white-color, $q-middle);
+    color: $secondary-text-color-dark-back;
+  }
+
+}
+
+// Кнопка в виде ссылки
+.button_link {
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  color: $secondary-text-color-light-back;
+  text-transform: none;
+  background: none;
+
+  &:hover, &:active, &:focus {
+    box-shadow: none;
+    background: none;
+    color: $primary-text-color-light-back;
+  }
+}
+
+.button_link-white {
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  background: none;
+  color: $secondary-text-color-dark-back;
+  text-transform: none;
+
+  &:hover, &:active, &:focus {
+    box-shadow: none;
+    background: none;
+    color: $primary-text-color-dark-back;
+  }
+}
+
+.button_link-white-2x {
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  background: none;
+  color: $primary-text-color-dark-back;
+  text-transform: none;
+
+  &:hover, &:active, &:focus {
+    box-shadow: none;
+    background: none;
+    color: $secondary-text-color-dark-back;
+  }
+}
+
+.button_link-red {
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  color: $danger-color;
+  text-transform: none;
+  background: none;
+
+  &:hover, &:active, &:focus {
+    box-shadow: none;
+    background: none;
+    color: $danger-color;
+  }
+}
+
+// Кнопка на всю ширину контейнера
+.button_full {
+  width: 100%;
+}
+
+// Кнопка в одну линию
+.button_nowrap {
+  white-space: nowrap;
+}
+
+// Особая кнопка с действием
+.button_action {
+  .button__icon:after {
+    content: "";
+    position: absolute;
+    right: -4px;
+    bottom: -8px;
+    @include icons-sprite(icon-success-md);
+    opacity: 0;
+    transition: all .2s;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &.is-active {
+    .button__icon:after {
+      bottom: -4px;
+      opacity: 1;
+    }
+  }
+}
+
+// Кнопка без преобразования текста в верхний регистр
+.button_normalcase {
+  text-transform: none;
+}
+
+// Текст кнопки
+.button__text {
+  position: relative; // Исправление бага в IE11, когда при клике на кнопку внутренние элементы смещаются вниз и вправо.
+  margin-top: rem-to-px(-$indent-difference-p);
+  margin-bottom: rem-to-px(-$indent-difference-p);
+  font-size: $font-size-p;
+  line-height: $line-height-p;
+  text-align: center;
+}
+
+// Счётчик справа сверху над кнопкой
+.button__counter {
+  position: absolute;
+  top: -20px + $basic-value*4;
+  right: -20px + $basic-value*4;
+  display: block;
+  padding: $basic-value*2 7px;
+  min-width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+.button__counter-value {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  color: $white-color;
+  font-size: $font-size-small;
+  line-height: 0.5rem; // 8px
+  z-index: 1;
+}
+
+.button__counter-background {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 10px;
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: $danger-color;
+    border-radius: 50%;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+
+  span {
+    display: block;
+    height: 20px;
+    width: 100%;
+    background-color: $danger-color;
+  }
+}
+
+// Иконка внутри кнопки
+.button__icon {
+  position: relative; // Исправление бага в IE11, когда при клике на кнопку внутренние элементы смещаются вниз и вправо.
+  margin-top: -#{$basic-value * 4};
+  margin-bottom: -#{$basic-value * 4};
+
+  &:before {
+    content: "";
+    display: block;
+  }
+
+  &:first-child {
+    margin-right: $basic-value * 3;
+  }
+
+  &:last-child {
+    margin-left: $basic-value * 3;
+  }
+
+  &:first-child:last-child {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// Особые иконки в виде текста
+.button__icon_arrow-left {
+  &:before {
+    content: "←";
+    font: #{$font-size-p}/#{$line-height-p} $font-light;
+  }
+}
+
+.button__icon_arrow-right {
+  &:before {
+    content: "→";
+    font: #{$font-size-p}/#{$line-height-p} $font-light;
+  }
+}
+
+// Различные модификаторы иконок
+.button__icon_phone-white {
+  &:before {
+    @include icons-sprite(sm-phone-white);
+    opacity: $q-dark;
+  }
+}
+
+.button__icon_scales-plus {
+  &:before {
+    @include icons-sprite(sm-scales-plus);
+    opacity: $q-middle;
+  }
+}
+
+.button__icon_scales-plus-white {
+  &:before {
+    @include icons-sprite(sm-scales-plus-white);
+    opacity: $q-dark;
+  }
+}
+
+.button__icon_bill-send-white {
+  &:before {
+    @include icons-sprite(sm-bill-send-white);
+    opacity: $q-dark;
+  }
+}
+
+.button__icon_bookmark-plus {
+  &:before {
+    @include icons-sprite(sm-bookmark-plus);
+    opacity: $q-middle;
+  }
+}
+
+.button__icon_bookmark-plus-white {
+  &:before {
+    @include icons-sprite(sm-bookmark-plus-white);
+    opacity: $q-dark;
+  }
+}
+
+.button__icon_settings {
+  &:before {
+    @include icons-sprite(sm-settings);
+    opacity: $q-middle;
+  }
+}
+
+.button__icon_play-white {
+  &:before {
+    @include icons-sprite(sm-play-white);
+    opacity: $q-dark;
+  }
+}

@@ -1,0 +1,34 @@
+// Блок видео на главной странице, со слайдером
+.video-block {
+  position: relative;
+  height: $basic-value * 140;
+  background: #2f2f2f url("#{$url-img}video-block-bg.png") left center no-repeat;
+  overflow: hidden;
+}
+
+// Стрелка видео-слайдера
+.video-block__arrow {
+  @extend .slider-arrow;
+
+  &.slick-disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.video-block__arrow_left {
+  @extend .slider-arrow_left;
+}
+
+.video-block__arrow_right {
+  @extend .slider-arrow_right;
+}
+
+.video-block__container {
+  position: relative;
+  height: 100%;
+
+  & > .row {
+    height: 100%;
+  }
+}

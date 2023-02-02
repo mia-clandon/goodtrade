@@ -1,0 +1,28 @@
+.banner-a1 {
+  width: 100%;
+  height: 90px;
+}
+.banner-a2 {
+  width: $container;
+  height: 180px;
+  margin: 0 -#{$p0};
+  background-color: $background-gray-color;
+}
+.banner-a3 {
+  width: $container;
+  height: 180px;
+}
+.banner-b1 {
+  width: 240px;
+  height: 400px;
+}
+.banner-b2 {
+  width: 250px;
+  height: 250px;
+  margin: 0 #{$p0};
+  background-color: $background-gray-color;
+}
+.banner-c1 {
+  width: 160px;
+  height: 600px;
+}

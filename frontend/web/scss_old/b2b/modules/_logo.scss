@@ -1,0 +1,39 @@
+// Логотип в различных вариациях
+.logo {
+  display: block;
+}
+
+.logo_md {
+  @include icons-sprite(b2b-logo-md);
+}
+
+.logo_md-white {
+  @include icons-sprite(b2b-logo-md-white);
+}
+
+.logo_sm {
+  @include icons-sprite(b2b-logo-sm);
+}
+
+.logo_sm-short {
+  @include icons-sprite(b2b-logo-sm-short);
+}
+
+.logo_sm-white {
+  @include icons-sprite(b2b-logo-sm-white);
+}
+
+.logo_sm-white-short {
+  @include icons-sprite(b2b-logo-sm-white-short);
+}
+
+.logo_footer {
+  margin-bottom: $basic-value * 13 - rem-to-px($indent-difference-p);
+}
+
+@include media-breakpoint-up(xs) {
+  .logo_footer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

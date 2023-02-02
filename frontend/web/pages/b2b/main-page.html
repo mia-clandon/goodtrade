@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/b2b.css">
+    <script type="text/javascript" src="/js/for-static-pages/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/libs/slick-1.8.0.min.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/libs/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/b2b/common.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/b2b/main-slider.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/b2b/categories-slider.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/b2b/news-slider.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/b2b/video-slider.js"></script>
+</head>
+<body>
+
+<aside class="nav-left">
+    <div class="nav-left__top-part">
+        <div class="nav-left__header">
+            <div class="nav-left__close-button-container">
+                <button class="nav-left__close-button"></button>
+            </div>
+            <a href="#" class="logo logo_sm-white" title="GoodTrade.kz"></a>
+        </div>
+
+        <div class="beta-notify-sidebar">
+            <div class="beta-notify-sidebar__image"></div>
+            <div class="beta-notify-sidebar__message">
+                <p>Сайт находится в стадии публичного beta-тестирования. Некоторые функции могут быть недоступны или работать некорректно. Любые вопросы по поводу работы сервиса можете отправлять на электронную почту: <a href="mailto:support@goodtrade.kz">support@goodtrade.kz</a></p>
+            </div>
+        </div>
+
+        <nav class="nav-left__menu">
+            <ul class="linear-list linear-list_white">
+                <li><a href="#">О проекте</a></li>
+                <li><a href="#">Юридическая информация</a></li>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-left__bottom-part">
+        <div class="nav-left__copyright">
+            <span class="nav-left__copyright-first-line">© GoodTrade.kz, 2017</span>
+            <div class="label label_white-invert">18+</div>
+            <p>Использование материалов<br>
+                GoodTrade.kz разрешено только<br>
+                с согласия правообладателей.</p>
+        </div>
+    </div>
+</aside>
+
+<header class="header-absolute">
+    <div class="bar-top bar-top_inverted">
+        <div class="bar-top__left-part">
+            <div class="bar-top__menu-button-container">
+                <button class="bar-top__menu-button bar-top__menu-button_white"></button>
+            </div>
+            <div class="bar-top__logo-container">
+                <a href="#" class="logo logo_sm-white" title="B2B"></a>
+            </div>
+        </div>
+
+        <div class="bar-top__search">
+            <form class="bar-top__search-form" action="">
+                <div class="input input_white input_no-focus">
+                    <div class="icon icon_search-white"></div>
+                    <input type="text" placeholder="Поиск по товарам и компаниям">
+                </div>
+            </form>
+            <div class="bar-top__search-toggle">
+                <div class="icon icon_search-white"></div>
+            </div>
+        </div>
+
+        <div class="bar-top__right-part">
+            <div class="bar-top__user-features">
+                <div class="dropdown">
+                    <div class="icon icon_favorite-white dropdown__toggle"></div>
+                    <div class="dropdown__item dropdown__item_bar-top-icon-center">
+                        <div class="modal">
+                            <div class="dropdown__item-indicator"></div>
+                            <div class="modal__title">Избранное</div>
+                            <div class="notification notification_shifted-down">
+                                <div class="notification__image notification__image_favorite"></div>
+                                <p class="notification__description">Вы пока не добавили в избранное<br>ни одну компанию или товар</p>
+                                <a href="#" class="notification__link">Зачем нужно избранное?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="icon icon_comparison-white dropdown__toggle"></div>
+                    <div class="dropdown__item dropdown__item_bar-top-icon-center">
+                        <div class="modal">
+                            <div class="dropdown__item-indicator"></div>
+                            <div class="modal__title">Сравнение</div>
+                            <div class="notification notification_shifted-down">
+                                <div class="notification__image notification__image_comparison"></div>
+                                <p class="notification__description">Вы не создали<br>ни одного сравнения</p>
+                                <a href="#" class="notification__link">Что такое сравнения?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="icon icon_deal-white dropdown__toggle"></div>
+                    <div class="dropdown__item dropdown__item_bar-top-icon-center">
+                        <div class="modal">
+                            <div class="dropdown__item-indicator"></div>
+                            <div class="modal__title">Сделки</div>
+                            <div class="notification notification_shifted-down">
+                                <div class="notification__image notification__image_deals"></div>
+                                <p class="notification__description">Вы не заключили ни одной<br>сделки на нашем сервисе</p>
+                                <a href="#" class="notification__link">Как заключить сделку?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bar-top__buttons-block">
+                <button class="button button_link-white" data-type="modal-open" data-modal="overlay-sign-up">
+                    <span class="button__text">Войти</span>
+                </button>
+                <button class="button button_white"  data-type="modal-open" data-modal="overlay-register">
+                    <span class="button__text">Получить премиум доступ на 30 дней</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="wrapper">
+    <div class="block">
+        <div class="block__content">
+            <div class="main-slider-block">
+                <div class="main-slider-block__arrow main-slider-block__arrow_left"></div>
+                <div class="main-slider-block__arrow main-slider-block__arrow_right"></div>
+                <div class="main-slider-block__container container container_main">
+                    <div class="main-slider row">
+                        <div class="main-slider__slide col-lg-8">
+                            <div class="main-slider__slide-bg">
+                                <img src="/pages/b2b/img/main-slider-slide-01.png" alt="">
+                            </div>
+                            <div class="main-slider__slide-content row">
+                                <div class="col-lg-4">
+                                    <div class="main-slider__slide-title">Создайте свое первое коммерческое предложение</div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p class="main-slider__slide-text">Удобный конструктор поможет вам создать простое, понятное и самое главное эффективное коммерческое предложение.</p>
+                                            <button class="button button_primary">
+                                                <span class="button__text">Создать коммерческое предложение</span>
+                                            </button>
+                                            <div class="main-slider__slide-button-desc">Конструктор полностью бесплатный</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="cards-list cards-list_lg cards-list_vertical cards-list_in-slider row">
+                                        <div class="cards-list__card cards-list__card_accent-yellow-wide col-lg-8">
+                                            <div class="cards-list__card-content">
+                                                <div class="cards-list__card-bg">
+                                                    <img src="/pages/b2b/img/main-slider-card-bg-01.png" alt="Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <h2 class="cards-list__card-heading">Покажите миру свой бизнес!</h2>
+                                                    </div>
+                                                </div>
+                                                <div class="cards-list__card-content-bottom-row row">
+                                                    <div class="col-lg-4">
+                                                        <p class="cards-list__card-text">Добавьте свою компанию сейчас и получите 30 дней премиум аккаунта бесплатно!</p>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <button class="button button_full button_primary">
+                                                            <span class="button__text">Добавить компанию</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards-list__card cards-list__card_video col-lg-4">
+                                            <div class="cards-list__card-content">
+                                                <div class="cards-list__card-bg">
+                                                    <img src="/pages/b2b/img/main-slider-card-bg-02.jpg" alt="Казахстан переходит на латиницу">
+                                                </div>
+                                                <div class="cards-list__card-type">
+                                                    <div class="label label_primary-invert">Видео</div>
+                                                </div>
+                                                <div class="cards-list__card-content-bottom">
+                                                    <p class="cards-list__card-title">Как совершить прорыв и выйти на новый уровень? Тони Роббинс</p>
+                                                </div>
+                                                <div class="cards-list__card-more cards-list__card-more_small">
+                                                    <div class="cards-list__card-video-link">
+                                                        <a href="#"><span class="cards-list__card-video-icon cards-list__card-video-icon_small"></span>Смотреть видео</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards-list__card cards-list__card_borderless col-lg-4">
+                                            <div class="cards-list__card-content">
+                                                <div class="cards-list__card-type">
+                                                    <div class="label label_primary-invert">Новая компания</div>
+                                                </div>
+                                                <div class="cards-list__card-content-bottom">
+                                                    <div class="elements-list">
+                                                        <div class="elements-list__item">
+                                                            <div class="elements-list__item-image">
+                                                                <img src="/pages/b2b/img/company-05.jpg" alt="ТОО &laquo;Алтай Лес Пром Хоз&raquo;">
+                                                            </div>
+                                                            <div class="elements-list__item-content">
+                                                                <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="ТОО &laquo;Алтай Лес Пром Хоз&raquo;">ТОО &laquo;Алтай Лес Пром Хоз&raquo;</a>
+                                                                <div class="breadcrumbs">
+                                                                    <div class="breadcrumbs__item">
+                                                                        <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_forest"></a>
+                                                                        <div class="breadcrumbs__item-title"><a href="#">Лесозаготовка</a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid elements-grid_no-masonry">
+                                                        <div class="elements-grid__cell">
+                                                            <div class="elements-grid__cell-content">
+                                                                <div class="elements-grid__cell-thumbs">
+                                                                    <a href="#" class="elements-grid__cell-thumb">
+                                                                        <img src="/pages/b2b/img/provider-goods-01.jpg" alt="Фото товара компании">
+                                                                    </a>
+                                                                    <a href="#" class="elements-grid__cell-thumb">
+                                                                        <img src="/pages/b2b/img/provider-goods-02.jpg" alt="Фото товара компании">
+                                                                    </a>
+                                                                    <a href="#" class="elements-grid__cell-thumb">
+                                                                        <img src="/pages/b2b/img/provider-goods-03.jpg" alt="Фото товара компании">
+                                                                    </a>
+                                                                    <a href="#" class="elements-grid__cell-thumb">
+                                                                        <img src="/pages/b2b/img/provider-goods-04.jpg" alt="Фото товара компании">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-slider__slide col-lg-8">
+                            <div class="main-slider__slide-bg">
+                                <img src="/pages/b2b/img/slide-01.jpg" alt="">
+                            </div>
+                            <div class="main-slider__slide-content row">
+                                <div class="col-lg-4">
+                                    <div class="main-slider__slide-title">Создайте свое первое коммерческое предложение</div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <p class="main-slider__slide-text">Удобный конструктор поможет вам создать простое, понятное и самое главное эффективное коммерческое предложение.</p>
+                                            <button class="button button_primary">
+                                                <span class="button__text">Создать коммерческое предложение</span>
+                                            </button>
+                                            <div class="main-slider__slide-button-desc">Конструктор полностью бесплатный</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="cards-list cards-list_lg cards-list_vertical cards-list_in-slider row">
+                                        <div class="cards-list__card cards-list__card_accent-yellow-wide col-lg-8">
+                                            <div class="cards-list__card-content">
+                                                <div class="cards-list__card-bg">
+                                                    <img src="/pages/b2b/img/main-slider-card-bg-01.png" alt="Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <h2 class="cards-list__card-heading">Покажите миру свой бизнес!</h2>
+                                                    </div>
+                                                </div>
+                                                <div class="cards-list__card-content-bottom-row row">
+                                                    <div class="col-lg-4">
+                                                        <p class="cards-list__card-text">Добавьте свою компанию сейчас и получите 30 дней премиум аккаунта бесплатно!</p>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <button class="button button_full button_primary">
+                                                            <span class="button__text">Добавить компанию</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards-list__card cards-list__card_video col-lg-4">
+                                            <div class="cards-list__card-content">
+                                                <div class="cards-list__card-bg">
+                                                    <img src="/pages/b2b/img/main-slider-card-bg-02.jpg" alt="Казахстан переходит на латиницу">
+                                                </div>
+                                                <div class="cards-list__card-type">
+                                                    <div class="label label_primary-invert">Видео</div>
+                                                </div>
+                                                <div class="cards-list__card-content-bottom">
+                                                    <p class="cards-list__card-title">Как совершить прорыв и выйти на новый уровень? Тони Роббинс</p>
+                                                </div>
+                                                <div class="cards-list__card-more cards-list__card-more_small">
+                                                    <div class="cards-list__card-video-link">
+                                                        <a href="#"><span class="cards-list__card-video-icon cards-list__card-video-icon_small"></span>Смотреть видео</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cards-list__card cards-list__card_borderless col-lg-4">
+                                            <div class="cards-list__card-content">
+                                                <div class="cards-list__card-type">
+                                                    <div class="label label_primary-invert">Новая компания</div>
+                                                </div>
+                                                <div class="cards-list__card-content-bottom">
+                                                    <div class="elements-list">
+                                                        <div class="elements-list__item">
+                                                            <div class="elements-list__item-image">
+                                                                <img src="/pages/b2b/img/company-05.jpg" alt="ТОО &laquo;Алтай Лес Пром Хоз&raquo;">
+                                                            </div>
+                                                            <div class="elements-list__item-content">
+                                                                <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="ТОО &laquo;Алтай Лес Пром Хоз&raquo;">ТОО &laquo;Алтай Лес Пром Хоз&raquo;</a>
+                                                                <div class="breadcrumbs">
+                                                                    <div class="breadcrumbs__item">
+                                                                        <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_forest"></a>
+                                                                        <div class="breadcrumbs__item-title"><a href="#">Лесозаготовка</a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid elements-grid_no-masonry">
+                                                        <div class="elements-grid__cell">
+                                                            <div class="elements-grid__cell-content">
+                                                                <div class="elements-grid__cell-thumbs">
+                                                                    <a href="#" class="elements-grid__cell-thumb">
+                                                                        <img src="/pages/b2b/img/provider-goods-01.jpg" alt="Фото товара компании">
+                                                                    </a>
+                                                                    <a href="#" class="elements-grid__cell-thumb">
+                                                                        <img src="/pages/b2b/img/provider-goods-02.jpg" alt="Фото товара компании">
+                                                                    </a>
+                                                                    <a href="#" class="elements-grid__cell-thumb">
+                                                                        <img src="/pages/b2b/img/provider-goods-03.jpg" alt="Фото товара компании">
+                                                                    </a>
+                                                                    <a href="#" class="elements-grid__cell-thumb">
+                                                                        <img src="/pages/b2b/img/provider-goods-04.jpg" alt="Фото товара компании">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container container_main">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="block">
+                        <div class="block__title">
+                            <h2 class="block__title-heading">Новые товары</h2>
+                        </div>
+                        <div class="block__content">
+                            <div class="elements-grid">
+                                <div class="row">
+                                    <div class="elements-grid__cell elements-grid__cell_promo-h2 col-lg-4">
+                                        <div class="elements-grid__cell-content">
+                                            <div class="elements-grid__bg">
+                                                <img src="/pages/b2b/img/logs.jpg" alt="Фотография товара">
+                                            </div>
+                                            <div class="breadcrumbs">
+                                                <div class="breadcrumbs__item breadcrumbs__item_white">
+                                                    <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_forest-white"></a>
+                                                </div>
+                                                <div class="breadcrumbs__item breadcrumbs__item_white">
+                                                    <div class="breadcrumbs__item-title breadcrumbs__item-title_white">
+                                                        <a href="#">Бревна</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="row">
+                                                    <div class="col col_two-thirds">
+                                                        <a href="#" class="elements-grid__cell-title" title="Бревна, не обработанное, диаметр 35-45см, влажность 60%">Бревна, не обработанное, диаметр 35-45см, влажность 60%</a>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg col-lg_two-thirds">
+                                                        <div class="elements-grid__cell-vat elements-grid__cell-vat_white">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price elements-grid__cell-price_white">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit elements-grid__cell-price-unit_white">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer elements-grid__cell-footer_white-border">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_scales-plus-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_bookmark-plus-white"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell elements-grid__cell_promo col-lg-4">
+                                        <div class="elements-grid__cell-content">
+                                            <div class="elements-grid__bg elements-grid__bg_half">
+                                                <img src="/pages/b2b/img/furnace.jpg" alt="Фотография товара">
+                                            </div>
+                                            <div class="element-grid__cell-text-container">
+                                                <div class="row">
+                                                    <div class="col col_two-thirds">
+                                                        <a href="#" class="elements-grid__cell-title" title="Промышленная печь, газовая, цилендрическая, 200–1900°C">Промышленная печь, газовая, цилендрическая, 200–1900°C</a>
+                                                    </div>
+                                                </div>
+                                                <div class="elements-grid__cell-bottom-container">
+                                                    <div class="row">
+                                                        <div class="col-lg col-lg_two-thirds">
+                                                            <div class="elements-grid__cell-vat elements-grid__cell-vat_white">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price elements-grid__cell-price_white">29 000 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit elements-grid__cell-price-unit_white">за штуку</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-lg-none elements-grid__cell-footer elements-grid__cell-footer_white-border">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_scales-plus-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_bookmark-plus-white"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="elements-grid__cell-content">
+                                                <div class="elements-grid__bg elements-grid__bg_half">
+                                                    <img src="/pages/b2b/img/furnace.jpg" alt="Фотография товара">
+                                                </div>
+                                                <div class="element-grid__cell-text-container">
+                                                    <div class="row">
+                                                        <div class="col col_two-thirds">
+                                                            <a href="#" class="elements-grid__cell-title" title="Промышленная печь, газовая, цилендрическая, 200–1900°C">Промышленная печь, газовая, цилендрическая, 200–1900°C</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="row">
+                                                            <div class="col col_two-thirds">
+                                                                <div class="elements-grid__cell-vat elements-grid__cell-vat_white">Цена без НДС</div>
+                                                                <div class="elements-grid__cell-price-container">
+                                                                    <div class="elements-grid__cell-price elements-grid__cell-price_white">29 000 000 тг.</div>
+                                                                    <div class="elements-grid__cell-price-unit elements-grid__cell-price-unit_white">за штуку</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="elements-grid__cell-footer elements-grid__cell-footer_white-border">
+                                                    <button class="button button_small button_primary">
+                                                        <span class="button__text">Коммерческий запрос</span>
+                                                        <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                    </button>
+                                                    <button class="button button_small button_link">
+                                                        <span class="button__icon button__icon_scales-plus-white"></span>
+                                                    </button>
+                                                    <button class="button button_small button_link">
+                                                        <span class="button__icon button__icon_bookmark-plus-white"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-grid__cell col-lg-4">
+                                        <div class="row">
+                                            <div class="col col_third col_no-right-gutter">
+                                                <div class="elements-grid__cell-image">
+                                                    <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                </div>
+                                            </div>
+                                            <div class="col col_two-thirds">
+                                                <div class="elements-grid__cell-content">
+                                                    <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                    <div class="breadcrumbs">
+                                                        <div class="breadcrumbs__item">
+                                                            <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                        </div>
+                                                        <div class="breadcrumbs__item">
+                                                            <div class="breadcrumbs__item-title">
+                                                                <a href="#">Пшеница</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="elements-grid__cell-bottom-container">
+                                                        <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                        <div class="elements-grid__cell-price-container">
+                                                            <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                            <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__cell-footer-container">
+                                            <div class="elements-grid__cell-bottom-container">
+                                                <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                <div class="elements-grid__cell-price-container">
+                                                    <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                    <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="elements-grid__modal">
+                                            <div class="row">
+                                                <div class="col col_third col_no-right-gutter">
+                                                    <div class="elements-grid__cell-image">
+                                                        <img src="/pages/b2b/img/wheat.jpg" alt="Фотография товара">
+                                                    </div>
+                                                </div>
+                                                <div class="col col_two-thirds">
+                                                    <div class="elements-grid__cell-content">
+                                                        <a href="#" class="elements-grid__cell-title" title="Пшеница мягкая второй класс, влажность 60%, озимая">Пшеница мягкая второй класс, влажность 60%, озимая</a>
+                                                        <div class="breadcrumbs">
+                                                            <div class="breadcrumbs__item">
+                                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                            </div>
+                                                            <div class="breadcrumbs__item">
+                                                                <div class="breadcrumbs__item-title">
+                                                                    <a href="#">Пшеница</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elements-grid__cell-bottom-container">
+                                                            <div class="elements-grid__cell-vat">Цена без НДС</div>
+                                                            <div class="elements-grid__cell-price-container">
+                                                                <div class="elements-grid__cell-price">380 000 тг.</div>
+                                                                <div class="elements-grid__cell-price-unit">за тонну</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="elements-grid__cell-footer">
+                                                <button class="button button_small button_primary">
+                                                    <span class="button__text">Коммерческий запрос</span>
+                                                    <span class="button__icon button__icon_right button__icon_bill-send-white"></span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_scales-plus"></span>
+                                                    <span class="button__text">К сравнению</span>
+                                                </button>
+                                                <button class="button button_small button_link">
+                                                    <span class="button__icon button__icon_left button__icon_bookmark-plus"></span>
+                                                    <span class="button__text">Сохранить</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg col-lg_two-thirds m-auto">
+                                        <button class="elements-grid__button button button_full">
+                                            <span class="button__text">Показать еще</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="block">
+                        <div class="block__title">
+                            <h2 class="block__title-heading">Новые компании</h2>
+                        </div>
+                        <div class="block__content">
+                            <div class="elements-list">
+                                <div class="elements-list__item">
+                                    <div class="elements-list__item-image">
+                                        <img src="/pages/b2b/img/company-01.jpg" alt="Логотип компании">
+                                    </div>
+                                    <div class="elements-list__item-content">
+                                        <a href="#" class="elements-list__item-title">Ассоциация развития стального строительства</a>
+                                        <div class="breadcrumbs">
+                                            <div class="breadcrumbs__item">
+                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_construction"></a>
+                                                <div class="breadcrumbs__item-title"><a href="#">Строительство</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="elements-list__item">
+                                    <div class="elements-list__item-image">
+                                        <img src="/pages/b2b/img/company-02.jpg" alt="Логотип компании">
+                                    </div>
+                                    <div class="elements-list__item-content">
+                                        <a href="#" class="elements-list__item-title">Granite Services International Kazakhstan</a>
+                                        <div class="breadcrumbs">
+                                            <div class="breadcrumbs__item">
+                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_energetics"></a>
+                                                <div class="breadcrumbs__item-title"><a href="#">Энергетика</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="elements-list__item">
+                                    <div class="elements-list__item-image">
+                                        <img src="/pages/b2b/img/company-03.jpg" alt="Логотип компании">
+                                    </div>
+                                    <div class="elements-list__item-content">
+                                        <a href="#" class="elements-list__item-title">ПФ «Кулагер»</a>
+                                        <div class="breadcrumbs">
+                                            <div class="breadcrumbs__item">
+                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_agriculture"></a>
+                                                <div class="breadcrumbs__item-title"><a href="#">Сельское хозяйство</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="elements-list__item">
+                                    <div class="elements-list__item-image">
+                                        <img src="/pages/b2b/img/company-04.jpg" alt="Логотип компании">
+                                    </div>
+                                    <div class="elements-list__item-content">
+                                        <a href="#" class="elements-list__item-title">Крестецкий лесо промышленный комплекс</a>
+                                        <div class="breadcrumbs">
+                                            <div class="breadcrumbs__item">
+                                                <a href="#" class="breadcrumbs__item-icon breadcrumbs__item-icon_forest"></a>
+                                                <div class="breadcrumbs__item-title"><a href="#">Лесозаготовка</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="block-content">
+                            <div class="simple-banner">
+                                <div class="simple-banner__title">Торговая площадка для бизнеса</div>
+                                <div class="simple-banner__content">Зарегистрируйтесь сейчас и получите 30 дней премиум аккаунта бесплатно</div>
+                                <button class="button button_primary button_full">
+                                    <span class="button__text">Получить премиум<br>на&nbsp;30&nbsp;дней бесплатно</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="categories-block">
+        <div class="container container_main">
+            <div class="block block_no-padding">
+                <div class="block__title">
+                    <h2 class="block__title-heading">Сферы деятельности</h2>
+                </div>
+            </div>
+        </div>
+        <div class="categories-slider-block">
+            <div class="categories-slider-block__container container container_main">
+                <div class="block">
+                    <div class="block__content">
+                        <div class="categories-slider row">
+                            <div class="categories-slider__slide">
+                                <div class="elements-list">
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_agriculture"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Сельское хозяйство">Сельское хозяйство</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>472 компании</span>
+                                                <span>3547 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_forest"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Лесозаготовка">Лесозаготовка</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>354 компании</span>
+                                                <span>1278 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_minerals_and_chemicals_metallurgy"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Добыча, химия и металлургия">Добыча, химия и металлургия</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>76 компаний</span>
+                                                <span>758 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="categories-slider__slide">
+                                <div class="elements-list">
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_containers_and_packaging"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Тара и упаковка">Тара и упаковка</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>254 компании</span>
+                                                <span>3256 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_food"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Пищевая промышленность">Пищевая промышленность</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>254 компании</span>
+                                                <span>3256 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_textile_and_clothing"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Текстиль и одежда">Текстиль и одежда</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>254 компании</span>
+                                                <span>3256 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="categories-slider__slide">
+                                <div class="elements-list">
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_instrumentation"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Приборостроение">Приборостроение</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>254 компании</span>
+                                                <span>3256 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_medicine"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Медицина">Медицина</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>254 компании</span>
+                                                <span>3256 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_energetics"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Энергетика">Энергетика</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>254 компании</span>
+                                                <span>3256 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="categories-slider__slide">
+                                <div class="elements-list">
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_engineering"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Машиностроение">Машиностроение</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>254 компании</span>
+                                                <span>3256 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elements-list__item col">
+                                        <div class="elements-list__item-image elements-list__item-image_gray elements-list__item-image_construction"></div>
+                                        <div class="elements-list__item-content">
+                                            <a href="#" class="elements-list__item-title elements-list__item-title_one-line" title="Строительство">Строительство</a>
+                                            <div class="elements-list__item-counters">
+                                                <span>254 компании</span>
+                                                <span>3256 товаров</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-block">
+        <div class="container container_main">
+            <div class="block block_no-padding">
+                <div class="block__title">
+                    <div class="block__title-left">
+                        <h2 class="block__title-heading">Новости</h2>
+                        <a href="#" class="block__title-link">Смотреть все новости</a>
+                    </div>
+                    <div class="block__title-right">
+                        <div class="block__title-text">Подписаться на еженедельную рассылку</div>
+                        <button class="button button_primary">
+                            <span class="button__text">Подписаться</span>
+                            <span class="button__icon button__icon_right button__icon_play-white"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news-slider-block">
+            <div class="news-slider-block__arrow news-slider-block__arrow_left"></div>
+            <div class="news-slider-block__arrow news-slider-block__arrow_right"></div>
+            <div class="news-slider-block__container container container_main">
+                <div class="block">
+                    <div class="block__content">
+                        <div class="news-slider row">
+                            <div class="news-slider__slide">
+                                <div class="cards-list">
+                                    <div class="cards-list__card cards-list__card_tall col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-bg">
+                                                <img src="/pages/b2b/img/news-bg-01.jpg" alt="Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы">
+                                            </div>
+                                            <div class="cards-list__card-source">Источник: news.rambler.ru</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы</p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">Сегодня, 14:21</div>
+                                                    <div class="cards-list__card-info-views">247</div>
+                                                    <div class="cards-list__card-info-comments">4</div>
+                                                </div>
+                                                <div class="cards-list__card-more">
+                                                    <a href="#" class="cards-list__card-more-link">Читать далее</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-slider__slide">
+                                <div class="cards-list">
+                                    <div class="cards-list__card cards-list__card_accent col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-bg">
+                                                <img src="/pages/b2b/img/news-bg-02.jpg" alt="Казахстан переходит на латиницу">
+                                            </div>
+                                            <div class="cards-list__card-source">Источник: tengrinews.kz</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Казахстан переходит на латиницу</a>
+                                                </p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">Вчера, 18:45</div>
+                                                    <div class="cards-list__card-info-views">247</div>
+                                                    <div class="cards-list__card-info-comments">4</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cards-list__card col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-source">Источник: newyorker.com</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Prime Business Park: международный &laquo;зелёный&raquo; стандарт качества</a>
+                                                </p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">20 ноября, 10:17</div>
+                                                    <div class="cards-list__card-info-views">563</div>
+                                                    <div class="cards-list__card-info-comments">15</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-slider__slide">
+                                <div class="cards-list">
+                                    <div class="cards-list__card cards-list__card_tall-divided col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-bg">
+                                                <img src="/pages/b2b/img/news-bg-03.jpg" alt="Возможен ли запрет майнинга в Республике Казахстан &mdash; эксперты прокомментировали слова Акишева">
+                                            </div>
+                                            <div class="cards-list__card-source">Источник: nytimes.com</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Возможен ли запрет майнинга в Республике Казахстан &mdash; эксперты прокомментировали слова Акишева</a>
+                                                </p>
+                                            </div>
+                                            <div class="cards-list__card-info">
+                                                <div class="cards-list__card-info-date">12 ноября, 12:53</div>
+                                                <div class="cards-list__card-info-views">690</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-slider__slide">
+                                <div class="cards-list">
+                                    <div class="cards-list__card col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-source">Источник: life.ru</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Розничную онлайн-торговлю спиртным разрешат через три года</a>
+                                                </p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">11 ноября, 21:29</div>
+                                                    <div class="cards-list__card-info-views">147</div>
+                                                    <div class="cards-list__card-info-comments">8</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cards-list__card cards-list__card_accent col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-bg">
+                                                <img src="/pages/b2b/img/news-bg-04.jpg" alt="Эксперты спрогнозировали рекордное замедление инфляции в 2018 году">
+                                            </div>
+                                            <div class="cards-list__card-source">Источник: tengrinews.kz</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Эксперты спрогнозировали рекордное замедление инфляции в 2018 году</a>
+                                                </p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">9 ноября, 20:19</div>
+                                                    <div class="cards-list__card-info-views">253</div>
+                                                    <div class="cards-list__card-info-comments">5</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-slider__slide">
+                                <div class="cards-list">
+                                    <div class="cards-list__card cards-list__card_tall col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-bg">
+                                                <img src="/pages/b2b/img/news-bg-01.jpg" alt="Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы">
+                                            </div>
+                                            <div class="cards-list__card-source">Источник: news.rambler.ru</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы</p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">Сегодня, 14:21</div>
+                                                    <div class="cards-list__card-info-views">247</div>
+                                                    <div class="cards-list__card-info-comments">4</div>
+                                                </div>
+                                                <div class="cards-list__card-more">
+                                                    <a href="#" class="cards-list__card-more-link">Читать далее</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-slider__slide">
+                                <div class="cards-list">
+                                    <div class="cards-list__card cards-list__card_accent col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-bg">
+                                                <img src="/pages/b2b/img/news-bg-02.jpg" alt="Казахстан переходит на латиницу">
+                                            </div>
+                                            <div class="cards-list__card-source">Источник: tengrinews.kz</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Казахстан переходит на латиницу</a>
+                                                </p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">Вчера, 18:45</div>
+                                                    <div class="cards-list__card-info-views">247</div>
+                                                    <div class="cards-list__card-info-comments">4</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cards-list__card col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-source">Источник: newyorker.com</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Prime Business Park: международный &laquo;зелёный&raquo; стандарт качества</a>
+                                                </p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">20 ноября, 10:17</div>
+                                                    <div class="cards-list__card-info-views">563</div>
+                                                    <div class="cards-list__card-info-comments">15</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-slider__slide">
+                                <div class="cards-list">
+                                    <div class="cards-list__card cards-list__card_tall-divided col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-bg">
+                                                <img src="/pages/b2b/img/news-bg-03.jpg" alt="Возможен ли запрет майнинга в Республике Казахстан &mdash; эксперты прокомментировали слова Акишева">
+                                            </div>
+                                            <div class="cards-list__card-source">Источник: nytimes.com</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Возможен ли запрет майнинга в Республике Казахстан &mdash; эксперты прокомментировали слова Акишева</a>
+                                                </p>
+                                            </div>
+                                            <div class="cards-list__card-info">
+                                                <div class="cards-list__card-info-date">12 ноября, 12:53</div>
+                                                <div class="cards-list__card-info-views">690</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-slider__slide">
+                                <div class="cards-list">
+                                    <div class="cards-list__card col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-source">Источник: life.ru</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Розничную онлайн-торговлю спиртным разрешат через три года</a>
+                                                </p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">11 ноября, 21:29</div>
+                                                    <div class="cards-list__card-info-views">147</div>
+                                                    <div class="cards-list__card-info-comments">8</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cards-list__card cards-list__card_accent col">
+                                        <div class="cards-list__card-content">
+                                            <div class="cards-list__card-bg">
+                                                <img src="/pages/b2b/img/news-bg-04.jpg" alt="Эксперты спрогнозировали рекордное замедление инфляции в 2018 году">
+                                            </div>
+                                            <div class="cards-list__card-source">Источник: tengrinews.kz</div>
+                                            <div class="cards-list__card-content-bottom">
+                                                <p class="cards-list__card-title">
+                                                    <a href="#">Эксперты спрогнозировали рекордное замедление инфляции в 2018 году</a>
+                                                </p>
+                                                <div class="cards-list__card-info">
+                                                    <div class="cards-list__card-info-date">9 ноября, 20:19</div>
+                                                    <div class="cards-list__card-info-views">253</div>
+                                                    <div class="cards-list__card-info-comments">5</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-block">
+        <div class="video-block__arrow video-block__arrow_left"></div>
+        <div class="video-block__arrow video-block__arrow_right"></div>
+        <div class="video-block__container container container_main">
+            <div class="video-slider row">
+                <div class="video-slider__spec-slide col">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p class="video-slider__spec-slide-title">B2BTV &mdash; посмотри на настоящий бизнес</p>
+                            <p class="video-slider__spec-slide-text">Живые истории из первых уст. Вы услышите только реальные истории успеха предпринимателей, которые знают о чем говорят не понаслышке.</p>
+                        </div>
+                    </div>
+                    <div class="video-slider__spec-slide-actions row">
+                        <div class="col-lg-4">
+                            <a href="#" class="button button_primary button_full button_nowrap">
+                                <span class="button__text">Подписаться на канал</span>
+                                <span class="button__icon button__icon_right button__icon_play-white"></span>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-lg_no-left-gutter">
+                            <a href="#" class="button button_small button_link-white-2x">
+                                <span class="button__text">Смотреть все видео</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-slider__slide col">
+                    <div class="cards-list cards-list_lg row">
+                        <div class="cards-list__card cards-list__card_tall cards-list__card_video col">
+                            <div class="cards-list__card-content">
+                                <div class="cards-list__card-bg">
+                                    <img src="/pages/b2b/img/video-slider-slide-01.jpg" alt="Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы">
+                                </div>
+                                <div class="cards-list__card-type">
+                                    <div class="label label_primary-invert">Видео</div>
+                                </div>
+                                <div class="cards-list__card-content-bottom">
+                                    <h2 class="cards-list__card-heading">Бизнес-секреты 3.0: Владимир Мельников, владелец Глории Джинс</h2>
+                                    <div class="cards-list__card-more">
+                                        <div class="cards-list__card-video-link">
+                                            <a href="#"><span class="cards-list__card-video-icon"></span>Смотреть видео</a>
+                                        </div>
+                                        <a href="#" class="button button_small button_link-white-2x">
+                                            <span class="button__text">Читать историю</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-slider__slide col">
+                    <div class="cards-list cards-list_lg row">
+                        <div class="cards-list__card cards-list__card_tall cards-list__card_video col">
+                            <div class="cards-list__card-content">
+                                <div class="cards-list__card-bg">
+                                    <img src="/pages/b2b/img/video-slider-slide-02.jpg" alt="Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы">
+                                </div>
+                                <div class="cards-list__card-type">
+                                    <div class="label label_primary-invert">Видео</div>
+                                </div>
+                                <div class="cards-list__card-content-bottom">
+                                    <h2 class="cards-list__card-heading">Умный, но денег нет! Разбор с Михаилом Дашкиевым и Петром Осиповым</h2>
+                                    <div class="cards-list__card-more">
+                                        <div class="cards-list__card-video-link">
+                                            <a href="#"><span class="cards-list__card-video-icon"></span>Смотреть видео</a>
+                                        </div>
+                                        <a href="#" class="button button_small button_link-white-2x">
+                                            <span class="button__text">Читать историю</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-slider__slide col">
+                    <div class="cards-list cards-list_lg row">
+                        <div class="cards-list__card cards-list__card_tall cards-list__card_video col">
+                            <div class="cards-list__card-content">
+                                <div class="cards-list__card-bg">
+                                    <img src="/pages/b2b/img/video-slider-slide-01.jpg" alt="Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы">
+                                </div>
+                                <div class="cards-list__card-type">
+                                    <div class="label label_primary-invert">Видео</div>
+                                </div>
+                                <div class="cards-list__card-content-bottom">
+                                    <h2 class="cards-list__card-heading">Бизнес-секреты 3.0: Владимир Мельников, владелец Глории Джинс</h2>
+                                    <div class="cards-list__card-more">
+                                        <div class="cards-list__card-video-link">
+                                            <a href="#"><span class="cards-list__card-video-icon"></span>Смотреть видео</a>
+                                        </div>
+                                        <a href="#" class="button button_small button_link-white-2x">
+                                            <span class="button__text">Читать историю</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-slider__slide col">
+                    <div class="cards-list cards-list_lg row">
+                        <div class="cards-list__card cards-list__card_tall cards-list__card_video col">
+                            <div class="cards-list__card-content">
+                                <div class="cards-list__card-bg">
+                                    <img src="/pages/b2b/img/video-slider-slide-02.jpg" alt="Всемирный банк ухудшил прогноз цен на нефть на 2017-2018 годы">
+                                </div>
+                                <div class="cards-list__card-type">
+                                    <div class="label label_primary-invert">Видео</div>
+                                </div>
+                                <div class="cards-list__card-content-bottom">
+                                    <h2 class="cards-list__card-heading">Умный, но денег нет! Разбор с Михаилом Дашкиевым и Петром Осиповым</h2>
+                                    <div class="cards-list__card-more">
+                                        <div class="cards-list__card-video-link">
+                                            <a href="#"><span class="cards-list__card-video-icon"></span>Смотреть видео</a>
+                                        </div>
+                                        <a href="#" class="button button_small button_link-white-2x">
+                                            <span class="button__text">Читать историю</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container container_main">
+            <div class="row">
+                <div class="col-lg-1 col-lg_no-right-gutter">
+                    <a href="#" class="logo logo_md logo_footer" title="GoodTrade.kz"></a>
+                </div>
+                <div class="col-lg-3">
+                    <nav class="multi-col-menu">
+                        <div class="row">
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">О компании</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Блог</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">СМИ о нас</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Тарифы</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Контакты</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Реклама на сайте</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Справка и FAQ</a></div>
+                            <div class="col-4 col_no-right-gutter col-lg col-lg_third multi-col-menu__item"><a href="#">Администрация</a></div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer__copyright">
+                        <p>© GoodTrade.kz, 2017<br>
+                            Использование материалов GoodTrade.kz разрешено только с согласия правообладателей.<br>
+                            Сайт имеет возрастное ограничение 18+</p>
+                        <p>ТОО «goodtrade.kz».<br>
+                            Юридический адрес: 110000, г. Костанай, ул. Карбышева, 16.  БИН 160340028349.<br>
+                            Счёт в АО «КАЗКОМЕРЦ Банк»,  ИИК KZ04926160119W579000, БИК KZKOKZKX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div class="overlay" data-type="modal" data-modal="overlay-sign-up">
+    <div class="container container_main">
+        <div class="row">
+            <div class="col-lg-4 m-auto">
+                <div class="overlay__modal-container">
+                    <div class="overlay__modal-logo-container">
+                        <div class="logo logo_md-white"></div>
+                    </div>
+                    <div class="modal modal_into-overlay">
+                        <h2 class="modal__heading">Авторизация</h2>
+                        <div class="row">
+                            <div class="col-lg-4 m-auto">
+                                <form action="">
+                                    <div class="form-control">
+                                        <div class="form-control__top-text">
+                                            <div class="form-control__label">Ваш email</div>
+                                        </div>
+                                        <div class="input">
+                                            <input type="text" placeholder="username@gmail.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <div class="form-control__top-text">
+                                            <div class="form-control__label">Пароль</div>
+                                        </div>
+                                        <div class="input">
+                                            <input type="password" placeholder="Пароль">
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <button class="button button_full button_primary">
+                                            <span class="button__text">Войти</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" data-type="modal" data-modal="overlay-register">
+    <div class="container container_main">
+        <div class="row">
+            <div class="col-lg-4 m-auto">
+                <div class="overlay__modal-container">
+                    <div class="overlay__modal-logo-container">
+                        <div class="logo logo_md-white"></div>
+                    </div>
+                    <div class="modal modal_into-overlay">
+                        <h2 class="modal__heading">Зарегистрируйтесь и получите бесплатный доступ на 30 дней</h2>
+                        <div class="row">
+                            <div class="col-lg-4 m-auto">
+                                <form action="">
+                                    <div class="form-control">
+                                        <div class="form-control__top-text">
+                                            <div class="form-control__label">Ваш основной телефон</div>
+                                        </div>
+                                        <div class="input">
+                                            <input type="text" placeholder="+7 777 987 65 43">
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <div class="form-control__top-text">
+                                            <div class="form-control__label">Ваш основной email</div>
+                                        </div>
+                                        <div class="input">
+                                            <input type="text" placeholder="username@gmail.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <div class="form-control__top-text">
+                                            <div class="form-control__label">Ваш БИН</div>
+                                        </div>
+                                        <div class="input">
+                                            <input type="text" placeholder="123456789012">
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <button class="button button_full button_primary">
+                                            <span class="button__text">Зарегистрироваться</span>
+                                        </button>
+                                    </div>
+                                    <div class="form-control">
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="checkbox__input" checked>
+                                            <label class="checkbox__label checkbox__label_small"><span class="checkbox__check-mark"></span>Я даю свое согласие на обработку персональных данных и соглашаюсь с политикой конфиденциальности</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-control">
+                                        <div class="checkbox">
+                                            <input type="checkbox" class="checkbox__input" checked>
+                                            <label class="checkbox__label checkbox__label_small"><span class="checkbox__check-mark"></span>Я хочу получать email-письма о мероприятиях и/или иных услугах</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/for-static-pages/pages/config.js"></script>
+<script src="../../js/for-static-pages/libs/require.js" data-main="/js/for-static-pages/b2b/pages/main-page.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+.notifyjs-corner{
+}
+
+.notifyjs-trade-base {
+	font-weight: normal;
+  @extend %border-box;
+	padding: 10px 15px;
+  box-shadow: 0 5px 10px 0 rgba($black-color, $q-light);
+	background-color: white;
+  border: 1px solid rgba($black-color, $q-light);
+  @include border-radius($border-radius);
+  width: 250px;
+  font: 14px/21px Neris-Light, sans-serif;
+
+}
+.notifyjs-trade-error {
+  border-top: 2px solid #da231a;
+}
+.notifyjs-trade-success {
+  border-top: 2px solid #2abf1d;
+}
+.notifyjs-trade-info {
+  border-top: 2px solid $base-color;
+}
+.notifyjs-trade-warn {
+  border-top: 2px solid #ffbd38;
+}

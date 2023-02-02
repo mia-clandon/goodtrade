@@ -1,0 +1,89 @@
+// Левая навигационная панель
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  width: 0;
+  height: 100%;
+  background-color: $primary-color;
+  overflow: hidden;
+  z-index: 10;
+  transition: width .8s;
+}
+
+.nav-left_active {
+  width: $basic-value * 60 + $basic-value * 10 * 2;
+}
+
+.nav-left__top-part, .nav-left__bottom-part {
+  width: $basic-value * 80;
+  padding: 0 $basic-value*10;
+}
+
+.nav-left__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: $basic-value * 14;
+  padding: $basic-value*3 0;
+  height: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // Высота букв + высота внутренних отступов + расстояние от букв до отступов
+  font-size: 0;
+  line-height: 0;
+}
+
+// Контейнер для кнопки закрытия панели
+.nav-left__close-button-container {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: $basic-value * 7;
+}
+
+// Кнопка закрытия панели
+.nav-left__close-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  @include icons-sprite(sm-delete-white);
+
+  &:hover, &:focus, &:active {
+    outline: none;
+  }
+}
+
+// Меню в навигационной панели
+.nav-left__menu {
+  color: $primary-text-color-dark-back;
+
+  a {
+    color: $primary-link-color-blue-back;
+
+    &:hover, &:focus, &:active {
+      color: $primary-link-color-blue-back-hover;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Блок с авторскими правами в панели
+.nav-left__copyright {
+  padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-p);
+  font-size: 0;
+  line-height: 0;
+
+  p {
+    padding: 0;
+    font: #{$font-size-small}/#{$line-height-small} $font-light;
+    color: $secondary-text-color-dark-back;
+  }
+}
+
+.nav-left__copyright-first-line {
+  display: inline-block;
+  margin-right: $basic-value * 4;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-dark-back;
+}

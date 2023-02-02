@@ -1,0 +1,206 @@
+.dropdown {
+  position: relative;
+}
+.dropdown.is-open {
+  .dropdown-modal {
+    visibility: visible;
+  }
+}
+.dropdown-toggle {
+  cursor: pointer;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  margin-top: 10px;
+  @include border-radius($border-radius);
+  border: 1px solid $border-color-black-light;
+  background: $white-color;
+  margin-left: -180px;
+  z-index: 10;
+  padding: 15px 20px;
+  box-shadow: 0 5px 10px 0 rgba($black-color, $q-light);
+  line-height: initial;
+  text-align: left;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url("#{$url-img}/sprite.png") 0 -30px;
+    width: 14px;
+    height: 6px;
+    top: -6px;
+    left: 50%;
+    margin-left: -7px;
+  }
+}
+
+/* Выпадающее окно уведомлений */
+.dropdown-menu-notify {
+  width: 380px;
+
+  .dropdown-menu-body {
+    height: 295px;
+  }
+}
+
+/* Выпадающее окно уведомлений, когда их нет */
+.dropdown-menu-notify_empty {
+  .dropdown-menu-body {
+    padding-top: 65px;
+  }
+
+  .dropdown-menu-notify__image {
+    width: 89px;
+    height: 116px;
+    margin: 0 auto;
+    background: transparent url(../../img/notify-dropdown-image.png) 0 0 no-repeat;
+    opacity: 0.1;
+  }
+  .dropdown-menu-notify__text {
+    text-align: center;
+    font: #{$font-size-p}/#{$line-height-p} $font-light;
+    color: $secondary-text-color-light-back;
+  }
+}
+
+/* Всплыывающее окно сравнений */
+.dropdown-menu-compare {
+  width: 380px;
+}
+
+/* Всплыывающее окно сравнений, когда их нет */
+.dropdown-menu-compare_empty {
+  .dropdown-menu-body {
+    min-height: 295px;
+    padding-top: 50px;
+  }
+
+  .dropdown-menu-compare__image {
+    width: 125px;
+    height: 101px;
+    margin: 0 auto;
+    background: transparent url(../../img/compare-dropdown-image.png) 0 0 no-repeat;
+    opacity: 0.1;
+  }
+  .dropdown-menu-compare__text {
+    text-align: center;
+    font: #{$font-size-p}/#{$line-height-p} $font-light;
+    color: $secondary-text-color-light-back;
+  }
+}
+
+.dropdown-menu-profile {
+  margin-left: -20px;
+  width: 180px;
+  padding: 20px;
+
+  &:before {
+    left: 40px !important;
+  }
+}
+.dropdown-menu-share {
+  width: 180px;
+  margin-left: -34px;
+  &:before {
+    left: 41px;
+  }
+}
+.dropdown-menu-head {
+  position: relative;
+  font: 11px/16px 'Neris-Black', sans-serif;
+}
+.dropdown-menu-body {
+  position: relative;
+}
+.dropdown-menu-body-faded {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 2;
+    pointer-events: none;
+    @include border-radius(0 0 3px 3px);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  }
+}
+.dropdown-menu-body.has-scrollbar {
+  margin: 15px -20px -15px;
+  overflow: hidden;
+
+  >.notify-content {
+
+    &::-webkit-scrollbar {
+      display: block;
+    }
+  }
+}
+.dropdown-menu-content {
+  position: absolute;
+  overflow-x: hidden;
+  top: 0;
+  bottom: 0;
+  padding-top: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 15px;
+  outline: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.dropdown-menu-title {
+  color: rgba($black-color, $q-middle);
+  display: inline-block;
+  font: 11px/16px Neris-Black, sans-serif;
+  text-transform: uppercase;
+}
+.dropdown-menu-more {
+  color: rgba($black-color, $q-middle);
+  float: right;
+  font: 11px/16px $font-light;
+}
+.dropdown-menu-scrollbar {
+  position: absolute;
+  width: 6px;
+  right: 6px;
+  top: 0;
+  bottom: 15px;
+  z-index: 3;
+}
+.dropdown-menu-scrollbar-slider {
+  background: #d9d9d9;
+  position: relative;
+  @include border-radius(3px);
+}
+
+/*
+*выпадушка профиля
+*/
+.profile-dropdown {
+  display: inline-block;
+}
+.profile-dropdown-avatar {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  @include border-radius(20px);
+  border: 1px solid #d0d0d0;
+}
+.profile-dropdown-btn {
+  display: inline-block;
+  font: 14px/21px Neris-Light, sans-serif;
+  color: #b9b9b9;
+}
+
+.dropdown-menu_search-filters {
+  width: 225px;
+  margin-left: -75px;
+}

@@ -1,0 +1,67 @@
+.range {
+  position: relative;
+}
+
+// Виджет диапазона типа "value", с одним текстовым полем и одним кругом
+// Виджет диапазона типа "balance", с двумя текстовыми полями и одним кругом
+.range_value, .range_balance {
+  .range__track-container {
+    padding-left: $basic-value * 2 + $basic-value * 5 / 2;
+    padding-right: $basic-value * 2 + $basic-value * 5 / 2;
+  }
+
+  .range__button {
+    &:first-child, &:first-child:last-child {
+      margin-left: -$basic-value * 5 / 2;
+      margin-right: 0;
+    }
+  }
+}
+
+.range__track-container {
+  position: absolute;
+  left: 0;
+  top: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2 - 1; // Высота текстового поля
+  width: 100%;
+  height: 1px;
+  padding-left: $basic-value * 2 + $basic-value * 5;
+  padding-right: $basic-value * 2 + $basic-value * 5;
+  @include user-select(none);
+}
+
+.range__track {
+  position: relative;
+  z-index: 1;
+}
+
+.range__button {
+  position: absolute;
+  top: -(floor($basic-value * 5 / 2));
+  left: 0;
+  margin-left: -$basic-value * 5;
+  margin-right: 0;
+  width: $basic-value * 5;
+  height: $basic-value * 5;
+  background-color: $primary-color;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:last-child {
+    left: auto;
+    right: 0;
+    margin-left: 0;
+    margin-right: -$basic-value * 5;
+  }
+}
+
+.range__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: $primary-color;
+}
+
+.range__checkbox {
+  margin-top: $basic-value * 4;
+}

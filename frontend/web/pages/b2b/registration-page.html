@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="registration-page">
+<head>
+    <meta charset="UTF-8">
+    <title>Заполните данные о вашей компании</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/b2b.css">
+    <script type="text/javascript" src="/js/for-static-pages/libs/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/libs/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="/js/for-static-pages/b2b/common.js"></script>
+</head>
+<body>
+
+<header class="header-registration">
+    <div class="bar-top">
+        <div class="bar-top__left-part">
+            <div class="bar-top__logo-container">
+                <a href="#" class="logo logo_sm" title="B2B"></a>
+            </div>
+            <div class="bar-top__link-container">
+                <a href="#" class="button button_small button_link">
+                    <span class="button__icon button__icon_arrow-left"></span>
+                    <span class="button__text">Вернуться назад</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container container_registration-page">
+    <div class="registration-page__top-part">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="steps">
+                    <div class="steps__step">
+                        <div class="steps__step-circle steps__step-circle_done"></div>
+                        <span class="steps__step-title">Пользователь</span>
+                    </div>
+                    <div class="steps__arrow"></div>
+                    <div class="steps__step">
+                        <div class="steps__step-circle steps__step-circle_active">
+                            <span class="steps__step-number">2</span>
+                        </div>
+                        <span class="steps__step-title">Компания</span>
+                    </div>
+                    <div class="steps__arrow"></div>
+                    <div class="steps__step">
+                        <div class="steps__step-circle">
+                            <span class="steps__step-number">3</span>
+                        </div>
+                        <span class="steps__step-title">Товары</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="registration-page__middle-part">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-2">
+                <form action="">
+                    <h2 class="form-heading">Информация о компании</h2>
+                    <fieldset>
+                        <legend id="main-info">Основная информация</legend>
+                        <!-- Артём, обрати внимание на то, что этот контрол и нижние два дублируют друг друга.
+                             Только первый для широких экранов, а два других для мобильной вёрстки. -->
+                        <div class="form-control d-none d-lg-block">
+                            <div class="form-control__top-text-group">
+                                <div class="form-control__top-text">
+                                    <div class="form-control__label">Название компании</div>
+                                </div>
+                                <div class="form-control__top-text">
+                                    <div class="form-control__label">БИН</div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input">
+                                    <input type="text" placeholder="Введите название компании">
+                                </div>
+                                <div class="input">
+                                    <input type="text" placeholder="Введите БИН компании">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control d-lg-none">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Название компании</div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Введите название компании">
+                            </div>
+                        </div>
+                        <div class="form-control d-lg-none">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">БИН</div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Введите БИН компании">
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Сфера деятельности</div>
+                                <div class="form-control__tip d-none d-lg-block">Максимум 3 сферы деятельности</div>
+                                <div class="form-control__tip d-lg-none">Максимум 3</div>
+                            </div>
+                            <div class="ui-category activity-control" data-is-product-category-state="0" data-firm-activities-ids="[]" data-selected-values="[]">
+                                <div class="ui-tags">
+                                    <div class="ui-tag-template">
+                                        <span class="ui-tags-item" style="display: none">
+                                            <i class="icon"></i>
+                                            <span class="ui-tags-item-label"></span>
+                                            <input type="hidden" name="company_activity[]">
+                                            <a role="button" href="#" class="ui-tags-item-close"></a>
+                                        </span>
+                                    </div>
+                                    <div class="tags-container">
+                                        <a role="button" href="#" class="ui-category-button">
+                                            <span class="ui-category-button-hidden">Выберите категорию</span>
+                                            <span class="ui-category-button-text">Добавить категорию</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ui-product-menu-wrap" style="display: none;">
+                                    <!--<a role="button" href="#" class="ui-product-menu-back">Назад</a>-->
+                                    <ul class="ui-product-menu">
+                                        <li><a role="button" href="#" class="ui-product-menu-back all">Все категории</a></li>
+                                    </ul>
+                                </div>
+                                <div style="" class="ui-category-menu">
+                                    <ul class="ui-category-menu-list activities">
+                                        <li data-value="1" data-icon="agriculture" class="ui-category-menu-list-item agriculture">Сельское хозяйство</li>
+                                        <li data-value="19" data-icon="forest" class="ui-category-menu-list-item forest">Лесозаготовка</li>
+                                        <li data-value="26" data-icon="textile_and_clothing" class="ui-category-menu-list-item textile_and_clothing">Текстиль и одежда</li>
+                                        <li data-value="33" data-icon="minerals_and_chemicals_metallurgy" class="ui-category-menu-list-item minerals_and_chemicals_metallurgy">Добыча и Химия, Металлургия</li>
+                                        <li data-value="40" data-icon="engineering" class="ui-category-menu-list-item engineering">Машиностроение</li>
+                                        <li data-value="41" data-icon="instrumentation" class="ui-category-menu-list-item instrumentation">Приборостроение</li>
+                                        <li data-value="43" data-icon="containers_and_packaging" class="ui-category-menu-list-item containers_and_packaging">Тара и Упаковка</li>
+                                        <li data-value="44" data-icon="medicine" class="ui-category-menu-list-item medicine">Медицина</li>
+                                        <li data-value="51" data-icon="construction" class="ui-category-menu-list-item construction">Строительство</li>
+                                        <li data-value="0" data-icon="food" class="ui-category-menu-list-item food">Пищевая промышленность</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend id="contact-info">Контактная информация</legend>
+                        <!-- Артём, обрати внимание на то, что этот контрол и нижние два дублируют друг друга.
+                             Только первый для широких экранов, а два других для мобильной вёрстки. -->
+                        <div class="form-control d-none d-lg-block">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Регион</div>
+                            </div>
+                            <div class="input-group">
+                                <div class="input input_md">
+                                    <input type="text" placeholder="Казахстан" disabled>
+                                </div>
+                                <div class="input">
+                                    <input type="text" placeholder="Ваш город">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control d-lg-none">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Регион</div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Казахстан" disabled>
+                            </div>
+                        </div>
+                        <div class="form-control d-lg-none">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Регион</div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Регион">
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Юридический адрес</div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Введите юридический адрес компании">
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Телефон</div>
+                            </div>
+                            <ul id="multiply-phone" class="multiply">
+                                <li>
+                                    <div class="input">
+                                        <input type="tel" placeholder="+7 (777) 707 00 77">
+                                        <div class="label label_warning-invert">Основной</div>
+                                    </div>
+                                    <a href="#" role="button" data-action="add"></a>
+                                </li>
+                            </ul>
+                            <div class="form-control__bottom-text"></div>
+                        </div>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Электронный адрес</div>
+                            </div>
+                            <ul id="multiply-email" class="multiply">
+                                <li>
+                                    <div class="input">
+                                        <input type="email" placeholder="example@example.com">
+                                        <div class="label label_warning-invert">Основной</div>
+                                    </div>
+                                    <a href="#" role="button" data-action="add"></a>
+                                </li>
+                            </ul>
+                            <div class="form-control__bottom-text"></div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend id="additional-info">Дополнительная информация</legend>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Логотип</div>
+                            </div>
+                            <div id="image_control_company_image" class="input-photo">
+                                <input type="file" class="input-photo-field" name="company_image">
+                                <div class="input-hidden-wrap"></div>
+                                <div class="input-photo-placeholder">
+                                    <div class="input-photo-text">Перетащите сюда фотографии или<br>
+                                        <a role="button" href="#" data-action="add"> выберите их с вашего компьютера</a>
+                                    </div>
+                                </div>
+                                <div class="input-photo-thumbnails-wrap">
+                                    <div class="input-photo-drop-text">Перетащите сюда фото,<br>которое хотите сделать<br>главным</div>
+                                    <ul class="input-photo-thumbnails input-photo-thumbnails_sortable ui-sortable">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-control__bottom-text"></div>
+                        </div>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Описание компании</div>
+                            </div>
+                            <textarea placeholder="Введите описание компании"></textarea>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend id="add-requisites">Добавить реквизиты</legend>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">Банк</div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Введите банк бенефициара">
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">БИК</div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Введите ваш БИК">
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <div class="form-control__top-text">
+                                <div class="form-control__label">ИИК</div>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Введите ваш ИИК">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-control">
+                                    <div class="form-control__top-text">
+                                        <div class="form-control__label">КБЕ</div>
+                                    </div>
+                                    <div class="input">
+                                        <input type="text" placeholder="Введите КБЕ">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-control">
+                                    <div class="form-control__top-text">
+                                        <div class="form-control__label">КНП</div>
+                                    </div>
+                                    <div class="input">
+                                        <input type="text" placeholder="Введите КНП">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-lg-2 d-none d-lg-block">
+                <div class="list-title">Содержание</div>
+                <ul class="linear-list">
+                    <li><a href="#main-info">Основная информация</a></li>
+                    <li><a href="#contact-info">Контактная информация</a></li>
+                    <li><a href="#additional-info">Дополнительная информация</a></li>
+                    <li><a href="#add-requisites">Добавить реквизиты</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="registration-page__bottom-part">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="registration-page__bottom-panel">
+                    <div class="d-none d-lg-flex">
+                        <button class="button button_small button_link">
+                            <span class="button__icon button__icon_arrow-left"></span>
+                            <span class="button__text">Вернуться назад</span>
+                        </button>
+                    </div>
+                    <button class="button button_primary">
+                        <span class="button__text">Сохранить и перейти к добавлению товаров</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/for-static-pages/pages/config.js"></script>
+<script src="../../js/for-static-pages/libs/require.js" data-main="/js/for-static-pages/b2b/pages/registration-page.js"></script>
+
+</body>
+</html>

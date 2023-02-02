@@ -1,0 +1,898 @@
+.ui-tags {
+  line-height: 38px;
+}
+.ui-tags-editable {
+  cursor: text;
+}
+// Тег (сфера деятельности)
+.ui-tags-item {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+  padding: 7px 0;
+  line-height: 0;
+  // Иконка тега (сферы деятельности)
+  .icon {
+    opacity: $q-middle;
+    margin-top: 4px;
+    margin-right: 7px;
+
+    &.agriculture { &:after { @include category-sprite(icon-category-s-01);}}
+    &.forest { &:after { @include category-sprite(icon-category-s-02);}}
+    &.textile_and_clothing { &:after { @include category-sprite(icon-category-s-03);}}
+    &.minerals_and_chemicals_metallurgy { &:after { @include category-sprite(icon-category-s-04);}}
+    &.engineering { &:after { @include category-sprite(icon-category-s-05);}}
+    &.instrumentation { &:after { @include category-sprite(icon-category-s-06);}}
+    &.construction { &:after { @include category-sprite(icon-category-s-07);}}
+    &.containers_and_packaging { &:after { @include category-sprite(icon-category-s-08);}}
+    &.medicine { &:after { @include category-sprite(icon-category-s-09);}}
+    &.energetics { &:after { @include category-sprite(icon-category-s-10);}}
+    &.food { &:after { @include category-sprite(icon-category-s-11);}}
+  }
+
+  .ui-tags-input {
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 15px;
+
+    .ui-tags-input-field {
+      margin: 0;
+      outline: 0;
+      border: 0;
+      @include border-radius(0);
+      padding: 0;
+      box-shadow: none !important;
+      width: auto;
+      transition: none;
+    }
+  }
+  // Название тега (сферы деятельности)
+  .ui-tags-item-label {
+    vertical-align: middle;
+    margin-left: 0;
+    font: #{$font-size-p}/#{$line-height-p} $font-light;
+  }
+
+  .ui-tags-item-value {
+    display: none;
+  }
+  // Иконка удаления тега (сферы деятельности)
+  .ui-tags-item-close {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+
+    .icon {
+      margin: 0;
+      vertical-align: baseline;
+    }
+  }
+}
+.ui-category {
+  position: relative;
+  border: 1px solid #ccc;
+  @include border-radius(3px);
+  font-size: 0;
+  padding: 0 20px;
+
+  &:after {
+    clear: both;
+    display: table;
+    content: '';
+  }
+
+  .ui-tags {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+.ui-category-overflow {
+  overflow: hidden;
+  height: 38px;
+  white-space: nowrap;
+}
+.ui-category-button {
+  display: inline-block;
+  vertical-align: top;
+  color: $secondary-text-color-light-back;
+  font: $smallFont;
+  line-height: 38px;
+}
+.ui-category-button-hidden {
+  display: none;
+}
+.ui-category-button-changed {
+  .ui-category-button-text {
+    display: none;
+  }
+  .ui-category-button-hidden {
+    display: inline;
+  }
+}
+
+/* Блок со списком сфер деятельности */
+.ui-category-menu {
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  margin-top: 5px;
+  border: 1px solid $border-color-black-light;
+  @include border-radius(3px);
+  background: $white-color;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 8;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -6px;
+    left: 18px;
+    width: 8px;
+    height: 8px;
+    border-left: 1px solid $border-color-black-light;
+    border-top: 1px solid $border-color-black-light;
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+    background-color: $white-color;
+  }
+}
+
+/* Кнопка скрытия и показа полного списка категорий */
+.ui-category-menu-button {
+  float: right;
+  height: 95px;
+  width: 95px;
+  text-align: center;
+  position: relative;
+  padding-top: 50px;
+  cursor: pointer;
+  font: 11px/16px 'Neris-Light', sans-serif;
+  color: $secondary-text-color-light-back;
+
+  &:before {
+    background: url("#{$url-img}/sprite.png") 0 -18px;
+    width: 26px;
+    height: 6px;
+    content: '';
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 40px;
+  }
+}
+/* Текст у кнопки скрытия */
+.ui-category-menu-button-hidden {
+  display: none;
+}
+/* Текст у кнопки показа */
+.ui-category-menu-button-active {
+  &:before {
+    background: url("#{$url-img}/sprite.png") 0 -1329px;
+    width: 28px;
+    height: 28px;
+  }
+  .ui-category-menu-button-text {
+    display: none;
+  }
+  .ui-category-menu-button-hidden {
+    display: inline;
+  }
+}
+
+/* Список сфер деятельности */
+.ui-category-menu-list {
+  //margin-right: 95px;
+  overflow: hidden;
+
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+/* Элемент списка сфер деятельности */
+.ui-category-menu-list-item {
+  height: 95px;
+  width: 95px;
+  text-align: center;
+  position: relative;
+  padding-top: 50px;
+  cursor: pointer;
+  font: 11px/16px 'Neris-Light', sans-serif;
+  color: $secondary-text-color-light-back;
+  float: left;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 40px;
+  }
+
+  &:after {
+    content: '';
+    visibility: hidden;
+    position: absolute;
+    display: block;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 25px;
+    bottom: 10px;
+    opacity: 0;
+    @include icons-sprite(icon-success);
+    transition: all .2s;
+  }
+}
+
+.ui-category-menu-list-item {
+  &.agriculture{ &:before { @include category-sprite(icon-category-lg-01); } }
+  &.forest{ &:before { @include category-sprite(icon-category-lg-02); } }
+  &.textile_and_clothing{ &:before { @include category-sprite(icon-category-lg-03); } }
+  &.minerals_and_chemicals_metallurgy{ &:before { @include category-sprite(icon-category-lg-04); } }
+  &.engineering{ &:before { @include category-sprite(icon-category-lg-05); } }
+  &.instrumentation{ &:before { @include category-sprite(icon-category-lg-06); } }
+  &.construction{ &:before { @include category-sprite(icon-category-lg-07); } }
+  &.containers_and_packaging{ &:before { @include category-sprite(icon-category-lg-08); } }
+  &.medicine{ &:before { @include category-sprite(icon-category-lg-09); } }
+  &.energetics{ &:before { @include category-sprite(icon-category-lg-10); } }
+  &.food{ &:before { @include category-sprite(icon-category-lg-11); } }
+}
+
+.ui-tags-item{
+  &.agriculture{ &:before { @include category-sprite(icon-category-s-01); } }
+  &.forest{ &:before { @include category-sprite(icon-category-s-02); } }
+  &.textile_and_clothing{ &:before { @include category-sprite(icon-category-s-03); } }
+  &.minerals_and_chemicals_metallurgy{ &:before { @include category-sprite(icon-category-s-04); } }
+  &.engineering{ &:before { @include category-sprite(icon-category-s-05); } }
+  &.instrumentation{ &:before { @include category-sprite(icon-category-s-06); } }
+  &.construction{ &:before { @include category-sprite(icon-category-s-07); } }
+  &.containers_and_packaging{ &:before { @include category-sprite(icon-category-s-08); } }
+  &.medicine{ &:before { @include category-sprite(icon-category-s-09); } }
+  &.energetics{ &:before { @include category-sprite(icon-category-s-10); } }
+  &.food{ &:before { @include category-sprite(icon-category-s-11); } }
+}
+
+/* Активный элемент списка сфер деятельности */
+.ui-category-menu-list-item-active {
+  &:after {
+    visibility: visible;
+    opacity: 1;
+    bottom: 15px;
+  }
+}
+.ui-category-menu-list-item-loading {
+  opacity: $q-middle;
+}
+.ui-helper-hidden-accessible {
+  display: none;
+}
+
+/* контрол добавления категории товаров */
+.ui-product {
+  height: 40px;
+  border: 1px solid $border-color-black-light;
+  @include border-radius(3px);
+  position: relative;
+}
+/* кнопка добавления еще одной категории */
+.ui-product-button {
+  font: 11px/16px 'Neris-Light', sans-serif;
+  color: $secondary-text-color-light-back;
+}
+/* Контейнер с категориями товаров */
+.ui-product-menu-wrap {
+  position: absolute;
+  width: 610px;
+  left: -1px;
+  margin-top: 5px;
+  margin-bottom: 70px; // Это на случай, если подкатегорий будет слишком много, то чтобы нижняя плашка сайта не залезала поверх
+  padding: 7px 15px;
+  border: 1px solid $border-color-black-light;
+  @include border-radius(3px);
+  box-shadow: 0 5px 10px 0 rgba($black-color, $q-light);
+  z-index: 8;
+  background-color: $white-color;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -6px;
+    left: 18px;
+    width: 8px;
+    height: 8px;
+    border-left: 1px solid $border-color-black-light;
+    border-top: 1px solid $border-color-black-light;
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+    background-color: $white-color;
+  }
+
+  &:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+/* Список сфер деятельности компании */
+.ui-product-menu {
+  position: relative;
+  width: 130px;
+  text-align: center;
+  padding: 8px 15px 38px 0;
+
+  &:after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background-color: rgba($black-color, $q-light);
+  }
+}
+/* Элемент в списке сфер деятельности компании */
+.ui-product-menu-item {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Превращаем сферу деятельности в кнопку */
+  .ui-product-menu-item-wrap{
+    cursor: pointer;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  /* Иконка сферы деятельности */
+  .ui-product-menu-item-icon {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 0;
+    height: 16px;
+    margin-right: 5px;
+
+    &:after {
+      position: relative;
+      content: '';
+      display: inline-block;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  /* Название сферы деятельности */
+  .ui-product-menu-item-label{
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    text-align: center;
+    color: $secondary-text-color-light-back;
+    font: 11px/16px 'Neris-Light', sans-serif;
+  }
+}
+
+/* Стандартные иконки для сфер деятельности 16*16 */
+.ui-product-menu-item {
+  &.agriculture {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-01);
+    }
+  }
+  &.forest {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-02);
+    }
+  }
+  &.textile_and_clothing {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-03);
+    }
+  }
+  &.minerals_and_chemicals_metallurgy {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-04);
+    }
+  }
+  &.engineering {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-05);
+    }
+  }
+  &.instrumentation {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-06);
+    }
+  }
+  &.construction {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-07);
+    }
+  }
+  &.containers_and_packaging {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-08);
+    }
+  }
+  &.medicine {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-09);
+    }
+  }
+  &.energetics {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-10);
+    }
+  }
+  &.food {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-s-11);
+    }
+  }
+}
+/* Большие иконки для выбранных сфер деятельности */
+.ui-product-menu-item-active {
+  /* стили которые перезадают размеры иконки */
+  .ui-product-menu-item-icon{
+    height: 35px;
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  &.agriculture {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-01);
+    }
+  }
+  &.forest {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-02);
+    }
+  }
+  &.textile_and_clothing {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-03);
+    }
+  }
+  &.minerals_and_chemicals_metallurgy {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-04);
+    }
+  }
+  &.engineering {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-05);
+    }
+  }
+  &.instrumentation {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-06);
+    }
+  }
+  &.construction {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-07);
+    }
+  }
+  &.containers_and_packaging {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-08);
+    }
+  }
+  &.medicine {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-09);
+    }
+  }
+  &.energetics {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-10);
+    }
+  }
+  &.food {
+    .ui-product-menu-item-icon:after {
+      @include category-sprite(icon-category-lg-11);
+    }
+  }
+}
+
+/* Действие назад */
+.ui-product-menu-back {
+  position: absolute;
+  width: 115px;
+  left: 0;
+  bottom: 8px;
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+  z-index: 2;
+}
+/* Активный пункт меню */
+.ui-product-menu-item-active {
+  .ui-product-menu-item-wrap {
+    position: relative;
+
+    /* Треугольная стрелка вправо на разделителе */
+    &:after {
+      content: '';
+      display: block;
+      width: 13px;
+      height: 13px;
+      position: absolute;
+      top: 35%;
+      right: -28px;
+      border-top: 1px solid $border-color-black-light;
+      border-right: 1px solid $border-color-black-light;
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+      background: $white-color;
+      z-index: 1;
+    }
+  }
+
+  /* Отображать подкатегории у активной сферы деятельности */
+  .ui-product-submenu{
+    display: block;
+  }
+}
+/* Стили для подкатегорий товаров */
+.ui-product-submenu{
+  display: none;
+  position: absolute;
+  width: 465px;
+  top: 0;
+  left: 130px;
+  margin: 0 -1px;
+  padding: 8px 15px;
+  text-align: left;
+
+  &:after{
+    content: '';
+    clear: both;
+    height: 0;
+    display: block;
+  }
+
+  /* кнопка назад и скрыть ее по умолчанию */
+  .ui-product-menu-back{
+    display: none;
+    padding-left: 20px;
+  }
+
+  &.second-level-submenu-is-open{
+    /* изменяем ширину подкатегорий */
+    width: 217px;
+    height: 100%;
+
+    &:after{
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      right: 0;
+      top: 0;
+      background-color: rgba($black-color, $q-light);
+    }
+
+    /* Отображать кнопку назад */
+    .ui-product-menu-back{
+      display: block;
+    }
+
+    /* скрываем все подкатегории */
+    .ui-product-submenu-item{
+      display: none;
+    }
+
+    /* оставляем видимой только активную подкатегорию */
+    .submenu-is-open{
+      display: inline-block;
+      position: relative;
+      width: 100%;
+
+      > span {
+        position: relative;
+
+        /* Треугольная стрелка вправо на разделителе */
+        &:after {
+          content: '';
+          display: block;
+          width: 13px;
+          height: 13px;
+          position: absolute;
+          top: 35%;
+          right: -48px;
+          border-top: 1px solid $border-color-black-light;
+          border-right: 1px solid $border-color-black-light;
+          transform: rotate(45deg);
+          transform-origin: 0 0;
+          background: $white-color;
+          z-index: 1;
+        }
+      }
+
+      /* Стили для второго уровня подкатегорий */
+      .ui-product-submenu-submenu{
+        display: inline-block;
+        vertical-align: top;
+        width: 217px;
+
+        position: absolute;
+        left: 217px;
+
+        /* Стили для элемента списка второго уровня подкатегорий */
+        .ui-product-submenu-submenu-item{
+          width: 100%;
+          padding: 0 20px 20px 20px;
+          display: inline-block;
+          vertical-align: top;
+
+          span{
+            font-size: $font-size-p;
+            color: $base-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+/* Элемент списка подкатегорий товара */
+.ui-product-submenu-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 217px;
+  padding: 0 20px 20px 20px;
+
+  span {
+    display: inline-block;
+    font-size: $font-size-p;
+    color: $base-color;
+    cursor: pointer;
+  }
+
+  /* Стили для стрелочки, которая указывает на наличие второго уровня */
+  &.with-submenu {
+    > span {
+      &:after {
+        content: '';
+        display: inline-block;
+        height: 5px;
+        width: 5px;
+        @include rotate(45deg);
+        border-top: 2px solid rgba(black,$q-middle);
+        border-right: 2px solid rgba(black,$q-middle);
+        margin-left: 5px;
+        margin-bottom: 1px;
+      }
+    }
+  }
+
+  /* по умолчанию второй уровень подкатегорий скрыт */
+  .ui-product-submenu-submenu {
+    display: none;
+  }
+}
+.product-category-item {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    @include icons-sprite(icon-success);
+    transition: all .2s;
+  }
+
+  /* Активный элемент списка подкатегорий товара */
+  &.ui-category-menu-list-item-active {
+    &:after {
+      opacity: 1;
+      top: 4px;
+      bottom: 0;
+    }
+  }
+}
+
+/* Красивый чекбокс */
+.ui-checkbox {
+  position: relative;
+  margin: 16px 0;
+  min-height: 14px;
+  min-width: 14px;
+  cursor: pointer;
+  input[type="checkbox"] {
+    display: none;
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 1px;
+    @include icons-sprite(checkbox-not-checked);
+  }
+}
+.ui-checkbox_settings {
+  display: inline-block;
+  width: 33.3%;
+  margin-top: 6px;
+}
+.ui-checkbox-label {
+  cursor: pointer;
+  display: block;
+  font: 11px Neris-Light, sans-serif;
+  line-height: 16px;
+  margin-left: 25px;
+  color: $secondary-text-color-light-back;
+}
+.ui-checkbox-label_settings {
+  color: $primary-text-color-light-back;
+  margin-left: 20px;
+  line-height: 14px;
+}
+.ui-checkbox.is-required {
+  .ui-checkbox-label {
+    color: #da231a;
+  }
+  &:before {
+    margin: -4px 0 0 -4px;
+    @include icons-sprite(checkbox-is-required);
+  }
+}
+.ui-checkbox.is-required.ui-checkbox-checked {
+  &:before {
+    @include icons-sprite(checkbox-checked);
+    margin: 0;
+  }
+  .ui-checkbox-label {
+    color: $secondary-text-color-light-back;
+  }
+}
+.ui-checkbox-checked {
+  &:before {
+    @include icons-sprite(checkbox-checked);
+  }
+}
+.ui-checkbox-disabled.ui-checkbox-checked {
+  &:before {
+    @include icons-sprite(checkbox-checked-disabled);
+  }
+}
+.ui-checkbox-disabled {
+  &:before {
+    @include icons-sprite(checkbox-not-checked);
+  }
+}
+
+/* Выпадающий календарь */
+.ui-datepicker {
+  display: none;
+  padding: 20px;
+  margin-top: 9px;
+  @include border-radius($border-radius);
+  border: 1px solid $border-color-black-light;
+  background: white;
+  font-size: 0;
+  
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: url("#{$url-img}sprite.png") 0 -24px;
+    width: 14px;
+    height: 6px;
+    top: -6px;
+    left: 15px;
+  }
+  
+  span {
+    font: $smallFont;
+    color: rgba($black-color, $q-light);
+  }
+  
+  a {
+    font: $smallFont;
+    color: $secondary-text-color-light-back;
+  }
+}
+
+.ui-datepicker-header {
+  position: relative;
+  
+  .ui-datepicker-prev {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -17px;
+    span {
+      font-size: $font-size-h2;
+      line-height: $line-height-h2;
+    }
+  }
+}
+  .ui-datepicker-next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -17px;
+    span {
+      font-size: $font-size-h2;
+      line-height: $line-height-h2;
+    }
+  }
+
+.ui-datepicker-title {
+  .ui-datepicker-month {
+    font-size: $font-size-h2;
+    line-height: $line-height-h2;
+    text-transform: uppercase;
+    color: $primary-text-color-light-back;
+  }
+  .ui-datepicker-year {
+    margin-left: 10px;
+    color: $secondary-text-color-light-back;
+  }
+}
+
+.ui-datepicker-calendar {
+  
+  thead {
+    border-bottom: 1px solid rgba($black-color, 0.1);
+  }
+  
+  th {
+    padding: 10px 12.5px;
+    text-align: center;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  
+  td {
+    text-align: center;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+    
+    span, a {
+      display: inline-block;
+      padding: 12.5px;
+    }
+  }
+  
+  tr {
+    &:last-child {
+      td {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

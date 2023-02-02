@@ -1,0 +1,15 @@
+// Прочие блоки и элементы
+.top-rated {
+  display: flex;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-light-back;
+  @include user-select(none);
+  white-space: nowrap;
+
+  &:before {
+    content: "";
+    display: block;
+    margin-right: $basic-value * 3;
+    @include icons-sprite(top-seller);
+  }
+}

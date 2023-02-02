@@ -1,0 +1,390 @@
+// Информационный слайдер
+.info-slider {
+  position: relative;
+  height: $basic-value * 140;
+  margin-bottom: $basic-value * 17 - rem-to-px($indent-difference-h2);
+  box-shadow: 0 10px 30px 0 rgba($black-color, .3);
+  font-size: 0;
+  line-height: 0;
+  background-color: $black-color;
+
+  @include user-select(none);
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider {
+    height: $basic-value * 105;
+    margin-left: -$basic-value * 15;
+    margin-right: -$basic-value * 15;
+    overflow: hidden;
+
+    .slick-list {
+      overflow: visible;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .info-slider {
+    width: 768px;
+    margin-left: -($basic-value * 10);
+  }
+}
+
+// Контейнер для слайдов
+.info-slider__slides-container {
+  height: 100%;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slides-container {
+    padding: 0 $basic-value*10;
+  }
+}
+
+// Слайд
+.info-slider__slide {
+  position: relative;
+  height: 100%;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slide {
+    display: flex !important;
+    flex-direction: column;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .info-slider__slide {
+    .info-slider__panel {
+      display: none;
+    }
+  }
+}
+
+// Ниже следующие манипуляции с классами и селекторами нужны для плавного изменения размера текущего слайда
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slide.slick-current,
+  .info-slider__slide.slick-shrink {
+    .info-slider__slide-image {
+      margin: 0 -30px;
+    }
+
+    & + .info-slider__slide {
+      .info-slider__slide-image {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .info-slider__slide.slick-shrink:first-child {
+    .info-slider__panel {
+      width: auto;
+      margin-left: -30px;
+      padding-left: 45px;
+    }
+  }
+}
+
+// Контейнер с изображением слайда
+.info-slider__slide-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  overflow: hidden;
+  transition: all .5s linear;
+  background-color: $black-color;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    opacity: $q-dark;
+  }
+
+  img {
+    flex: 0 0 auto;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slide-image {
+    &:after {
+      background: linear-gradient(to right, black 0%, black 50%, transparent 100%);
+    }
+  }
+}
+
+// Контейнер содержимого слайда
+.info-slider__slide-content {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-left: $basic-value * 10;
+  padding-right: $basic-value * 10;
+  padding-top: $basic-value * 6;
+  // padding-top и padding-bottom у .info-slider__panel-item + height - margin у .info-slider__panel-item-number
+  padding-bottom: ($basic-value * 7) * 2 + ($basic-value * 12) - 2 + $basic-value * 10 - rem-to-px($indent-difference-p);
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slide-content {
+    flex: 1 0 0;
+    height: auto;
+    padding-left: $basic-value * 5;
+    padding-right: $basic-value * 5;
+    padding-top: $basic-value * 4;
+    padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-p);
+  }
+}
+
+// Контейнер для метки и примечания к слайду
+.info-slider__slide-note-container {
+  flex: 1 0 auto;
+  padding-bottom: $basic-value * 9 - rem-to-px($indent-difference-h1);
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slide-note-container {
+    padding-bottom: $basic-value * 4 - rem-to-px($indent-difference-p);
+  }
+}
+
+// Небольшое примечание к слайду
+.info-slider__slide-note {
+  display: inline-block;
+  padding-left: $basic-value * 5;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-dark-back;
+  font-style: italic;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slide-note {
+    span {
+      display: none;
+    }
+  }
+}
+
+// Заголовок слайда
+.info-slider__slide-heading {
+  max-height: $line-height-h1 * 4;
+  margin-bottom: $basic-value * 12 - rem-to-px($indent-difference-h1);
+  font: #{$font-size-h1}/#{$line-height-h1} $font-bold;
+  color: $accidental-text-color-dark-back;
+  overflow: hidden;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slide-heading {
+    max-height: $line-height-p * 5;
+    margin-bottom: $basic-value * 6 - rem-to-px($indent-difference-p);
+    font: #{$font-size-p}/#{$line-height-p} $font-bold;
+  }
+}
+
+// Информационный блок слайда
+.info-slider__slide-info {
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  color: $secondary-text-color-dark-back;
+}
+
+// Дата создания
+.info-slider__slide-info-date {
+  display: inline-block;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+}
+
+// Количество просмотров
+.info-slider__slide-info-views {
+  display: inline-block;
+  margin-left: $basic-value * 6;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    margin-right: $basic-value * 3;
+    @include icons-sprite(sm-view-white);
+    opacity: $q-dark;
+  }
+}
+
+// Количество комментариев
+.info-slider__slide-info-comments {
+  display: inline-block;
+  margin-left: $basic-value * 6;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    margin-bottom: -2px;
+    margin-right: $basic-value * 3;
+    @include icons-sprite(sm-comment-white);
+    opacity: $q-dark;
+  }
+}
+
+// Блок с ссылками на открытие
+.info-slider__slide-more {
+  position: relative;
+  padding-top: $basic-value * 10 - rem-to-px($indent-difference-p) - rem-to-px($indent-difference-small);
+  font-size: 0;
+  line-height: 0;
+}
+
+.info-slider__slide-more-link {
+  display: inline-block;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+}
+
+// Управляющая панель
+.info-slider__panel {
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-left: $basic-value * 10;
+  background-color: rgba($black-color, $q-middle);
+  z-index: 1;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__slides-container + .info-slider__panel {
+    display: none;
+  }
+
+  .info-slider__panel {
+    position: relative;
+    padding: 0 $basic-value*5;
+    background-color: $white-color;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($black-color, $q-middle);
+    }
+  }
+}
+
+// Элемент управляющей панели
+.info-slider__panel-item {
+  flex: 0 1 25%;
+  position: relative;
+  display: flex;
+  padding-top: $basic-value * 7;
+  padding-right: $basic-value * 5;
+  padding-bottom: $basic-value * 7;
+  align-items: center;
+  cursor: pointer;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .info-slider__panel-item {
+    flex: 0 0 100%;
+    padding-right: 0;
+  }
+}
+
+.info-slider__panel-item_active {
+  @keyframes left-spin {
+    to { transform: rotate(180deg); }
+  }
+
+  @keyframes right-spin {
+    to { transform: rotate(180deg); }
+  }
+
+  .info-slider__panel-item-circle_left {
+    animation: left-spin 0s linear 2s 1 forwards;
+  }
+
+  .info-slider__panel-item-circle_right {
+    animation: right-spin 0s linear 1 forwards;
+  }
+}
+
+// Номер элемента на панели
+.info-slider__panel-item-number {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  margin-right: $basic-value * 5;
+  width: $basic-value * 12;
+  height: $basic-value * 12;
+  font: #{$font-size-p}/#{$line-height-p-nowrap} $font-light;
+  color: $primary-text-color-dark-back;
+  box-shadow: inset 0 0 0 1px rgba($white-color, $q-middle);
+  border-radius: 50%;
+}
+
+.info-slider__panel-item-circle-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $basic-value * 12;
+  height: $basic-value * 12;
+}
+
+.info-slider__panel-item-circle-wrap_left {
+  clip: rect(0, $basic-value * 12 / 2, $basic-value * 12, 0);
+}
+
+.info-slider__panel-item-circle-wrap_right {
+  clip: rect(0, $basic-value * 12, $basic-value * 12, $basic-value * 12 / 2);
+}
+
+.info-slider__panel-item-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $basic-value * 12;
+  height: $basic-value * 12;
+  border-radius: 50%;
+  border: 1px solid $primary-color;
+}
+
+.info-slider__panel-item-circle_left {
+  clip: rect(0, $basic-value * 12, $basic-value * 12, $basic-value * 12 / 2);
+}
+
+.info-slider__panel-item-circle_right {
+  clip: rect(0, $basic-value * 12 / 2, $basic-value * 12, 0);
+}
+
+// Заголовок элемента на панели
+.info-slider__panel-item-title {
+  height: $line-height-small * 2;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-dark-back;
+  overflow: hidden;
+}

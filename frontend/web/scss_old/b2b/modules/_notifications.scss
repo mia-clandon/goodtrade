@@ -1,0 +1,74 @@
+// Уведомления
+.notification {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+// Уведомление смещено вниз
+.notification_shifted-down {
+  padding-top: $basic-value * 9 + rem-to-px($indent-difference-small) + rem-to-px($indent-difference-p);
+  padding-bottom: $basic-value * 19 - rem-to-px($indent-difference-p);
+}
+
+// Изображение, когда блок уведомления пуст
+.notification__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: "";
+    display: block;
+  }
+}
+
+.notification__image_favorite {
+  &:before {
+    width: 120px;
+    height: 114px;
+    background: transparent url("#{$url-img}favorite-star.png") 0 0 no-repeat;
+    opacity: $q-x-light;
+  }
+}
+
+.notification__image_comparison {
+  &:before {
+    width: 125px;
+    height: 101px;
+    background: transparent url("#{$url-img}compare-dropdown-image.png") 0 0 no-repeat;
+    opacity: $q-x-light;
+  }
+}
+
+.notification__image_deals {
+  &:before {
+    width: 114px;
+    height: 101px;
+    background: transparent url("#{$url-img}lg-briefcase.png") 0 0 no-repeat;
+    opacity: $q-x-light;
+  }
+}
+
+.notification__image_notices {
+  &:before {
+    width: 89px;
+    height: 116px;
+    background: transparent url("#{$url-img}notify-dropdown-image.png") 0 0 no-repeat;
+    opacity: $q-x-light;
+  }
+}
+
+// Описание, когда блок уведомления пуст
+.notification__description {
+  padding-top: $basic-value * 7 - rem-to-px($indent-difference-p);
+  padding-bottom: 0;
+  text-align: center;
+  color: $secondary-text-color-light-back;
+}
+
+// Ссылка, когда блок уведомления пуст
+.notification__link {
+  padding-top: $basic-value * 11 - rem-to-px($indent-difference-p) * 2;
+}

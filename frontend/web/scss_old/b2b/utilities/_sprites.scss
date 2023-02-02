@@ -1,0 +1,47 @@
+@import "compass/utilities/sprites";
+
+// Категории
+@import "category/*.png";
+$category-sprite-dimensions: true;
+$category-sprite-layout: smart;
+
+// Интерфейс
+@import "icons/*.png";
+$icons-sprite-dimensions: true;
+$icons-sprite-layout: smart;
+
+//A SCSS mixin for generating a sprite declaration block that will work with media queries.
+// http://compass-style.org/reference/compass/helpers/sprites/
+@mixin get-sprite($map, $sprite, $offset-x: 0, $offset-y: 0, $repeat: no-repeat, $height: true, $width: true) {
+  //http://compass-style.org/reference/compass/helpers/sprites/#sprite-file
+  $sprite-image: sprite-file($map, $sprite);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-url
+  $sprite-map: sprite-url($map);
+
+  // http://compass-style.org/reference/compass/helpers/sprites/#sprite-position
+  $sprite-position: sprite-position($map, $sprite, $offset-x, $offset-y);
+
+  // Returns background
+  background: $sprite-map $sprite-position $repeat;
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $height == true {
+    // Gets the height of the sprite-image
+    $sprite-height: image-height($sprite-image);
+
+    // Returns the height
+    height: $sprite-height;
+  }
+
+  // http://compass-style.org/reference/compass/helpers/image-dimensions/
+  // Checks to see if the user wants height returned
+  @if $width == true {
+    // Gets the height of the sprite-image
+    $sprite-width: image-width($sprite-image);
+
+    // Returns the width
+    width: $sprite-width;
+  }
+}

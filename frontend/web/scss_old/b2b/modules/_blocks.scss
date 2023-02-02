@@ -1,0 +1,112 @@
+// Блоки, расположенные в основном контейнере сайта
+.block {
+  padding-bottom: $basic-value * 20;
+}
+
+.block_no-padding {
+  padding-bottom: 0;
+}
+
+.block__title {
+  display: flex;
+  padding-bottom: round($basic-value * 12 - rem-to-px($indent-difference-h2));
+  font-size: 0;
+  line-height: 0;
+}
+
+.block__title-left {
+  flex: 1 0 auto;
+}
+
+.block__title-right {
+  flex: 1 0 auto;
+  text-align: right;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .block__title-right {
+    display: none;
+  }
+}
+
+.block__title-heading {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  color: $primary-text-color-light-back;
+
+  & + .block__title-link {
+    margin-left: $basic-value * 6;
+  }
+}
+
+.block__title-link {
+  display: inline-block;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+}
+
+.block__title-text {
+  display: inline-block;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $secondary-text-color-light-back;
+
+  & + .button {
+    margin-left: $basic-value * 5;
+  }
+}
+
+.block__content {
+  p:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.block__more-link-inline {
+  margin-left: $basic-value * 5;
+}
+
+.block__more-link-block {
+  display: none;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .block__more-link-inline {
+    display: none;
+  }
+  .block__more-link-block {
+    display: block;
+  }
+}
+
+// Небольшой блок
+.small-block {
+  padding-bottom: $basic-value * 10;
+}
+
+// Модификатор небольшого блока с обводкой.
+.small-block_bordered {
+  padding-top: $basic-value * 6 - rem-to-px($indent-difference-small);
+  padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-small);
+  padding-left: $basic-value * 5;
+  padding-right: $basic-value * 5;
+  margin-top: $basic-value * 6;
+  margin-bottom: $basic-value * 6;
+  margin-left: -$basic-value * 5;
+  margin-right: -$basic-value * 5;
+  box-shadow: inset 0 0 0 1px $border-color-black-light;
+  border-radius: $basic-value;
+}
+
+.small-block_normal-padding {
+  padding-bottom: $basic-value * 20;
+}
+
+.small-block__title {
+  padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-small);
+  font: #{$font-size-small}/#{$line-height-small} $font-bold;
+  color: $secondary-text-color-light-back;
+  text-transform: uppercase;
+}
+
+.small-block__content {}

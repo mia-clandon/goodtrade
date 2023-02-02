@@ -1,0 +1,47 @@
+// Технические характеристики товара
+.tech-specs {}
+
+// Графа технических характеристик
+.tech-specs__row {
+  & + .tech-specs__row {
+    margin-top: $basic-value * 10 - rem-to-px($indent-difference-p) * 2;
+  }
+}
+
+// Название характеристики
+.tech-specs__name {
+  position: relative;
+  max-width: 70%;
+
+  span {
+    padding-right: $basic-value * 2;
+    background: $white-color;
+  }
+}
+
+// Разделительные точки
+.tech-specs__dots {
+    position: absolute;
+    top: rem-to-px($indent-difference-p) + rem-to-px($line-height-p-nowrap);
+    left: 0;
+    display: block;
+    width: 99.5%;
+    height: 1px;
+    margin-left: $basic-value * 5;
+    background-image: linear-gradient(to right, rgba($black-color, .15) 25%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 4px 1px;
+    background-repeat: repeat-x;
+    z-index: -1;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .tech-specs__dots {
+    display: none;
+  }
+}
+
+// Значение характеристики
+.tech-specs__value {
+  font-family: $font-bold;
+}

@@ -1,0 +1,340 @@
+.popup {
+  padding: 20px;
+  position: absolute;
+  z-index: 15;
+  left: 0;
+  top: 0;
+  width: 450px;
+  border: 1px solid rgba($black-color, $q-light);
+  border-top: 2px solid $base-color;
+  @include border-radius($border-radius);
+  background: #fff;
+  box-shadow: 0 5px 10px 0 rgba($black-color, $q-light);
+  text-align: left;
+  transition: height 1s;
+  //margin: -1px;
+  
+  legend {
+    font-family: $font-bold;
+  }
+}
+.popup-form {
+  textarea {
+    min-height: 118px;
+    padding: 8px 20px;
+    font-size: $font-size-p;
+    line-height: $line-height-p;
+  }
+}
+.popup-dropdown {
+  position: relative;
+}
+.popup-toggle {
+  overflow: hidden;
+  
+  .icon-complete {
+    position: absolute;
+    top: -20px;
+    right: 19px;
+    opacity: 0;
+  }
+  .icon-commerce-white {
+    position: relative;
+    opacity: 1;
+  }
+  .icon {
+    transition: all .5s;
+  }
+}
+.popup-toggle.is-success {
+  .icon-complete {
+    top: 17px;
+    opacity: 1;
+  }
+  .icon-commerce-white {
+    top: 17px;
+    opacity: 0;
+  }
+}
+.popup.is-loading {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 5;
+    @include border-radius($border-radius);
+    opacity: .8;
+    animation: popup-overlay .2s;
+  }
+  &:after {
+    content: url("#{$url-img}preloader.gif");
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    margin-left: -40px;
+    top: 50%;
+    margin-top: -25px;
+    opacity: 1;
+    animation: popup-preloader .2s;
+  }
+}
+.popup.is-success {
+  .popup-foot {
+    display: none;
+  }
+  form {
+    display: none;
+  }
+  .popup-message {
+    display: block;
+  }
+}
+.popup-fixed {
+  position: fixed;
+  top: inherit;
+}
+.popup-head {
+  margin-bottom: 10px;
+}
+.popup-foot {
+  margin-top: 25px;
+}
+.popup-title {
+  font: #{$font-size-small}/#{$line-height-small} 'Neris-Black', sans-serif;
+  color: $secondary-text-color-light-back;
+  text-transform: uppercase;
+}
+
+/* Блок сообщения внутри всплывающего окна */
+.popup-message {
+  display: none;
+  &:before {
+    float: left;
+    content: '';
+    display: block;
+    margin-top: 3px;
+    background: url("#{$url-img}sprite.png") 0 -1357px;
+    width: 29px;
+    height: 29px;
+  }
+}
+
+/* Блок для группировки заголовков и текстов сообщения */
+.popup-message-inner-container {
+  margin-bottom: 20px;
+}
+
+/* Заголовок сообщения */
+.popup-message-title {
+  margin-left: 54px;
+  font: #{$font-size-small}/#{$line-height-small} 'Neris-Black', sans-serif;
+  color: rgba(42, 191, 29, 0.7);
+  text-transform: uppercase;
+}
+/* Заголовок сообщения серого цвета */
+.popup-message-title-gray {
+  color: $secondary-text-color-light-back;
+}
+/* Текст сообщения */
+.popup-message-text {
+  margin-left: 54px;
+  font: #{$font-size-p}/#{$line-height-p} 'Neris-Light', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  text-transform: none;
+  padding-top: 5px;
+  small {
+    font: $smallFont;
+    color: $secondary-text-color-light-back;
+  }
+  + {
+    .popup-message-text {
+      margin-top: 10px;
+    }
+  }
+  strong {
+    font-family: $font-bold;
+  }
+}
+/* Текст сообщения с указанием времени */
+.popup-message-text-time {
+  padding: 0;
+  font-size: 0;
+  
+  h2 {
+    display: inline;
+    font-family: $font-bold;
+  }
+  small {
+    margin-left: 8px;
+  }
+}
+/* Блок сообщения с ошибкой внутри всплывающего окна */
+.popup-message-error {
+  display: block;
+  margin: 20px 0;
+  &:before {
+    display: none;
+  }
+  .popup-message-title {
+    color: rgba(218, 35, 26, 0.78);
+    margin-left: 0;
+  }
+  .popup-message-text {
+    margin-left: 0;
+  }
+}
+.popup-green {
+  border-top-color: #2abf1d;
+}
+.popup-calendar {
+  padding: 5px 20px 15px 60px;
+  .popup-foot {
+    padding-top: 30px;
+  }
+}
+
+/* Блок компании внутри всплывающего окна */
+.popup-message-company {
+  position: relative;
+  font-size: 0;
+  padding-left: 54px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0px;
+    height: 40px;
+  }
+}
+.popup-message-company__image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  @include border-radius(50%);
+  border: 1px solid $border-color-black-light;
+  overflow: hidden;
+}
+.popup-message-company__name-container {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+.popup-message-company__name {}
+.popup-message-company__description {
+  display: block;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  color: $secondary-text-color-light-back;
+}
+/* Ссылка для показа контактов */
+.popup-message-company__contacts-link {
+  float: right;
+  font-size: $font-size-small;
+  line-height: $line-height-p;
+  color: $secondary-text-color-light-back;
+}
+.popup-message-company__contacts {
+  p {
+    padding: 0;
+    margin: 5px 0;
+    font: $smallFont;
+  }
+}
+
+/* Всплывающее окно выбора модификации на странице сравнения */
+.popup-modifications {
+  width: 208px;
+  padding: 15px;
+  margin-left: -15px;
+  margin-top: -12px;
+  border-top: 1px solid $border-color-black-light;
+  
+  .form-control-label {
+    margin-bottom: 2px;
+    padding: 0;
+    white-space: normal;
+    font: $smallFont;
+  }
+  .choice-item + .choice-item {
+    margin-left: 5px;
+  }
+  .choice-item-button {
+    height: 20px;
+    padding: 1px 9px;
+    font: $smallFont;
+  }
+  .ui-checkbox {
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
+/* Очень маленькая иконка крестика для закрытия всплывающего окна */
+.popup-close {
+  position: absolute;
+  @include icons-sprite(xxsm-delete);
+  top: 9px;
+  right: 9px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* Всплывающее окно в виде меню */
+.popup-menu {
+  display: inline-block;
+  width: auto;
+  padding: 12px $p0;
+  border-top: 1px solid $border-color-black-light;
+  font-size: 0;
+}
+/* Всплывающее окно в виде меню "Выслать контакты" */
+.popup-menu_send-contacts {
+  display: block;
+  width: 178px;
+}
+/* Список пунктов меню */
+.popup-menu__list {
+  position: relative;
+}
+/* Пункт меню */
+.popup-menu__list-item {
+  margin: 12px 0;
+  line-height: 1px;
+  
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+/* Ссылка внутри пункта меню */
+.popup-menu__list-link {
+  //display: inline-block;
+  width: 100%;
+  font: $smallFont;
+  color: $primary-text-color-light-back;
+}
+
+/* Кнопка закрытия меню */
+.popup-menu__close {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  padding: 10px;
+  cursor: pointer;
+  
+  &:after {
+    content: '';
+    display: block;
+    @include icons-sprite(xsm-sortup);
+    opacity: $q-middle;
+  }
+}

@@ -1,0 +1,380 @@
+// Список элементов в виде карточек
+.cards-list {
+  //display: flex;
+  //flex-flow: column wrap;
+  //justify-content: flex-start;
+  //align-content: flex-start;
+  //width: 100%;
+  height: $basic-value * 110;
+  margin-top: -$basic-value * 10;
+}
+
+// Список элементов в виде карточек больше по высоте
+.cards-list_lg {
+  height: $basic-value * 118;
+
+  .cards-list__card {
+    height: $basic-value * 54;
+  }
+
+  .cards-list__card_tall {
+    height: 100%;
+  }
+}
+
+// Список карточек вертикальный, элементы заполняются по горизонтали
+.cards-list_vertical {
+  flex-direction: row;
+}
+
+// Список карточек в слайдере
+.cards-list_in-slider {
+  //align-content: space-between;
+}
+
+// Карточка
+.cards-list__card {
+  flex: 0 0 auto;
+  height: $basic-value * 50;
+  margin-top: $basic-value * 10;
+}
+
+// Высокая карточка
+.cards-list__card_tall {
+  height: 100%;
+
+  .cards-list__card-content {
+    background-color: transparent;
+  }
+
+  .cards-list__card-source {
+    color: $secondary-text-color-dark-back;
+  }
+
+  .cards-list__card-heading {
+    color: $primary-text-color-dark-back;
+  }
+
+  .cards-list__card-title {
+    color: $primary-text-color-dark-back;
+
+    a {
+      color: $primary-link-color-dark-back;
+
+      &:hover {
+        color: $primary-link-color-dark-back-hover;
+      }
+    }
+  }
+
+  .cards-list__card-info {
+    color: $secondary-text-color-dark-back;
+  }
+
+  .cards-list__card-info-views {
+    &:before {
+      @include icons-sprite(sm-view-white);
+      opacity: $q-dark;
+    }
+  }
+
+  .cards-list__card-info-comments {
+    &:before {
+      @include icons-sprite(sm-comment-white);
+      opacity: $q-dark;
+    }
+  }
+}
+
+// Высокая карточка, поделённая на две части
+.cards-list__card_tall-divided {
+  height: $basic-value * 110;
+
+  .cards-list__card-bg {
+    height: 50%;
+    border-radius: 3px 3px 0 0;
+
+    &:after {
+      border-radius: 3px 3px 0 0;
+    }
+  }
+
+  .cards-list__card-source {
+    flex: 0 0 50%;
+    color: $secondary-text-color-dark-back;
+  }
+
+  .cards-list__card-content-bottom {
+    justify-content: flex-start;
+    padding-top: $basic-value * 10 - rem-to-px($indent-difference-p);
+  }
+}
+
+// Выделенная карточка
+.cards-list__card_accent {
+  .cards-list__card-content {
+    background-color: transparent;
+  }
+
+  .cards-list__card-source {
+    color: $secondary-text-color-dark-back;
+  }
+
+  .cards-list__card-info {
+    color: $secondary-text-color-dark-back;
+  }
+
+  .cards-list__card-info-views {
+    &:before {
+      @include icons-sprite(sm-view-white);
+      opacity: $q-dark;
+    }
+  }
+
+  .cards-list__card-info-comments {
+    &:before {
+      @include icons-sprite(sm-comment-white);
+      opacity: $q-dark;
+    }
+  }
+}
+
+// Выделенная жёлтая широкая карточка
+.cards-list__card_accent-yellow-wide {
+  .cards-list__card-content {
+    background-color: transparent;
+  }
+
+  .cards-list__card-heading {
+    margin-top: -(rem-to-px($indent-difference-h2)) + rem-to-px($indent-difference-small);
+  }
+
+  .cards-list__card-bg {
+    align-items: flex-end;
+    background-color: $warning-color;
+
+    &:after {
+      display: none;
+    }
+  }
+
+}
+
+// Карточка без обводки
+.cards-list__card_borderless {
+  .cards-list__card-content {
+    box-shadow: none;
+  }
+}
+
+// Карточка типа "Видео"
+.cards-list__card_video {
+  .cards-list__card-content {
+    background-color: transparent;
+  }
+
+  .cards-list__card-heading {
+    color: $primary-text-color-dark-back;
+  }
+
+  .cards-list__card-title {
+    color: $primary-text-color-dark-back;
+
+    a {
+      color: $primary-link-color-dark-back;
+
+      &:hover {
+        color: $primary-link-color-dark-back-hover;
+      }
+    }
+  }
+}
+
+// Содержимое карточки
+.cards-list__card-content {
+  @extend %basic-entity;
+  padding-top: $basic-value * 6 - rem-to-px($indent-difference-small);
+  padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-small);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+// Задний фон карточки
+.cards-list__card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: $basic-value;
+  @include user-select(none);
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, black 0%, black 50%, transparent 100%);
+    opacity: $q-dark;
+  }
+
+  img {
+    flex: 0 0 auto;
+  }
+}
+
+// Небольшая строка с указанием типа карточки
+.cards-list__card-type {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+}
+
+// Небольшая строка с указанием источника сведений
+.cards-list__card-source {
+  position: relative;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $secondary-text-color-light-back;
+
+  .label + & {
+    margin-left: $basic-value * 5;
+  }
+}
+
+// Нижняя часть карточки
+.cards-list__card-content-bottom {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+// Нижняя часть карточки, в которой несколько столбцов
+.cards-list__card-content-bottom-row {
+  flex: 1 0 auto;
+  align-items: flex-end;
+}
+
+// Крупный заголовок карточки
+.cards-list__card-heading {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin-bottom: $basic-value * 4 - rem-to-px($indent-difference-h2) - rem-to-px($indent-difference-p);
+  font: #{$font-size-h2}/#{$line-height-h2} $font-light;
+}
+
+// Заголовок/название карточки
+.cards-list__card-title {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin-bottom: $basic-value * 6 - rem-to-px($indent-difference-p) - rem-to-px($indent-difference-small);
+  color: $secondary-text-color-light-back;
+}
+
+// Описание/текст карточки
+.cards-list__card-text {
+  padding: 0;
+}
+
+// Информационный блок карточки
+.cards-list__card-info {
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  color: $secondary-text-color-light-back;
+}
+
+// Дата создания
+.cards-list__card-info-date {
+  display: inline-block;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+}
+
+// Количество просмотров
+.cards-list__card-info-views {
+  display: inline-block;
+  margin-left: $basic-value * 6;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    margin-right: $basic-value * 3;
+    @include icons-sprite(sm-view);
+    opacity: $q-middle;
+  }
+}
+
+// Количество комментариев
+.cards-list__card-info-comments {
+  display: inline-block;
+  margin-left: $basic-value * 6;
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    margin-bottom: -2px;
+    margin-right: $basic-value * 3;
+    @include icons-sprite(sm-comment);
+    opacity: $q-middle;
+  }
+}
+
+// Блок с ссылками на открытие
+.cards-list__card-more {
+  position: relative;
+  padding-top: $basic-value * 10 - rem-to-px($indent-difference-p) - rem-to-px($indent-difference-small);
+  padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-p) - $basic-value * 6; // 30px - разница строки - отступ карточки
+  font-size: 0;
+  line-height: 0;
+}
+
+.cards-list__card-more_small {
+  padding: 0;
+}
+
+.cards-list__card-more-link {
+  display: inline-block;
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+}
+
+// Блок с ссылкой для карточки типа "Видео"
+.cards-list__card-video-link {
+  display: inline-block;
+
+  & + .button {
+    margin-left: $basic-value * 5;
+  }
+
+  a {
+    display: inline-block;
+    font: #{$font-size-p}/#{$line-height-p} $font-light;
+  }
+}
+
+.cards-list__card-video-icon {
+  display: inline-block;
+  margin-top: -($basic-value * 6);
+  margin-bottom: -(($basic-value * 6) - rem-to-px($indent-difference-p));
+  margin-right: $basic-value * 3;
+  @include icons-sprite(md-play-circle);
+}
+
+.cards-list__card-video-icon_small {
+  margin-top: -13px;
+  margin-bottom: round(-(13px - rem-to-px($indent-difference-p)));
+  @include icons-sprite(sm-play-circle);
+}

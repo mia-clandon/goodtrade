@@ -1,0 +1,135 @@
+// Поясняющий заголовок для списка
+.list-title {
+  padding-bottom: $basic-value * 8 - rem-to-px($indent-difference-small) - rem-to-px($indent-difference-p);
+  font: #{$font-size-small}/#{$line-height-small} $font-bold;
+  color: $secondary-text-color-light-back;
+  text-transform: uppercase;
+}
+
+// Простой линейный список, без отступов слева
+.linear-list {
+  li {
+    padding-left: 0;
+    color: $primary-text-color-light-back;
+
+    &:before {
+      content: "";
+    }
+
+    ul {
+      padding-left: 0;
+    }
+  }
+}
+
+.linear-list_white {
+  li {
+    color: $secondary-text-color-dark-back;
+  }
+
+  a {
+    color: $primary-text-color-dark-back;
+  }
+}
+
+// Ссылка раскрытия списка
+ul, ol {
+  .list-more-link, .list-less-link {
+    padding-top: $basic-value * 2;
+
+    &:before {
+      content: "";
+    }
+  }
+
+  .list-more-link_secondary {
+    a {
+      color: $secondary-text-color-light-back;
+
+      &:hover {
+        color: $primary-text-color-light-back;
+      }
+    }
+  }
+
+  ul, ol {
+    .list-more-link, .list-less-link {
+      padding-top: $basic-value * 1;
+    }
+  }
+}
+
+// Многоколончатое меню
+.multi-col-menu {
+  padding-bottom: 0;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .multi-col-menu {
+    padding-bottom: $basic-value * 15 - rem-to-px($indent-difference-p) - rem-to-px($line-height-p) - rem-to-px($indent-difference-small);
+  }
+}
+
+.multi-col-menu__item {
+  min-height: rem-to-px($line-height-p) * 2;
+}
+
+// Меню пользователя внутри выпадающего блока
+.profile-menu {
+  padding-bottom: 0;
+}
+
+// Пункт меню
+.profile-menu__item {
+  display: flex;
+  align-items: baseline;
+  padding-left: 0;
+  color: $secondary-text-color-light-back;
+
+  &:before {
+    content: "";
+  }
+
+  a + .button_small {
+    margin-left: $basic-value * 5;
+    margin-top: -($basic-value * 3 + rem-to-px($line-height-small / 2) - rem-to-px($indent-difference-small)); // Рассчитываем половину высоты кнопки
+    margin-bottom: -($basic-value * 3 + rem-to-px($line-height-small / 2) - rem-to-px($indent-difference-small)); // Рассчитываем половину высоты кнопки
+  }
+
+  ul {
+    padding-left: 0;
+  }
+}
+
+// Небольшой пункт меню
+.profile-menu__item_small {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+
+  a {
+    color: $secondary-text-color-light-back;
+
+    &:hover {
+      color: $primary-text-color-light-back;
+    }
+  }
+}
+
+// Список кнопок подкатегорий сферы деятельности
+.buttons-list {
+  padding-bottom: 0;
+
+  li {
+    padding-left: 0;
+    padding-bottom: 0;
+    //padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-p);
+    color: $primary-text-color-light-back;
+
+    &:before {
+      content: "";
+    }
+
+    &:last-of-type {
+      //padding-bottom: $basic-value * 10 - rem-to-px($indent-difference-p);
+    }
+  }
+}

@@ -1,0 +1,84 @@
+#logo {
+  display: block;
+  margin-bottom: 30px;
+
+  &:before {
+    content: "";
+    display: block;
+    @include icons-sprite(b2b-logo-md);
+  }
+}
+
+.logo {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.logo-blue {
+  @include icons-sprite(logo-blue);
+}
+
+.logo-sm {
+  display: inline-block;
+  vertical-align: middle;
+  height: 10px;
+
+  a {
+    @include icons-sprite(b2b-logo-sm);
+    display: block;
+    position: relative;
+  }
+}
+
+.logo-sm.outline {
+  a {
+    @include icons-sprite(b2b-logo-sm-white);
+  }
+}
+
+// Временные стили, для публичного бета-тестирования
+a.logo {
+  position: relative;
+
+  &:after {
+    content: 'Beta';
+    position: absolute;
+    left: 102px;
+    top: 0px;
+    padding-left: 11px;
+
+    font: #{$font-size-p}/#{$line-height-p} $font-bold;
+    color: $white-color;
+  }
+}
+a.logo-blue {
+  &:after {
+    content: ''
+  }
+}
+.logo-sm {
+  a {
+    margin-right: 36px;
+
+    &:after {
+      content: 'Beta';
+      position: absolute;
+      left: 74px;
+      top: -2px;
+      padding-left: 11px;
+
+      font: #{$font-size-small}/#{$line-height-small} $font-light;
+      opacity: $q-dark;
+      color: $black-color;
+    }
+  }
+}
+.logo-sm.outline {
+  a {
+    margin-right: 0;
+
+    &:after {
+      color: $white-color;
+    }
+  }
+}

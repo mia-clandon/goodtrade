@@ -1,0 +1,84 @@
+// Контейнера для выпадающего элемента
+.dropdown {
+  position: relative;
+}
+
+// Переключатель выпадающего элемента
+.dropdown__toggle {
+  cursor: pointer;
+}
+
+// Выпадающий элемент
+.dropdown__item {
+  position: absolute;
+  top: 100%;
+  margin-top: $basic-value * 6;
+  opacity: 0;
+  z-index: -1;
+  touch-action: none;
+  @include user-select(none);
+
+  .modal {
+    min-height: 100%;
+  }
+}
+
+.dropdown__item_visible {
+  opacity: 1;
+  z-index: 5;
+  touch-action: auto;
+  @include user-select(auto);
+}
+
+// Выпадающий элемент у иконки в верхней панели сайта
+.dropdown__item_bar-top-icon-center {
+  margin-left: -($basic-value * 120 / 2) + (16px / 2);
+  width: $basic-value * 120;
+  max-height: $basic-value * 123;
+}
+
+.dropdown__item_user-avatar {
+  right: 0;
+  margin-right: -($basic-value * 6);
+}
+
+// Указатель выпадающего элемента
+.dropdown__item-indicator {
+  position: absolute;
+  top: (-$basic-value * 2) / 2;
+  display: block;
+  width: $basic-value * 2;
+  height: $basic-value * 2;
+  border-left: 1px solid $border-color-black-light;
+  border-top: 1px solid $border-color-black-light;
+  background-color: $white-color;
+  transform: rotate(45deg);
+}
+
+// Блок, содержащий блок с содержимым. Нужен как обёртка для появления градиента снизу, если содержимого много.
+.dropdown__item-body {
+  position: relative;
+  max-height: $basic-value * 108;
+}
+
+// Модификатор с градиентом
+.dropdown__item-body_faded {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: $basic-value * 12;
+    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  }
+}
+
+.dropdown__item-content {
+  position: relative;
+  max-height: $basic-value * 108;
+  margin-right: -$basic-value * 4;
+  padding-right: $basic-value * 4;
+  overflow: hidden;
+}

@@ -1,0 +1,221 @@
+#register {
+  white-space: nowrap;
+  section {
+    white-space: normal;
+    vertical-align: top;
+    width: 100%;
+    .sub-title{
+      margin-bottom: 20px;
+    }
+  }
+}
+#register-top {
+  background: #fff;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+}
+#register-bottom {
+  background: #fff;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  line-height: 40px;
+  bottom: 0;
+  left: 0;
+  padding: 10px 60px;
+}
+#register-progress {
+  width: 100%;
+  margin: 10px auto 0;
+  max-width: 700px;
+}
+.register-step {
+  display: none;
+}
+.register-step-visible {
+  display: inline-block;
+}
+
+.progress {
+  display: table;
+  padding-bottom: 7px;
+}
+.progress-arrow {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15px;
+    display: block;
+    height: 1px;
+    background: #84cff2;
+    margin-right: 5px;
+  }
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    border-left: 10px solid #84cff2;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-right: none;
+    right: 0;
+    top: 15px;
+    margin-top: -3px;
+    position: absolute;
+  }
+}
+.progress-item {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 70px;
+}
+.progress-item.is-active {
+  .progress-item-number {
+    border-color: $base-color;
+    background-color: $base-color;
+    color: #fff;
+  }
+}
+.progress-item.is-success {
+  .progress-item-number {
+    font-size: 0;
+    &:before {
+      content: '';
+      display: inline-block;
+      background: url("#{$url-img}/sprite.png") 0 -100px;
+      width: 14px;
+      height: 10px;
+      margin-top: 9px;
+    }
+  }
+}
+.progress-item-number {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #d7d7d7;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin-bottom: 7px;
+  line-height: 28px !important;
+  font: 11px/16px 'Neris-Light', sans-serif;
+  color: #cbcbcb;
+  color: rgba(0, 0, 0, 0.45);
+}
+.progress-item-label {
+  font: 11px/16px 'Neris-Light', sans-serif;
+  color: #cbcbcb;
+  color: rgba(0, 0, 0, 0.45);
+  display: block;
+}
+#page-wrap.has-progress-bar {
+  margin-top: 120px;
+}
+
+.not-find{
+  font-size: $font-size-small;
+  color: $secondary-text-color-light-back;
+  cursor: pointer;
+  &:hover{
+    color: $primary-text-color-light-back;
+  }
+}
+
+
+/**
+*Запихнул сюда, ибо хуй пами куда это.
+*Это выбор категории при добавлении товаров. Он есть в регистрации, но есть и в кабинете
+*/
+.product-category {
+  margin: 7px 0;
+}
+.product-category-controls {
+  float: left;
+  width: 23.84868421052632%;
+  position: relative;
+  height: 235px;
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+.product-category-thumbnail {
+  margin-bottom: 10px;
+}
+.product-category-content {
+  margin-left: 23.84868421052632%;
+  width: 76.15131578947368%;
+  padding-left: 4.319654427645788%;
+  ul {
+    li {
+      display: inline-block;
+      margin-bottom: 7px;
+    }
+    li.is-selected {
+      a {
+        display: none;
+      }
+    }
+  }
+  .is-selected {
+    display: none;
+  }
+}
+.product-category-tabs {
+  li {
+    position: relative;
+    padding-top: 15px;
+    b {
+      display: none;
+    }
+  }
+  li.is-active {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      margin-top: -8px;
+      background: url("#{$url-img}sprite.png") 0 -946px;
+      width: 10px;
+      height: 17px;
+    }
+    span {
+      display: block;
+    }
+    b {
+      display: inline-block;
+    }
+    i {
+      display: none;
+    }
+  }
+  a {
+    font: $smallFont;
+    color: #cbcbcb;
+    color: rgba(0, 0, 0, 0.45);
+  }
+}
+.product-category-all {
+  a {
+    font: $smallFont;
+    color: #cbcbcb;
+    color: rgba(0, 0, 0, 0.45);
+  }
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+}
+.product-category-link {
+  padding: 9px 0;
+}

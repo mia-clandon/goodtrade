@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Добавление товара</title>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!-- <![endif] -->
+    <meta name="keywords" content="trade,goodtrade,b2b">
+    <meta name="description" content="goodtrade.kz">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://trade.dev/cabinet/product/index">
+    <link href="/css/main.css" rel="stylesheet">
+    <style>
+        code {
+            position: absolute;
+            z-index: 1111;
+            display: block;
+            background: white;
+        }
+    </style>
+    <style>
+        code {
+            position: absolute;
+            z-index: 9999;
+        }
+    </style>
+<body class="has-sidebar has-bottom-control">
+    <script type="text/javascript">
+        var controller = "product";
+        var action = "index";
+    </script>
+
+    <header class="navbar-wrap">
+        <nav id="navbar" class="navbar-white">
+            <div class="navbar-left-side">
+                <button class="menu"></button>
+                <div class="logo logo-sm"><a href="/site/index"></a></div>
+            </div>
+            <div id="breadcrumbs" class="breadcrumbs">
+                <div class="breadcrumbs-item">
+                    <a href="/cabinet">
+                        Кабинет        </a>
+                </div>
+                <div class="breadcrumbs-item">
+                    <a href="/cabinet/product">
+                        Товары        </a>
+                </div>
+            </div>                <div class="pull-right">
+            <div class="snippets">
+                <ul>
+
+                    <li class="snippets-item dropdown">
+                        <a role="button" href="#" class="action dropdown-toggle ">
+            <span class="action-icon action-icon-compare">
+                <span id="compare" class="action-count">0</span>
+            </span>
+                        </a>
+
+
+                        <div class="dropdown-menu dropdown-menu-compare dropdown-menu-compare_empty">
+                            <div class="dropdown-menu-head">
+                                <div class="dropdown-menu-title">Сравнения</div>
+                            </div>
+                            <div class="dropdown-menu-body">
+                                <div class="dropdown-menu-compare__image"></div>
+                                <div class="dropdown-menu-compare__text">
+                                    <p>Вы не создали<br>ни одного сравнения</p>
+                                    <p><a href="#">Что такое сравнения?</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>                                        <li class="snippets-item dropdown">
+                    <a role="button" href="#" class="action dropdown-toggle">
+            <span class="action-icon action-icon-notify">
+                <span class="action-count">1</span>
+            </span>
+                    </a>
+
+
+                    <div class="dropdown-menu dropdown-menu-notify">
+                        <div class="dropdown-menu-head">
+                            <div class="dropdown-menu-title">Уведомления</div>
+                            <a href="#more" class="dropdown-menu-more">Смотреть все</a>
+                        </div>
+                        <div class="dropdown-menu-body has-scrollbar dropdown-menu-body-faded">
+                            <div class="dropdown-menu-content">
+                                <div class="notify-company">
+                                    <div class="notify-company-logo">
+                                        <img src="/storage/company/cg/uw/fi/kn/b631dd2aa3911015b840d7bdc7124e5f_40_40auto.jpg"/>
+                                    </div>
+                                    <div class="notify-company-content">
+                                        <div class="notify-company-date">14 дней назад</div>
+                                        <div class="notify-company-message">"<a href="/firm/profile?id=39">ИП "РемБытТех"</a>" запрашивает коммерческое предложение...</div>
+                                        <a href="/commercial/response/9" class="notify-company-btn btn btn-blue">
+                                            Ответить на запрос
+                                        </a>
+                                    </div>
+                                </div>            </div>
+                            <!--
+                                        <div class="dropdown-menu-scrollbar">
+                                            <div class="dropdown-menu-scrollbar-slider"></div>
+                                        </div>
+                            -->
+                        </div>
+                    </div>
+
+
+                </li>                                    </ul>
+            </div>
+            <div class="user-profile dropdown">
+                <div class="user-profile-avatar"></div>
+                <a role="button" href="#" class="user-profile-title dropdown-toggle">ex@ex.com</a>
+                <div class="dropdown-menu dropdown-menu-profile">
+                    <div class="dropdown-menu-head">
+                        <div class="dropdown-menu-title">+7 (707) 350 55 55</div>
+                    </div>
+                    <div class="dropdown-menu-body">
+                        <ul class="profile-menu">
+                            <li class="profile-menu__item"><a href="/cabinet">Профиль</a></li>
+                            <li class="profile-menu__item"><a href="/cabinet/company">Компания</a></li>
+                            <li class="profile-menu__item profile-menu__item_has-button">
+                                <a href="/cabinet/product">Товары</a>
+                                <a href="/cabinet/product/add" class="btn btn-sm btn-lowercase">Добавить</a>
+                            </li>
+                            <!--<li class="profile-menu__item profile-menu__item_secondary"><a class="link link-muted">Настройки</a></li>-->
+                            <li class="profile-menu__item profile-menu__item_secondary"><a>Помощь</a></li>
+                            <li class="profile-menu__item profile-menu__item_secondary"><a href="/logout">Выход</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </nav>
+    </header>
+    <main role="main" id="page-wrap">
+
+        <div class="inner-sidebar">
+            <ul class="inner-sidebar-menu">
+                <li class="">
+                    <a href="/cabinet">Профиль</a>
+                </li>
+                <li class="">
+                    <a href="/cabinet/company">Компания</a>
+                </li>
+                <li class="has-button is-active">
+                    <a href="/cabinet/product">Товары</a>
+                    <a href="/cabinet/product/add" class="btn btn-sm btn-lowercase btn-outline">Добавить</a>
+                </li>
+            </ul>
+            <!--    <ul class="inner-sidebar-settings">-->
+            <!--        <li><a href="#" class="muted">Настройки</a></li>-->
+            <!--        <li><a href="#" class="muted">Помощь</a></li>-->
+            <!--    </ul>-->
+        </div>    <div class="container">
+        <div class="cabinet">
+
+            <div class="row">
+                <div class=" col-xs-6">
+                    <h2 class="sub-title">Добавление товара
+                        <small><a href="/cabinet/product/add-price">Загрузить прайс-лист</a></small>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <form method="GET">
+                        <div class="search-product-add">
+                            <div class="search-product-add__search-row">
+                                <div class="input">
+                                    <input type="text" name="query" required="required" placeholder="Введите название вашего товара">
+                                </div>
+                                <div class="search-product-add__buttons"> <!-- Для того, чтобы отобразилась кнопка "Настроить ваши товары", необходимо к этому блоку добавить класс search-product-add__buttons_has-added -->
+                                    <button type="submit" class="btn btn-blue btn-outline" name="submit">Найти</button>
+                                    <button type="submit" class="btn btn-blue" name="submit">Настроить ваши товары</button>
+                                    <div class="search-product-add__counter">3</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="sort">
+                                        <div class="sort-text">Сортировать:</div>
+                                        <ul class="sort-list">
+                                            <li class="is-active sort-list-item-down"> <!-- При сортировке по возрастанию - sort-list-item-up, по убыванию - sort-list-item-down -->
+                                                <a href="/cabinet/product?sort=title">по названию</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="search-filters">
+                                        <div class="search-filters__filter">
+                                            <div class="search-filters__title">Категория:</div>
+                                            <a href="#" class="search-filters__link">Все категории</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="select-categories">
+                <div class="select-categories-title">Выберите вашу сферу деятельности.<br>Это упростит процесс добавления
+                    ваших товаров.
+                </div>
+                <ul class="select-categories-list">
+                    <li class="select-categories-list-item select-categories-list-item_agriculture">Сельское хозяйство</li>
+                    <li class="select-categories-list-item select-categories-list-item_forest">Лесозаготовка</li>
+                    <li class="select-categories-list-item select-categories-list-item_textile_and_clothing">Текстиль и одежда</li>
+                    <li class="select-categories-list-item select-categories-list-item_minerals_and_chemicals_metallurgy">Добыча и Химия, Металлургия</li>
+                    <li class="select-categories-list-item select-categories-list-item_engineering">Машино-строение</li>
+                    <li class="select-categories-list-item select-categories-list-item_instrumentation">Приборо-строение</li>
+                    <li class="select-categories-list-item select-categories-list-item_construction">Строительство</li>
+                    <li class="select-categories-list-item select-categories-list-item_containers_and_packaging">Тара и упаковка</li>
+                    <li class="select-categories-list-item select-categories-list-item_medicine">Медицина</li>
+                    <li class="select-categories-list-item select-categories-list-item_energetics">Энергетика</li>
+                    <li class="select-categories-list-item select-categories-list-item_food">Пищевая промышленность</li>
+                </ul>
+                <div class="select-categories-button btn btn-blue">Сохранить сферу деятельности</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <noscript>
+        <div class="error">
+            <div class="error-text text-uppercase">Для работы с сайтом необходима поддержка <strong> JavaScript </strong> и  <strong>Cookies</strong>.</div>
+            <div class="error-solution">Чтобы использовать все возможности сайта, загрузите и установите один из этих браузеров:</div>
+            <ul class="error-browsers">
+                <li><img src="/img/chrome.png"/><a href="#chrome" class="block">Chrome</a></li>
+                <li><img src="/img/opera.png"/><a href="#chrome" class="block">Opera</a></li>
+                <li><img src="/img/firefox.png"/><a href="#chrome" class="block">Firefox</a></li>
+            </ul>
+            <ul class="error-links">
+                <li><a href="#gotoback">Вернуться назад</a></li>
+                <li><a href="#gotomain">Вернуться на главную</a></li>
+            </ul>
+        </div>
+    </noscript>
+    <script src="/app/pages/common_bundle.js"></script>
+    <!-- Анимация при клике на сферу деятельности -->
+    <script>
+        $(".select-categories-list-item").on("click", function () {
+            $(this).toggleClass("select-categories-list-item_active");
+        });
+        $(".select-categories").on("click", function (event) {
+            if ($(".select-categories-list-item_active").length > 0) {
+                $(this).children(".select-categories-button").addClass("select-categories-button_active");
+            } else {
+                $(this).children(".select-categories-button").removeClass("select-categories-button_active");
+            }
+            event.stopPropagation();
+        });
+    </script>
+</body>
+</html>

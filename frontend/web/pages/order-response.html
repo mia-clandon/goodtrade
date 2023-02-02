@@ -1,0 +1,925 @@
+<!DOCTYPE html><!--[if lte IE 9]>
+<html class="no-js lte-ie9">
+<![endif]--><!--[if gt IE 9]><!-->
+<html class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Order-page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/for-static-pages/libs/modernizr-custom.js" type="text/javascript"></script><!--[if lt IE 9]>
+    <script src="../js/for-static-pages/libs/html5shiv.js"></script>
+    <script src="../js/for-static-pages/libs/respond.min.js"></script>
+    <!-- <![endif] -->
+    <link href="../css/main.css" rel="stylesheet">
+  </head>
+  <body class="has-settings has-top-controls">
+    <nav>
+      <div id="top-controls" class="control control-fixed control-top">
+        <div class="control control-left"><a href="register.html" class="logo logo-blue"></a></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-1">
+              <div class="user-profile">
+                <div class="user-profile-avatar"><img src="../img/company-avatar.png" alt="Company Avatar"></div>
+                <div class="user-profile-container"><a href="#company" class="user-profile-link">Металлургический комбинат Темиртаy</a>
+                  <ul class="user-profile-menu">
+                    <li>
+                      <div class="top-rated"></div>
+                    </li>
+                    <li><a role="button" href="#" data-id="1" data-key="hold" class="action js-keeper"><span class="action-icon action-icon-hold"></span></a>
+                    </li>
+                    <li>
+                      <button id="wall-btn" class="btn btn-link btn-lowercase">Подробно о запросе</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="control control-right">
+          <button id="print-btn" class="btn btn-link is-hidden"><i class="icon icon-print"></i><span>Распечатать</span></button>
+          <button id="settings-open" class="btn btn-link"><i class="icon icon-settings"></i><span>Настройки</span></button>
+        </div>
+      </div>
+    </nav>
+    <aside id="sidebar">
+      <div class="sidebar-head">
+        <button class="menu menu-white"></button>
+        <div class="logo logo-sm outline"><a></a></div>
+      </div>
+      <div class="sidebar-body">
+        <ul class="sidebar-links">
+          <li><a>О компании</a></li>
+          <li><a>СМИ о нас</a></li>
+          <li><a>Отзывы</a></li>
+          <li><a>Реклама на сайте</a></li>
+        </ul>
+        <ul class="sidebar-links sidebar-links-small">
+          <li><a>Пользовательское соглашение</a></li>
+          <li><a>Безопасность</a></li>
+          <li><a>Правила</a></li>
+          <li><a>Справка и FAQ</a></li>
+          <li><a>Контакты</a></li>
+        </ul>
+      </div>
+    </aside>
+    <main role="main" id="page-wrap">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-4 col-xs-offset-1">
+            <div class="row wall">
+              <div class="col-xs-3">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <div class="wall-title">Товар</div>
+                    <div class="wall-content"><a href="#none" class="wall-link">Древесная щепа</a>
+                      <div class="price">250 000 тг.</div>
+                      <div class="label">Ориентировочно</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-3">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <div class="wall-title">Детали партии</div>
+                    <div class="wall-content"><span class="wall-expires">до 8 сентября</span>
+                      <div class="muted">осталось 30 дней</div>
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <div class="wall-cost">5 тонн</div>
+                  </div>
+                  <div class="col-xs-6 wall-delivery">
+                    <div class="wall-title">Адрес доставки</div>
+                    <div class="wall-content">
+                      <div class="wall-location">Карагандинская область, Темиртау</div><span class="muted">Расстояние 1450км</span><a class="muted wall-map">Смотреть на карте</a>
+                    </div>
+                  </div>
+                </div>
+              </div><a role="button" href="#" class="wall-close"><i class="icon icon-close-med"></i></a>
+            </div>
+            <div class="row">
+              <div id="print">
+                <div class="page-wrap">
+                  <div class="page-mini-title">
+                    <span class="muted">Коммерческое предложение</span>
+                  </div>
+                  <div class="page">
+                    <div class="page-body">
+                      <div class="page__control-edit-page-company"></div>
+                      <div class="page-company">ТОО «Казлес»</div>
+                      <div class="clearfix">
+                        <div class="page-col-left">
+                          <div class="page-contacts">
+                            <div class="page-contacts__address popup-dropdown">
+                              <span data-bind="text: 'г. ' + city()"></span><span data-bind="text: formattedAddress"></span>
+                              <span class="edit-control-icon-dropdown edit-control-icon-dropdown_address"></span>
+                            </div>
+                            <div></div>
+                            <div class="page-contacts__email popup-dropdown">
+                              <span class="page-contacts__email-label">E-mail:</span>
+                              <!-- ko foreach: emails-->
+                              <div class="page-contacts__email-item" data-bind="text: $data"></div>
+                              <!-- /ko -->
+                              <span class="edit-control-icon-dropdown edit-control-icon-dropdown_email"></span>
+                            </div>
+                            <div></div>
+                            <div class="page-contacts__tel popup-dropdown">
+                              <span class="page-contacts__tel-label">Тел.:</span>
+                              <!-- ko foreach: tels-->
+                              <div class="page-contacts__tel-item" data-bind="text: $data"></div>
+                              <!-- /ko -->
+                              <span class="edit-control-icon-dropdown edit-control-icon-dropdown_tel"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="page-col-right">
+                          <div class="page-number">
+                            <div class="page-number-number">№ 9876543</div>
+                            <div class="page-number-date">от 14 августа 2016</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="page-title">Коммерческое предложение</div>
+                      <div class="page-text">
+                        <p>Уважаемые господа!<br>
+                          Настоящим разрешите выразить Вам искреннее уважение и предоставить Вашему вниманию коммерческое предложение в ответ на запрос № 9876543 от 14 августа 2016.
+                        </p>
+                      </div>
+                      <table class="page-product">
+                        <tbody>
+                          <tr>
+                            <td class="page-product-title">Колпаковые электропечи СГЗ, СГО</td>
+                            <td class="page-product-count">
+                              <div class="popup-changer mini-spinner">
+                                <a role="button" data-action="decrease" class="popup-changer__button-less"></a>
+                                <input form="commerceSettingsForm" type="number" name="delivery_time" data-bind="textInput: productCount" class="popup-changer__value">
+                                <a role="button" data-action="increase" class="popup-changer__button-more"></a>
+                              </div>
+                              <span data-bind="text: productCount"></span> <span data-bind="text: productUnitShort"></span>
+                            </td>
+                            <td class="page-product-price"><span data-bind="text: formatPrice(productPrice())"></span>тг.</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <td></td>
+                            <td>Итого</td>
+                            <td class="page-product-price"><span data-bind="text: formatPrice(totalPrice())"></span>тг.</td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                      <div class="clearfix">
+                        <div class="page-col-left">
+                          <div class="page-condition popup-dropdown">
+                            <div class="edit-control-icon-pencil edit-control-icon-pencil_condition-delivery"></div>
+                            <div class="page-condition__title">Условия поставки:</div>
+                            <div class="page-condition__content">
+                              <div data-bind="text: formattedDeliveryConditions"></div>
+                              <div data-bind="visible: inStock">Товар в наличии</div>
+                              <div data-bind="visible: !inStock()">Срок до отправки <span data-bind="text: deliveryTime"></span> дней</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="page-col-right">
+                          <div class="page-condition popup-dropdown">
+                            <div class="edit-control-icon-pencil edit-control-icon-pencil_condition-payment"></div>
+                            <div class="page-condition__title">Условия оплаты:</div>
+                            <div class="page-condition__content">
+                              Предоплата - <span data-bind="text: prepay"></span><br>
+                              При получении - <span data-bind="text: postpay"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="page-expires popup-dropdown">
+                        <span>Коммерческое предложение действительно в течение </span>
+                        <div class="page-expires__select-container">
+                          <strong data-bind="text: commerceTime"></strong><strong> дней</strong>
+                          <div class="select select_expires">
+                            <select form="commerceSettingsForm" class="popup-edit__dropdown-select" data-bind="value: commerceTime">
+                              <option class="popup-edit__select-element" value="30">30 дней</option>
+                              <option class="popup-edit__select-element" value="14">14 дней</option>
+                              <option class="popup-edit__select-element" value="7">7 дней</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="page-foot">
+                      <div class="clearfix">
+                        <div class="page-col-left page-col-left_page-foot">
+                          <div class="page-requisites popup-dropdown">
+                            <div class="edit-control-icon-pencil edit-control-icon-pencil_requisites"></div>
+                            <div class="page-requisites__title">
+                              <span>ТОО «Позитроника»</span>
+                            </div>
+                            <div class="page-requisites__content">
+                              <span class="page-requisites__content-element page-requisites__content-element_address">Республика Казахстан<span data-bind="text: ', г. ' + city()">, г. Алматы</span><span data-bind="text: formattedAddress">, мкр. Коктем-1, дом 15а, 4-й этаж</span></span>
+                              <!-- ko if: bin() !== "" -->
+                                <span class="page-requisites__content-element page-requisites__content-element_bin" data-bind="text: 'БИН: ' + bin()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: bank() !== "" -->
+                                <span class="page-requisites__content-element page-requisites__content-element_bank" data-bind="text: 'Банк: ' + bank()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: bik() !== "" -->
+                                <span class="page-requisites__content-element page-requisites__content-element_bik" data-bind="text: 'БИК: ' + bik()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: iik() !== "" -->
+                                <span class="page-requisites__content-element page-requisites__content-element_iik" data-bind="text: 'ИИК: ' + iik()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: kbe() !== "" -->
+                                <span class="page-requisites__content-element page-requisites__content-element_kbe" data-bind="text: 'КБе: ' + kbe()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: knp() !== "" -->
+                                <span class="page-requisites__content-element page-requisites__content-element_knp" data-bind="text: 'КНП: ' + knp()"></span>
+                              <!-- /ko -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="page-col-right page-col-right_page-foot">
+                          <div class="page-watermark">
+                            <div class="page-watermark-logo"><img src="../img/requisites-logo.png"></div>
+                            <div class="page-watermark-text">Создано на платформе<br> b2bMarket</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="page-wrap">
+                  <div class="page-mini-title">
+                    <span class="muted">Приложение №1</span>
+                    <span class="muted page-mini-title__notice">Генерируется автоматически</span>
+                  </div>
+                  <div class="page">
+                    <div class="page-body">
+                      <div class="page-company">ТОО «Казлес»</div>
+                      <div class="clearfix">
+                        <div class="page-col-left">
+                          <div class="page-contacts">
+                            <div class="page-contacts__address">
+                              <span data-bind="text: 'г. ' + city()"></span><span data-bind="text: formattedAddress"></span>
+                            </div>
+                            <div class="page-contacts__email popup-dropdown">
+                              <span class="page-contacts__email-label">E-mail:</span>
+                              <!-- ko foreach: emails-->
+                              <div class="page-contacts__email-item" data-bind="text: $data"></div>
+                              <!-- /ko -->
+                            </div>
+                            <div></div>
+                            <div class="page-contacts__tel popup-dropdown">
+                              <span class="page-contacts__tel-label">Тел.:</span>
+                              <!-- ko foreach: tels-->
+                              <div class="page-contacts__tel-item" data-bind="text: $data"></div>
+                              <!-- /ko -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="page-col-right">
+                          <div class="page-number">
+                            <div class="page-number-number">№ 9876543</div>
+                            <div class="page-number-date">от 14 августа 2016</div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="page-title">Приложение №1</div>
+                      <div class="page-text">
+                        <p>ДРЕВЕСНАЯ ЩЕПА</p>
+                        <p>Натуральная неокрашенная щепа подойдет для мульчирования почвы и решения таких задач ландшафтного дизайна, как отсыпка дорожек и площадок. Это удобный, полностью натуральный материал без каких-либо химических добавок. Вы обязательно найдете ему применение на своей даче! Обратите внимание, что это щепа лиственных пород деревьев (березы, липы, тополя, клена и осины). Вы можете не беспокоится о том, что мульча или отсыпка из этой щепы закислят почву или повредят вашим растениям.</p>
+                      </div>
+                      <div class="page-product-description">
+                        <div class="page-col-left">
+                          <div class="page-product-description-name">Древесина</div>
+                          <div class="page-product-description-space"></div>
+                        </div>
+                        <div class="page-col-right">
+                          <div class="page-product-description-value">Сосна</div>
+                        </div>
+                        <div class="page-col-left">
+                          <div class="page-product-description-name">Упаковка</div>
+                          <div class="page-product-description-space"></div>
+                        </div>
+                        <div class="page-col-right">
+                          <div class="page-product-description-value">Мешки</div>
+                        </div>
+                        <div class="page-col-left">
+                          <div class="page-product-description-name">Фракция</div>
+                          <div class="page-product-description-space"></div>
+                        </div>
+                        <div class="page-col-right">
+                          <div class="page-product-description-value">5см</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="page-foot">
+                      <div class="clearfix">
+                        <div class="page-col-left page-col-left_page-foot">
+                          <div class="page-requisites">
+                            <div class="page-requisites__title">
+                              <span>ТОО «Позитроника»</span>
+                            </div>
+                            <div class="page-requisites__content">
+                              <span class="page-requisites__content-element page-requisites__content-element_address">Республика Казахстан<span data-bind="text: ', г. ' + city()">, г. Алматы</span><span data-bind="text: formattedAddress">, мкр. Коктем-1, дом 15а, 4-й этаж</span></span>
+                              <!-- ko if: bin() !== "" -->
+                              <span class="page-requisites__content-element page-requisites__content-element_bin" data-bind="text: 'БИН: ' + bin()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: bank() !== "" -->
+                              <span class="page-requisites__content-element page-requisites__content-element_bank" data-bind="text: 'Банк: ' + bank()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: bik() !== "" -->
+                              <span class="page-requisites__content-element page-requisites__content-element_bik" data-bind="text: 'БИК: ' + bik()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: iik() !== "" -->
+                              <span class="page-requisites__content-element page-requisites__content-element_iik" data-bind="text: 'ИИК: ' + iik()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: kbe() !== "" -->
+                              <span class="page-requisites__content-element page-requisites__content-element_kbe" data-bind="text: 'КБе: ' + kbe()"></span>
+                              <!-- /ko -->
+                              <!-- ko if: knp() !== "" -->
+                              <span class="page-requisites__content-element page-requisites__content-element_knp" data-bind="text: 'КНП: ' + knp()"></span>
+                              <!-- /ko -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="page-col-right page-col-right_page-foot">
+                          <div class="page-watermark">
+                            <div class="page-watermark-logo"><img src="../img/requisites-logo.png"></div>
+                            <div class="page-watermark-text">Создано на платформе<br> b2bMarket</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside id="settings" class="settings nano">
+          <div class="settings-body nano-content">
+            <button id="settings-close" class="btn btn-link btn_settings">
+              <i class="icon icon-close-lg"></i>
+              <span class="btn__text">Закрыть настройки</span>
+            </button>
+            <form id="commerceSettingsForm" action="" method="post">
+              <div class="form-control">
+                <div class="form-control-label">Срок действия коммерческого предложения</div>
+                <div class="select">
+                  <select name="commerce_time" data-bind="value: commerceTime">
+                    <option value="30">30 дней</option>
+                    <option value="14">14 дней</option>
+                    <option value="7">7 дней</option>
+                  </select>
+                </div>
+              </div>
+              <fieldset>
+                <legend>О товаре</legend>
+                <div class="ui-checkbox ui-checkbox_settings">
+                  <input type="checkbox" name="in_stock" data-bind="checked: inStock"/>
+                  <label class="ui-checkbox-label ui-checkbox-label_settings">Товар в наличии</label>
+                </div>
+                <div class="form-control" data-bind="visible: !inStock()">
+                  <div class="form-control-label-tip">дней</div>
+                  <div class="form-control-label">Срок до отправки</div>
+                  <div class="spinner">
+                    <a role="button" data-action="decrease" class="spinner-btn spinner-btn-minus"></a>
+                    <input type="number" name="delivery_time" value="14" data-bind="textInput: deliveryTime" id="product-delivery" class="spinner-input input-field"/>
+                    <a role="button" data-action="increase" class="spinner-btn spinner-btn-plus"></a>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label">Количество</div>
+                  <div class="spinner">
+                    <a role="button" data-action="decrease" class="spinner-btn spinner-btn-minus"></a>
+                    <input type="number" name="product_count" data-bind="textInput: productCount" id="product-count" class="spinner-input input-field"/>
+                    <a role="button" data-action="increase" class="spinner-btn spinner-btn-plus"></a>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label-tip" data-bind="text: productUnitLong">за штуку</div>
+                  <div class="form-control-label">Цена</div>
+                  <div class="input input-price">
+                      <input type="text" name="product_price" data-bind="textInput: productPrice" placeholder="Введите цену"/>
+                    <span class="input-unit input-unit-right">ТГ.</span>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label">Условия оплаты</div>
+                  <div class="balance">
+                    <input type="hidden" name="billing-condition" value="0" data-bind="value: prepay"/>
+                    <div class="balance-unit balance-unit-left">
+                      <input type="text" name="prepay" data-bind="textInput: prepay"/><span class="balance-unit-label">Предоплата</span>
+                    </div>
+                    <div class="balance-control">
+                      <div class="balance-control-track"><span class="balance-control-track-btn"></span></div>
+                    </div>
+                    <div class="balance-unit balance-unit-right">
+                      <input type="text" name="postpay" data-bind="textInput: postpay"/><span class="balance-unit-label">Постоплата</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-control form-control_condition-delivery">
+                  <div class="form-control-label">Условия доставки</div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="EXW" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">EXW</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="CFR" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">CFR</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="DAT" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">DAT</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="FCA" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">FCA</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="CIF" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">CIF</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="DAP" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">DAP</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="FAS" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">FAS</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="CPT" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">CPT</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="DDP" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">DDP</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="FOB" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">FOB</label>
+                  </div>
+                  <div class="ui-checkbox ui-checkbox_settings">
+                    <input type="checkbox" name="deliveryConditions[]" value="CIP" data-bind="checked: deliveryConditions"/>
+                    <label class="ui-checkbox-label ui-checkbox-label_settings">CIP</label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Контактные данные</legend>
+                <div class="form-control">
+                  <div class="form-control-label">Город</div>
+                  <div class="select">
+                    <select name="city" data-bind="value: city">
+                      <option selected="selected">Караганда</option>
+                      <option>Алматы</option>
+                      <option>Экибастуз</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label">Адрес</div>
+                  <div class="input">
+                    <input type="text" name="company_address" data-bind="textInput: address" placeholder="Введите ваш адрес"/>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label">Email</div>
+                  <!-- ko foreach: emails -->
+                  <div class="input input-multiple has-btn">
+                    <input type="email" name="company_emails[]" data-bind="textInput: $parent.emails()[$index()]" placeholder="Введите ваш E-mail"/>
+                    <a role="button" href="#" class="input-btn-change input-btn-add" data-bind="visible: $root.emails().length < 3 && $index() === 0, click: $root.addEmail"></a>
+                    <a role="button" href="#" class="input-btn-change input-btn-remove" data-bind="visible: $index() > 0, click: $root.delEmail.bind($data, $index())"></a>
+                  </div>
+                  <!-- /ko -->
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label">Телефон</div>
+                  <!-- ko foreach: tels -->
+                  <div class="input input-multiple has-btn">
+                    <input type="tel" name="company_tels[]" data-bind="textInput: $parent.tels()[$index()]" placeholder="Введите ваш телефон"/>
+                    <a role="button" href="#" class="input-btn-change input-btn-add" data-bind="visible: $root.tels().length < 3 && $index() === 0, click: $root.addTel"></a>
+                    <a role="button" href="#" class="input-btn-change input-btn-remove" data-bind="visible: $index() > 0, click: $root.delTel.bind($data, $index())"></a>
+                  </div>
+                  <!-- /ko -->
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Реквизиты</legend>
+                <div class="form-control">
+                  <div class="form-control-label">БИН</div>
+                  <div class="input">
+                    <input type="text" name="company_bin" class="input-bin" data-bind="textInput: bin" placeholder="Введите ваш БИН"/>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label">Банк</div>
+                  <div class="input">
+                    <input type="text" name="company_bank" data-bind="textInput: bank" placeholder="Введите банк бенефициара"/>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label">БИК</div>
+                  <div class="input">
+                    <input type="text" name="company_bik" data-bind="textInput: bik" placeholder="Введите ваш БИК"/>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control-label">ИИК</div>
+                  <div class="input">
+                    <input type="text" name="company_iik" data-bind="textInput: iik" placeholder="Введите ваш ИИК"/>
+                  </div>
+                </div>
+                <div class="form-control-group">
+                  <div class="form-control form-control_half-less">
+                    <div class="form-control-label">КБе</div>
+                    <div class="input">
+                      <input type="text" name="company_kbe" data-bind="textInput: kbe" placeholder="Введите КБе"/>
+                    </div>
+                  </div>
+                  <div class="form-control form-control_half-less">
+                    <div class="form-control-label">КНП</div>
+                    <div class="input">
+                      <input type="text" name="company_knp" data-bind="textInput: knp" placeholder="Введите КНП"/>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </aside>
+      </div>
+      <div id="bottom-controls">
+        <div class="pull-right"><span class="muted">Сохранено 2 минуты назад</span>
+          <div class="btn btn-blue">Отправить</div>
+        </div>
+      </div>
+
+      <!-- Всплывающие окна -->
+      <!-- Адрес -->
+      <div class="popup-edit popup-edit_address is-hidden">
+        <span class="popup-edit__close"></span>
+        <select form="commerceSettingsForm" class="popup-edit__dropdown-select popup-edit__dropdown-select_address" data-bind="value: city">
+          <option class="popup-edit__select-element">Караганда</option>
+          <option class="popup-edit__select-element">Алматы</option>
+          <option class="popup-edit__select-element">Экибастуз</option>
+        </select>
+        <input form="commerceSettingsForm" class="popup-edit__input-borderless popup-edit__input-borderless_address" type="text" name="company_address" data-bind="textInput: address" placeholder="Введите ваш адрес">
+<!--
+
+        <input class="popup-edit__input-borderless popup-edit__input-borderless_address" type="text" value="новый адрес">
+        <a class="popup-edit__add-link" href="#">Добавить новый</a>
+-->
+      </div>
+
+      <!-- E-mail -->
+      <div class="popup-edit popup-edit_email is-hidden">
+        <span class="popup-edit__close"></span>
+        <label class="popup-edit__label-top">E-mail:</label>
+        <ul class="popup-edit__multiply-list">
+          <!-- ko foreach: emails -->
+          <li class="popup-edit__multiply-list-item">
+            <input class="popup-edit__input-borderless popup-edit__input-borderless_email" type="email" data-bind="textInput: $parent.emails()[$index()]" placeholder="Введите E-mail">
+            <a role="button" href="#" data-bind="click: $root.delEmail.bind($data, $index())"></a>
+          </li>
+          <!-- /ko -->
+          <li class="popup-edit__multiply-list-item">
+            <a class="popup-edit__add-link" role="button" href="#" data-bind="visible: emails().length < 3, click: $root.addEmail">Добавить новый</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Телефон -->
+      <div class="popup-edit popup-edit_tel is-hidden">
+        <span class="popup-edit__close"></span>
+        <label class="popup-edit__label-top">Тел.: </label>
+        <ul class="popup-edit__multiply-list">
+          <!-- ko foreach: tels -->
+          <li class="popup-edit__multiply-list-item">
+            <input class="popup-edit__input-borderless popup-edit__input-borderless_tel" type="tel" data-bind="textInput: $parent.tels()[$index()]" placeholder="Введите телефон">
+            <a role="button" href="#" data-bind="click: $root.delTel.bind($data, $index())"></a>
+          </li>
+          <!-- /ko -->
+          <li class="popup-edit__multiply-list-item">
+            <a class="popup-edit__add-link" role="button" href="#" data-bind="visible: tels().length < 3, click: $root.addTel">Добавить новый</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Условия поставки -->
+      <div class="popup-edit popup-edit_condition-delivery is-hidden">
+        <span class="popup-edit__title">Условия поставки:</span>
+<!--
+        <div class="popup-edit__condition-elements">
+          <div class="popup-edit__condition-element">
+            <div class="popup-edit__condition-element-name">FOB</div>
+            <div class="popup-edit__condition-element-delete"></div>
+          </div>
+          <div class="popup-edit__condition-element">
+            <div class="popup-edit__condition-element-name">CFR</div>
+            <div class="popup-edit__condition-element-delete"></div>
+          </div>
+          <div class="popup-edit__condition-element">
+            <div class="popup-edit__condition-element-name">CIF</div>
+            <div class="popup-edit__condition-element-delete"></div>
+          </div>
+        </div>
+        <a class="popup-edit__add-link popup-edit__add-link_condition" href="#">Добавить условие</a>
+-->
+        <div class="popup-edit__condition-container">
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="EXW" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">EXW</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="CFR" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">CFR</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="DAT" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">DAT</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="FCA" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">FCA</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="CIF" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">CIF</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="DAP" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">DAP</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="FAS" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">FAS</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="CPT" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">CPT</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="DDP" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">DDP</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="FOB" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">FOB</label>
+          </div>
+          <div class="ui-checkbox ui-checkbox_condition-delivery">
+            <input form="commerceSettingsForm" type="checkbox" name="deliveryConditions[]" value="CIP" data-bind="checked: deliveryConditions"/>
+            <label class="ui-checkbox-label ui-checkbox-label_settings">CIP</label>
+          </div>
+        </div>
+        <label class="popup-edit__condition-label">Товар в наличии</label>
+        <div class="ui-checkbox ui-checkbox_condition">
+          <input form="commerceSettingsForm" type="checkbox" name="in_stock" data-bind="checked: inStock">
+        </div>
+        <div class="popup-edit__delivery" data-bind="visible: !inStock()">
+          <label class="popup-edit__condition-label">Срок до отправки</label>
+          <div class="popup-changer popup-changer_condition mini-spinner">
+            <a role="button" data-action="decrease" class="popup-changer__button-less"></a>
+            <input form="commerceSettingsForm" type="number" name="delivery_time" data-bind="textInput: deliveryTime" class="popup-changer__value">
+            <a role="button" data-action="increase" class="popup-changer__button-more"></a>
+          </div>
+          <span class="popup-edit__condition-label popup-edit__condition-label_after">дней</span>
+        </div>
+      </div>
+
+      <!-- Условия оплаты -->
+      <div class="popup-edit popup-edit_condition-payment is-hidden">
+        <span class="popup-edit__title">Условия оплаты:</span>
+
+        <div class="balance">
+          <input form="commerceSettingsForm" type="hidden" name="blling_condition" value="70">
+          <div class="balance-unit balance-unit-left balance-unit_popup">
+            <input form="commerceSettingsForm" type="text" name="prepay" data-bind="value: prepay">
+            <span>Предоплата</span>
+          </div>
+          <div class="balance-control">
+            <div class="balance-control-track balance-control-track_popup"><span class="balance-control-track-btn"></span></div>
+          </div>
+          <div class="balance-unit balance-unit-right balance-unit_popup">
+            <input form="commerceSettingsForm" type="text" name="postpay" data-bind="value: postpay">
+            <span>Постоплата</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Срок действия коммерческого предложения -->
+      <div class="popup-edit popup-edit_expires is-hidden">
+        <span class="popup-edit__close"></span>
+        <div class="select">
+          <select form="commerceSettingsForm" class="popup-edit__dropdown-select" data-bind="value: commerceTime">
+            <option class="popup-edit__select-element" value="30">30 дней</option>
+            <option class="popup-edit__select-element" value="14">14 дней</option>
+            <option class="popup-edit__select-element" value="7">7 дней</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Реквизиты -->
+      <div class="popup-edit popup-edit_requisites is-hidden">
+        <span class="popup-edit__title">Реквизиты:</span>
+        <div class="poput-edit__containers">
+          <div class="popup-edit__container">
+            <label class="popup-edit__label">БИН</label>
+            <input form="commerceSettingsForm" name="company_bin" class="popup-edit__input-medium input-bin" type="text" data-bind="textInput: bin" placeholder="Введите ваш БИН">
+          </div>
+          <div class="popup-edit__container">
+            <label class="popup-edit__label">Банк</label>
+            <input form="commerceSettingsForm" name="company_bank" class="popup-edit__input-medium" type="text" data-bind="textInput: bank" placeholder="Введите банк бенефициара">
+          </div>
+          <div class="popup-edit__container">
+            <label class="popup-edit__label">БИК</label>
+            <input form="commerceSettingsForm" name="company_bik" class="popup-edit__input-medium" type="text" data-bind="textInput: bik" placeholder="Введите ваш БИК">
+          </div>
+          <div class="popup-edit__container">
+            <label class="popup-edit__label">ИИК</label>
+            <input form="commerceSettingsForm" name="company_iik" class="popup-edit__input-medium" type="text" data-bind="textInput: iik" placeholder="Введите ваш ИИК">
+          </div>
+
+          <div class="popup-edit__container popup-edit__container_half popup-edit__container_half-first">
+            <label class="popup-edit__label">КБе</label>
+            <input form="commerceSettingsForm" name="company_kbe" class="popup-edit__input-medium popup-edit__input-medium_half" type="text" data-bind="textInput: kbe" placeholder="Введите ваш КБе">
+          </div>
+          <div class="popup-edit__container popup-edit__container_half">
+            <label class="popup-edit__label">КНП</label>
+            <input form="commerceSettingsForm" name="company_knp" class="popup-edit__input-medium popup-edit__input-medium_half" type="text" data-bind="textInput: knp" placeholder="Введите ваш КНП">
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript" src="../js/for-static-pages/libs/knockout.js"></script>
+    <script>
+      /**
+       * Knockout
+       */
+      // ViewModel
+      function CommerceSettings(dataObj) {
+          let self = this;
+
+          if (typeof dataObj !== "undefined") {
+              this.commerceTime = ko.observable(dataObj.commerceTime);
+              this.inStock = ko.observable(dataObj.inStock);
+              this.deliveryTime = ko.observable(dataObj.deliveryTime);
+              this.productUnitShort = ko.observable(dataObj.productUnitShort);
+              this.productUnitLong = ko.observable(dataObj.productUnitLong);
+              this.productCount = ko.observable(dataObj.productCount);
+              this.productPrice = ko.observable(dataObj.productPrice);
+              this.prepay = ko.observable(dataObj.prepay);
+              this.postpay = ko.observable(dataObj.postpay);
+              this.deliveryConditions = ko.observableArray(dataObj.deliveryConditions);
+              this.city = ko.observable(dataObj.city);
+              this.address = ko.observable(dataObj.address);
+              this.emails = ko.observableArray(dataObj.emails);
+              this.tels = ko.observableArray(dataObj.tels);
+              this.bin = ko.observable(dataObj.bin);
+              this.bank = ko.observable(dataObj.bank);
+              this.bik = ko.observable(dataObj.bik);
+              this.iik = ko.observable(dataObj.iik);
+              this.kbe = ko.observable(dataObj.kbe);
+              this.knp = ko.observable(dataObj.knp);
+          } else {
+              this.commerceTime = ko.observable(0);
+              this.inStock = ko.observable(true);
+              this.deliveryTime = ko.observable(0);
+              this.productUnitShort = ko.observable("");
+              this.productUnitLong = ko.observable("");
+              this.productCount = ko.observable(0);
+              this.productPrice = ko.observable(0);
+              this.prepay = ko.observable(0);
+              this.postpay = ko.observable(0);
+              this.deliveryConditions = ko.observableArray([]);
+              this.city = ko.observable("");
+              this.address = ko.observable("");
+              this.emails = ko.observableArray([]);
+              this.tels = ko.observableArray([]);
+              this.bin = ko.observable("");
+              this.bank = ko.observable("");
+              this.bik = ko.observable("");
+              this.iik = ko.observable("");
+              this.kbe = ko.observable("");
+              this.knp = ko.observable("");
+          }
+
+          // Подсчитываемая сумма (итоговая цена) товара
+          this.totalPrice = ko.computed(function () {
+              if (typeof this.productCount() !== "undefined" && typeof this.productPrice() !== "undefined") {
+                  // Удаляем пробелы из цены для арифметических операций
+                  let productPrice = String(this.productPrice()),
+                      productCount = Number(this.productCount());
+
+                  productPrice = productPrice.replace(/(\s|\u00A0)+/g, '');
+                  productPrice = Number(productPrice);
+
+                  return productCount * productPrice;
+              } else {
+                  return "";
+              }
+          }, this);
+
+          // Форматирование вывода цены. Например: из 250000 в 250 000
+          this.formatPrice = function (price) {
+              if (typeof price === "undefined") {
+                  return false;
+              }
+              if (price === "") {
+                  price = 0;
+              }
+              price = String(price);
+              // Удаляем пробелы
+              price = price.replace(/(\s|\u00A0)+/g, '');
+              // Добавляем пробелы через каждые 3 цифры
+              return price.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+          };
+
+          // Форматирование вывода адреса с условием. Если адрес не указан, то вообще ничего видно не должно быть
+          this.formattedAddress = ko.computed(function () {
+              if (this.address() !== "") {
+                  return ", " + this.address();
+              }
+          }, this);
+
+          // Форматирование вывода условий поставки
+          this.formattedDeliveryConditions = ko.computed(function () {
+              if (this.deliveryConditions() !== []) {
+                  let deliveryConditions = this.deliveryConditions().join(", ");
+
+                  if (deliveryConditions.length > 1 ) {
+                      let lastCondition = deliveryConditions.slice(-3);
+                      deliveryConditions = deliveryConditions.replace(/, [A-Z]{3}$/, " и " + lastCondition);
+                  }
+
+                  return deliveryConditions;
+              }
+          }, this);
+
+          this.addEmail = function () {
+              self.emails.push(ko.observable(""));
+          };
+          this.delEmail = function (index, data, event) {
+              self.emails.splice(index, 1);
+          };
+
+          this.addTel = function () {
+              self.tels.push(ko.observable(""));
+          };
+          this.delTel = function (index, data, event) {
+              self.tels.splice(index, 1);
+          };
+      }
+
+      // Объект с начальными параметрами коммерческого предложения
+      let commerceData = {
+          commerceTime : 30,
+          inStock : true,
+          deliveryTime : 0,
+          productUnitShort : "шт.",
+          productUnitLong : "за штуку",
+          productCount : 5,
+          productPrice : 250000,
+          prepay : 70,
+          postpay : 30,
+          deliveryConditions : ["FOB", "CFR", "CIF"],
+          city : "",
+          address : "мкр. Коктем-1, дом 15а, 4-й этаж",
+          emails : [ko.observable("tagwriter@mail.ru"), ko.observable("manux31337@gmail.com")],
+          tels : [ko.observable("+7 (708) 544 64 00"), ko.observable("+7 (777) 777 77 77")],
+          bin : "090440007304",
+          bank : "",
+          bik : "KKMFKZ2",
+          iik : "KZ24070105KSN0000000",
+          kbe : "",
+          knp : ""
+      };
+
+      ko.applyBindings(new CommerceSettings(commerceData));
+    </script>
+    <script src="../js/for-static-pages/pages/config.js"></script>
+    <script src="../js/for-static-pages/libs/require.js" data-main="/js/for-static-pages/pages/order-response/main.js"></script>
+    <noscript>
+      <div class="error">
+        <div class="error-text text-uppercase">Для работы с сайтом необходима поддержка <strong> JavaScript </strong> и  <strong>Cookies</strong>.</div>
+        <div class="error-solution">Чтобы использовать все возможности сайта, загрузите и установите один из этих браузеров:</div>
+        <ul class="error-browsers">
+          <li><img src="../img/chrome.png"/><a href="#chrome" class="block">Chrome</a></li>
+          <li><img src="../img/opera.png"/><a href="#chrome" class="block">Opera</a></li>
+          <li><img src="../img/firefox.png"/><a href="#chrome" class="block">Firefox</a></li>
+        </ul>
+        <ul class="error-links">
+          <li><a href="#gotoback">Вернуться назад</a></li>
+          <li><a href="#gotomain">Вернуться на главную</a></li>
+        </ul>
+      </div>
+    </noscript>
+  </body>
+</html>

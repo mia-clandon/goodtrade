@@ -1,0 +1,50 @@
+.navbar-right-side {
+  float: right;
+}
+.navbar-white {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #d9d9d9;
+  background: #fff;
+  z-index: 15;
+  top: 0;
+  left: 0;
+  line-height: 57px;
+  transition: top .3s linear;
+  padding: 0 30px;
+
+  font-size: 0;
+  line-height: 0;
+}
+.navbar-white.is-collapsed {
+  top: -60px;
+}
+.navbar-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  padding: 20px 50px;
+  .navbar-right-side {
+    padding-top: 10px;
+  }
+}
+.navbar-wrap {
+  height: 60px;
+}
+.navbar-link-wrap {
+  display: inline-block;
+  vertical-align: top;
+  height: 60px;
+  padding: 19.5px 0;
+}
+.navbar-left-side {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 22px 0;
+  height: 60px;
+  font-size: 0;
+  line-height: 16px;
+}

@@ -1,0 +1,12 @@
+// Классы состояний элементов, не входят в БЭМ. В основном используются скриптами.
+.is-absolute {
+  position: absolute;
+}
+
+.is-fixed {
+  position: fixed;
+}
+
+.is-relative {
+  position: relative;
+}

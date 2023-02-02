@@ -1,0 +1,27 @@
+.paginator {
+  display: block;
+  text-align: center;
+}
+.paginator-link {
+  display: inline-block;
+  padding: 10px 14px;
+  font: 14px/21px $font-light;
+  color: $base-color;
+}
+
+/* Новый пагинатор */
+.pagination {
+  display: block;
+  text-align: center;
+  
+  li {
+    display: inline-block;
+    margin: 10px 14px;
+    
+    a, span {
+      font-size: $font-size-p;
+      line-height: $line-height-p;
+      font-family: $font-light;
+    }
+  }
+}

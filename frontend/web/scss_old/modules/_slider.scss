@@ -1,0 +1,22 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .dots {
+    margin-top: 42px;
+
+    .slick-active {
+      background: $base-color;
+      border-color: $base-color;
+    }
+  }
+}
+
+.slider-company{
+}
+
+.slider-item {
+  display: inline-block;
+  text-align: left;
+}

@@ -1,0 +1,33 @@
+// Виджет сворачивания/разворачивания элемента по высоте.
+.js-collapse {
+  &.is-open {
+    .js-collapse__content_faded {
+      &:after {
+        background: none;
+      }
+    }
+  }
+}
+
+.js-collapse__content {
+  overflow: hidden;
+}
+
+.js-collapse__content_faded {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: $basic-value * 10;
+    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  }
+}
+
+.js-collapse__toggle {
+  display: inline-block;
+  padding-top: $basic-value * 8 - rem-to-px($indent-difference-p);
+}

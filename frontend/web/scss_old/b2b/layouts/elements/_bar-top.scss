@@ -1,0 +1,417 @@
+// Верхняя панель на сайте
+.bar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $basic-value*3 $basic-value*10;
+  font-size: 0;
+  line-height: 0;
+  transition: padding-left .8s;
+  z-index: 5;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white-color;
+    transition: all .2s;
+    z-index: -1;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .bar-top {
+    padding-left: $basic-value * 5;
+    padding-right: $basic-value * 5;
+
+    &:after {
+      box-shadow: inset 0 -1px 0 0 $border-color-black-light;
+    }
+  }
+}
+
+.bar-top_inverted {
+  background-color: transparent;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+    box-shadow: none;
+    opacity: $q-middle;
+    z-index: -1;
+  }
+
+  &:after {
+    opacity: 0;
+  }
+}
+
+// Модификатор верхней панели без хлебных крошек
+.bar-top_no-breadcrumbs {
+  .bar-top__breadcrumbs {
+    display: none;
+  }
+}
+
+// Модификатор сдвига вправо относительно левой навигационной панели .nav-left
+.bar-top_shifted-right {
+  padding-left: $basic-value * 60 + $basic-value * 10 * 2;
+  transition: padding-left .8s ease .3s;
+
+  .bar-top__menu-button {
+    width: 0;
+    margin-right: 0;
+  }
+
+  .logo {
+    width: 0;
+  }
+}
+
+.bar-top__left-part {
+  display: flex;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .bar-top__left-part {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+}
+
+.bar-top__right-part {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .bar-top__right-part {
+    display: none;
+  }
+}
+
+// Кнопка открывания меню
+.bar-top__menu-button-container {
+  display: inline-flex;
+  vertical-align: top;
+  align-items: center;
+  height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;
+}
+
+.bar-top__menu-button {
+  padding: 0;
+  margin-right: $basic-value * 7;
+  @include icons-sprite(sm-menu);
+  opacity: $q-middle;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .2s, width .3s ease .3s, margin-right .3s ease .3s;
+
+  &:hover {
+    opacity: $q-dark;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .bar-top__menu-button {
+    margin-right: $basic-value * 5 - 1px; // 1px - поправка на ширину кнопки: 16px
+  }
+}
+
+.bar-top__menu-button_white {
+  @include icons-sprite(sm-menu-white);
+  opacity: $q-dark;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Место для логотипа
+.bar-top__logo-container {
+  display: flex;
+  vertical-align: top;
+  align-items: center;
+  flex-basis: 0;
+  flex-grow: 1;
+  justify-content: flex-start;
+  height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;
+
+  .logo {
+    overflow: hidden;
+    transition: width .3s ease .3s;
+  }
+}
+
+// Хлебные крошки
+.bar-top__breadcrumbs {
+  flex-grow: 10;
+  display: inline-flex;
+  vertical-align: top;
+}
+
+.bar-top__breadcrumbs-item {
+  display: inline-flex;
+  align-items: flex-end;
+  margin-left: $basic-value * 3;
+
+  &:before {
+    content: "";
+    display: block;
+    position: relative;
+    bottom: $basic-value * 4;
+    margin-right: $basic-value * 3;
+    @include icons-sprite(sm-bc-direction-to-right);
+    opacity: $q-middle;
+  }
+}
+
+.bar-top__breadcrumbs-item-icon {
+  align-self: center;
+  display: inline-flex;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  width: $basic-value * 12;
+  height: $basic-value * 12;
+  background-color: rgba($black-color, $q-x-light);
+  border-radius: 50%;
+
+  &:before {
+    content: "";
+    display: block;
+    margin: auto;
+    opacity: $q-middle;
+  }
+
+  & + .bar-top__breadcrumbs-item-title {
+    margin-left: $basic-value * 3;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .bar-top__breadcrumbs-item-icon {
+    margin: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+// В этом месте нарушаются правила именования модификаторов в методологии БЭМ. Это сделано как по историческим причинам,
+// так и потому, что в движке сайта происходит формирование названий по своим алгоритмам. Вряд ли backend-разработчик
+// будет их менять. Во всяком случае, в ближайшее время.
+.bar-top__breadcrumbs-item-icon_agriculture { &:before { @include category-sprite(icon-category-md-01); } }
+.bar-top__breadcrumbs-item-icon_forest { &:before { @include category-sprite(icon-category-md-02); } }
+.bar-top__breadcrumbs-item-icon_textile_and_clothing { &:before { @include category-sprite(icon-category-md-03); } }
+.bar-top__breadcrumbs-item-icon_minerals_and_chemicals_metallurgy { &:before { @include category-sprite(icon-category-md-04); } }
+.bar-top__breadcrumbs-item-icon_engineering { &:before { @include category-sprite(icon-category-md-05); } }
+.bar-top__breadcrumbs-item-icon_instrumentation { &:before { @include category-sprite(icon-category-md-06); } }
+.bar-top__breadcrumbs-item-icon_construction { &:before { @include category-sprite(icon-category-md-07); } }
+.bar-top__breadcrumbs-item-icon_containers_and_packaging { &:before { @include category-sprite(icon-category-md-08); } }
+.bar-top__breadcrumbs-item-icon_medicine { &:before { @include category-sprite(icon-category-md-09); } }
+.bar-top__breadcrumbs-item-icon_energetics { &:before { @include category-sprite(icon-category-md-10); } }
+.bar-top__breadcrumbs-item-icon_food { &:before { @include category-sprite(icon-category-md-11); } }
+
+@include media-breakpoint-between(xs, md) {
+  .bar-top__breadcrumbs-item-icon_agriculture { &:before { @include get-sprite($category-sprites, icon-category-s-01); } }
+  .bar-top__breadcrumbs-item-icon_forest { &:before { @include get-sprite($category-sprites, icon-category-s-02); } }
+  .bar-top__breadcrumbs-item-icon_textile_and_clothing { &:before { @include get-sprite($category-sprites, icon-category-s-03); } }
+  .bar-top__breadcrumbs-item-icon_minerals_and_chemicals_metallurgy { &:before { @include get-sprite($category-sprites, icon-category-s-04); } }
+  .bar-top__breadcrumbs-item-icon_engineering { &:before { @include get-sprite($category-sprites, icon-category-s-05); } }
+  .bar-top__breadcrumbs-item-icon_instrumentation { &:before { @include get-sprite($category-sprites, icon-category-s-06); } }
+  .bar-top__breadcrumbs-item-icon_construction { &:before { @include get-sprite($category-sprites, icon-category-s-07); } }
+  .bar-top__breadcrumbs-item-icon_containers_and_packaging { &:before { @include get-sprite($category-sprites, icon-category-s-08); } }
+  .bar-top__breadcrumbs-item-icon_medicine { &:before { @include get-sprite($category-sprites, icon-category-s-09); } }
+  .bar-top__breadcrumbs-item-icon_energetics { &:before { @include get-sprite($category-sprites, icon-category-s-10); } }
+  .bar-top__breadcrumbs-item-icon_food { &:before { @include get-sprite($category-sprites, icon-category-s-11); } }
+}
+
+.bar-top__breadcrumbs-item-title {
+  margin-bottom: $basic-value * 4 - rem-to-px($indent-difference-small);
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+  color: $primary-text-color-light-back;
+
+  a {
+    display: inline-block;
+    vertical-align: bottom;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $secondary-text-color-light-back;
+
+    &:hover {
+      color: $primary-text-color-light-back;
+    }
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  .bar-top__breadcrumbs-item-title {
+    max-width: $basic-value * 61;
+  }
+}
+
+// Блок со ссылкой "Вернуться назад"
+.bar-top__link-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+  padding-left: $basic-value * 6;
+  padding-top: 1px; // Костыль, во имя скорости
+}
+
+// Блок поиска
+.bar-top__search {
+  display: flex;
+  align-items: center;
+  flex-basis: 0;
+  flex-grow: 1;
+  margin-left: $basic-value * 10;
+  min-height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .bar-top__search {
+    flex-grow: 0;
+    margin-left: 0;
+  }
+}
+
+// Форма поиска
+.bar-top__search-form {
+  width: 100%;
+  text-align: right;
+  
+  .input .icon_settings {
+    display: none;
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .bar-top__search-form {
+    display: none;
+    
+    .input .icon_settings {
+      display: block;
+    }
+  }
+}
+
+// Активная форма поиска
+.bar-top__search-form_active {
+  text-align: left;
+
+  .bar-top__search-params {
+    display: flex;
+  }
+}
+
+// Блок с параметрами поиска
+.bar-top__search-params {
+  display: none;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: $basic-value*3 $basic-value*5 0 $basic-value*5;
+}
+
+.bar-top__search-params-list {}
+
+.bar-top__search-params-row {
+  display: flex;
+}
+
+.bar-top__search-params-title {
+  font: #{$font-size-small}/#{$line-height-small} $font-light;
+}
+
+.bar-top__search-params-items {
+  padding-left: $basic-value * 4;
+  padding-right: $basic-value * 4;
+}
+
+// Переключатель, показывающий форму поиска
+.bar-top__search-toggle {
+  margin-left: $basic-value * 7; // Тот же отступ, что и у кнопки меню
+}
+
+@include media-breakpoint-up(lg) {
+  .bar-top__search-toggle {
+    display: none;
+  }
+}
+
+// Блок инструментов пользователя
+.bar-top__user-features {
+  display: flex;
+  align-items: center;
+  height: rem-to-px($line-height-p-nowrap) + ($basic-value * 4) * 2;
+  margin-left: $basic-value * 12;
+
+  & > * {
+    margin-left: $basic-value * 6;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+// Блок с кнопками
+.bar-top__buttons-block {
+  display: flex;
+  align-items: center;
+  margin-left: $basic-value * 12;
+}
+
+// Блок пользователя
+.bar-top__user-block {
+  display: flex;
+  align-items: center;
+  margin-left: $basic-value * 12;
+
+  & > * + * {
+    margin-left: $basic-value * 6;
+  }
+}
+
+// Аватар пользователя
+.bar-top__user-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $basic-value * 12;
+  height: $basic-value * 12;
+  margin: -1px;
+  border: 1px solid $border-color-black-light;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+// Аватар пользователя с белой обводкой
+.bar-top__user-avatar_white {
+  border-color: $border-color-white-middle;
+}

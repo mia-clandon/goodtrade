@@ -1,0 +1,165 @@
+.dots {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+  font-size: 0;
+  li {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #cecece;
+    cursor: pointer;
+    margin-left: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  li.is-active {
+    background: $base-color;
+    border-color: $base-color;
+  }
+  button {
+    border: 0;
+    background: 0;
+    outline: 0;
+    color: inherit;
+    font: inherit;
+  }
+}
+.feedback-dots {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0;
+  font-size: 0;
+  margin-top: 42px;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 0;
+    font-size: 0;
+    height: 10px;
+    width: 10px;
+    @include border-radius(10px);
+    border: 1px solid #cecece;
+    cursor: pointer;
+    margin-left: 10px;
+    li {
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      border: 1px solid #cecece;
+      cursor: pointer;
+      margin-left: 10px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    li.is-active {
+      background: $base-color;
+      border-color: $base-color;
+    }
+    button {
+      border: 0;
+      background: 0;
+      outline: 0;
+      color: inherit;
+      font: inherit;
+    }
+  }
+  .li-white {
+    li.is-active {
+      background: $white-color !important;
+      border-color: $white-color !important;
+    }
+  }
+  .li-dot {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #cecece;
+    cursor: pointer;
+    margin-left: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  li.is-active {
+    background: $base-color;
+    border-color: $base-color;
+  }
+  .li-dot.is-active {
+    background: $base-color;
+    border-color: $base-color;
+  }
+  .slick-active {
+    background: $base-color;
+    border-color: $base-color;
+  }
+  button {
+    border: 0;
+    background: 0;
+    outline: 0;
+    color: inherit;
+    font: inherit;
+  }
+}
+.dots-white {
+  li.is-active {
+    background: $white-color !important;
+    border-color: $white-color !important;
+  }
+}
+.feedback-dots-white {
+  li.is-active {
+    background: $white-color !important;
+    border-color: $white-color !important;
+  }
+}
+.dots-dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #cecece;
+  cursor: pointer;
+  margin-left: 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+.feedback-dots-dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #cecece;
+  cursor: pointer;
+  margin-left: 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+.dots-dot.is-active {
+  background: $base-color;
+  border-color: $base-color;
+}
+.feedback-dots-dot.is-active {
+  background: $base-color;
+  border-color: $base-color;
+}

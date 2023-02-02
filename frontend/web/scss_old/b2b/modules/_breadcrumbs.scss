@@ -1,0 +1,140 @@
+// Небольшие хлебные крошки
+.breadcrumbs {
+  font-size: 0;
+  line-height: 0;
+}
+
+.breadcrumbs__item {
+  display: inline;
+  color: $primary-text-color-light-back;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    margin-top: ceil((rem-to-px($line-height-small) - 7px) / 2); // 7px - высота этого элемента
+    margin-bottom: floor((rem-to-px($line-height-small) - 7px) / 2); // 7px - высота этого элемента
+    margin-left: $basic-value * 3;
+    @include icons-sprite(sm-bc-direction-to-right);
+    opacity: $q-middle;
+  }
+  
+  &:last-child {
+    margin-right: 0;
+    
+    &:after {
+      display: none;
+    }
+  }
+
+  & + .breadcrumbs__item {
+    margin-left: $basic-value * 3;
+  }
+}
+
+.breadcrumbs__item_white {
+  &:after {
+    @include icons-sprite(sm-bc-direction-to-right-white);
+    opacity: $q-dark;
+  }
+}
+
+// Иконка элемента хлебных крошек
+.breadcrumbs__item-icon {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  line-height: 0;
+
+  &:before {
+    content: "";
+    display: inline-block;
+  }
+
+  & + .breadcrumbs__item-title {
+    margin-left: $basic-value * 3;
+  }
+}
+
+// В этом месте нарушаются правила именования модификаторов в методологии БЭМ. Это сделано как по историческим причинам,
+// так и потому, что в движке сайта происходит формирование названий по своим алгоритмам. Вряд ли backend-разработчик
+// будет их менять. Во всяком случае, в ближайшее время.
+.breadcrumbs__item-icon_agriculture { &:before { @include category-sprite(icon-category-s-01); opacity: $q-middle; } }
+.breadcrumbs__item-icon_forest { &:before { @include category-sprite(icon-category-s-02); opacity: $q-middle; } }
+.breadcrumbs__item-icon_textile_and_clothing { &:before { @include category-sprite(icon-category-s-03); opacity: $q-middle; } }
+.breadcrumbs__item-icon_minerals_and_chemicals_metallurgy { &:before { @include category-sprite(icon-category-s-04); opacity: $q-middle; } }
+.breadcrumbs__item-icon_engineering { &:before { @include category-sprite(icon-category-s-05); opacity: $q-middle; } }
+.breadcrumbs__item-icon_instrumentation { &:before { @include category-sprite(icon-category-s-06); opacity: $q-middle; } }
+.breadcrumbs__item-icon_construction { &:before { @include category-sprite(icon-category-s-07); opacity: $q-middle; } }
+.breadcrumbs__item-icon_containers_and_packaging { &:before { @include category-sprite(icon-category-s-08); opacity: $q-middle; } }
+.breadcrumbs__item-icon_medicine { &:before { @include category-sprite(icon-category-s-09); opacity: $q-middle; } }
+.breadcrumbs__item-icon_energetics { &:before { @include category-sprite(icon-category-s-10); opacity: $q-middle; } }
+.breadcrumbs__item-icon_food { &:before { @include category-sprite(icon-category-s-11); opacity: $q-middle; } }
+
+.breadcrumbs__item-icon_agriculture-white { &:before { @include category-sprite(icon-category-s-white-01); opacity: $q-dark; } }
+.breadcrumbs__item-icon_forest-white { &:before { @include category-sprite(icon-category-s-white-02); opacity: $q-dark; } }
+.breadcrumbs__item-icon_textile_and_clothing-white { &:before { @include category-sprite(icon-category-s-white-03); opacity: $q-dark; } }
+.breadcrumbs__item-icon_minerals_and_chemicals_metallurgy-white { &:before { @include category-sprite(icon-category-s-white-04); opacity: $q-dark; } }
+.breadcrumbs__item-icon_engineering-white { &:before { @include category-sprite(icon-category-s-white-05); opacity: $q-dark; } }
+.breadcrumbs__item-icon_instrumentation-white { &:before { @include category-sprite(icon-category-s-white-06); opacity: $q-dark; } }
+.breadcrumbs__item-icon_construction-white { &:before { @include category-sprite(icon-category-s-white-07); opacity: $q-dark; } }
+.breadcrumbs__item-icon_containers_and_packaging-white { &:before { @include category-sprite(icon-category-s-white-08); opacity: $q-dark; } }
+.breadcrumbs__item-icon_medicine-white { &:before { @include category-sprite(icon-category-s-white-09); opacity: $q-dark; } }
+.breadcrumbs__item-icon_energetics-white { &:before { @include category-sprite(icon-category-s-white-10); opacity: $q-dark; } }
+.breadcrumbs__item-icon_food-white { &:before { @include category-sprite(icon-category-s-white-11); opacity: $q-dark; } }
+
+// Название элемента хлебных крошек
+.breadcrumbs__item-title {
+  display: inline;
+  font-size: 0;
+  line-height: 0;
+
+  span {
+    color: $primary-text-color-light-back;
+    font: #{$font-size-small}/#{$line-height-small} $font-light;
+    vertical-align: top;
+  }
+
+  a {
+    color: $secondary-text-color-light-back;
+    font: #{$font-size-small}/#{$line-height-small} $font-light;
+    vertical-align: top;
+
+    &:hover, &:focus, &:active {
+      color: $primary-text-color-light-back;
+    }
+  }
+}
+
+.breadcrumbs__item-title_white {
+  span {
+    color: $primary-text-color-dark-back;
+  }
+
+  a {
+    color: $primary-text-color-dark-back;
+
+    &:hover, &:focus, &:active {
+      color: $accidental-text-color-dark-back;
+    }
+  }
+}
+
+// Активный элемент хленых крошек
+.breadcrumbs__item-title_current {
+  color: $primary-text-color-light-back;
+}
+
+// Иконка удаления элемента хлебных крошек
+.breadcrumbs__item-remove {
+  display: inline-block;
+  margin-left: $basic-value * 2;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    @include icons-sprite(xxsm-delete);
+    opacity: $q-middle;
+  }
+}

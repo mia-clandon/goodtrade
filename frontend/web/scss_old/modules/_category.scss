@@ -1,0 +1,50 @@
+.category {
+  font-size: 0;
+  width: 100%;
+  margin: 0 auto;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  text-align: center;
+  li {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+    width: 90px;
+    height: 78px;
+    text-align: center;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+.category-item {
+  position: relative;
+  display: inline-block;
+}
+.category-item.is-selected {
+  &:after {
+    content: '';
+    display: block;
+    @include icons-sprite(icon-success);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: 5px;
+  }
+}
+.category-item-thumb {
+  position: relative;
+  z-index: -1;
+  text-align: center;
+  height: 32px;
+  line-height: 32px;
+  vertical-align: middle;
+  margin: 5px 0;
+}
+.category-item-text {
+  position: relative;
+  z-index: -1;
+  color: rgba(0, 0, 0, 0.8);
+  font: 11px/16px 'Neris-Light', sans-serif;
+}

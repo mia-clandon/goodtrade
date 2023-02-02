@@ -1,0 +1,245 @@
+/* Блок "Хронология" */
+.chrono {
+  margin: 15px 0;
+}
+
+/* Строка месяца*/
+.chrono-month {
+  font-size: $font-size-small;
+  line-height: $line-height-small;
+  font-family: $font-bold;
+  text-transform: uppercase;
+  text-align: right;
+  color: $secondary-text-color-light-back;
+}
+
+/* Строка события */
+.chrono-event {
+  position: relative;
+  float: left;
+  width: 100%;
+  font-size: 0;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 16.33333333333333%;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    @include border-radius(50%);
+    border: 1px solid $base-color;
+    background: #fff;
+    z-index: 2;
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    width: 7px;
+    height: 21px;
+    font-size: 11px;
+    line-height: 21px;
+    opacity: 0.45;
+  }
+  
+  > div {
+    position: relative;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    
+    &:last-child {
+
+      /* Рамка вокруг описания события */
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid $border-color-black-light;
+        @include border-radius(3px);
+        opacity: 0;
+        transition-duration: 0.2s;
+      }
+      
+      /* Небольшая белая заплатка, чтобы рамка не касалась левого кружка */
+      &:after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 11px;
+        position: absolute;
+        top: 13px;
+        left: 0;
+        background: white;
+        opacity: 0;
+        transition-duration: 0.2s;
+      }
+    }
+    
+    /* Плавное появление */
+    &:last-child:hover {
+      &:before, &:after {
+        opacity: 1;
+      }
+      .chrono-info-edit {
+        opacity: 1;
+      }
+    }
+  }
+}
+/* Цвета кружков, незаполненных и заполненных */
+.chrono-event-blue {
+  &:before {
+    border-color: $base-color;
+  }
+}
+.chrono-event-blue.chrono-event-filled {
+  &:before {
+    background-color: $base-color;
+  }
+}
+.chrono-event-magenta {
+  &:before {
+    border-color: #955f99;
+  }
+}
+.chrono-event-magenta.chrono-event-filled {
+  &:before {
+    background-color: #955f99;
+  }
+}
+.chrono-event-green {
+  &:before {
+    border-color: #2abf1d;
+  }
+}
+.chrono-event-green.chrono-event-filled {
+  &:before {
+    background-color: #2abf1d;
+  }
+}
+// Связанные вертикальной линией между собой события
+// В макете их нет, временно убрал
+//.chrono-event-link {
+//  .chrono-info {
+//    &:before {
+//      content: '';
+//      position: absolute;
+//      display: block;
+//      width: 1px;
+//      height: 51px;
+//      margin-top: -40px;
+//      margin-left: -16px;
+//      background: url("#{$url-img}sprite.png") 0 -1584px;
+//    }
+//  }
+//  + .chrono-event-link-bypass {
+//      .chrono-info {
+//        &:before {
+//          width: 7px;
+//          height: 50px;
+//          margin-left: -24px;
+//          background: url("#{$url-img}sprite.png") 0 -1534px;
+//        }
+//      }
+//    }
+//}
+//.chrono-event-link-bypass {
+//  + {
+//    .chrono-event-link {
+//      >.chrono-info {
+//        &:before {
+//          margin-left: -25px;
+//          background: url("#{$url-img}sprite.png") 0 -1485px;
+//          width: 6px;
+//          height: 49px;
+//        }
+//      }
+//    }
+//  }
+//}
+/* Стрелка вправо от кружка */
+.chrono-event-in {
+  &:after {
+    content: "→";
+    left: 166.5px;
+  }
+}
+/* Стрелка влево от кружка */
+.chrono-event-out {
+  &:after {
+    content: "←";
+    left: 146.5px;
+  }
+}
+/* Стоблец с датой события */
+.chrono-date {
+  width: 100%;
+  min-height: 1px;
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+  text-align: right;
+  line-height: $line-height-p;
+}
+/* Столбец с описанием события */
+.chrono-info {
+  position: relative;
+  width: 100%;
+}
+/* Заголовок события */
+.chrono-info-title {
+  font: #{$font-size-p}/#{$line-height-p} $font-light;
+  color: $primary-text-color-light-back;
+}
+/* Доп. сведения по событию */
+.chrono-info-text {
+  font: $smallFont;
+  color: $secondary-text-color-light-back;
+  
+  span {
+    display: inline-block;
+    padding-right: 5px;
+    + {
+      span {
+        border-left: 1px solid #cacaca;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+/* Редактирование события */
+.chrono-info-edit {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  opacity: 0;
+  transition-duration: 0.2s;
+}
+%chrono-info-edit__element {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+  opacity: 0.45;
+}
+.chrono-info-edit__ok {
+  @extend %chrono-info-edit__element;
+  @include icons-sprite(sm-ok);
+}
+.chrono-info-edit__meeting {
+  @extend %chrono-info-edit__element;
+  @include icons-sprite(sm-handshake);
+}
+.chrono-info-edit__commerce {
+  @extend %chrono-info-edit__element;
+  @include icons-sprite(sm-bill);
+}
+.chrono-info-edit__pencil {
+  @extend %chrono-info-edit__element;
+  @include icons-sprite(sm-edit);
+}

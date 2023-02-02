@@ -1,0 +1,220 @@
+// Затемнённый слой поверх сайта
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black-color, $q-dark);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity .3s, z-index 0s ease .3s;
+}
+
+// Модификатор для плавного показа затемнённого слоя
+.overlay_visible {
+  opacity: 1;
+  z-index: 10;
+  transition: opacity .3s, z-index 0s ease 0s;
+
+  .overlay__modal-logo-container {
+    top: 0;
+    opacity: 1;
+  }
+
+  .modal_into-overlay {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+// Контейнер для модального окна
+.overlay__modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: rem-to-px($line-height-p-nowrap) + ($basic-value * 3) * 2 + ($basic-value * 4) * 2; // Высота шапки
+}
+
+@include media-breakpoint-between(xs, md) {
+  .overlay__modal-container {
+    padding-top: 0;
+  }
+}
+
+// Контейнер для логотипа модального окна
+.overlay__modal-logo-container {
+  position: relative;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $basic-value*11 0 $basic-value*10 0;
+  opacity: 0;
+  transition: all .7s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+// Обёртка для модального окна. Нужна для скриптов, чтобы модальное окно появлялось в этой обёртке
+.modal-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+// Модальные окна
+.modal {
+  @extend %basic-entity;
+  padding-top: $basic-value * 7;
+  padding-bottom: $basic-value * 7;
+  box-shadow: inset 0 0 0 1px $border-color-black-light, 0 6px 9px 0 $border-color-black-light;
+}
+
+// Модальное окно поверх затемнённого слоя
+.modal_into-overlay {
+  position: relative;
+  top: 30px;
+  padding: $basic-value*15 0;
+  opacity: 0;
+  transition: all .7s cubic-bezier(0.215, 0.61, 0.355, 1) .2s;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .modal_into-overlay {
+    padding: $basic-value*4 $basic-value*5;
+  }
+}
+
+// Модальное окно в выпадающем элементе, с треугольником вверху, выравненным по центру
+.modal_dropdown-center {
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: (-$basic-value * 2) / 2;
+    left: 50%;
+    margin-left: -$basic-value * 2 / 2;
+    width: $basic-value * 2;
+    height: $basic-value * 2;
+    border-left: 1px solid $border-color-black-light;
+    border-top: 1px solid $border-color-black-light;
+    background-color: $white-color;
+    transform: rotate(45deg);
+  }
+}
+
+// Модальное окно в выпадающем элементе, с треугольником вверху, выравненным по правому краю
+.modal_dropdown-right {
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: (-$basic-value * 2) / 2;
+    right: $basic-value * 12;
+    margin-right: -$basic-value * 2 / 2;
+    width: $basic-value * 2;
+    height: $basic-value * 2;
+    border-left: 1px solid $border-color-black-light;
+    border-top: 1px solid $border-color-black-light;
+    background-color: $white-color;
+    transform: rotate(45deg);
+  }
+}
+
+.modal[data-type="filter-form"] {
+  background-image: linear-gradient(to right, rgba($primary-color, $q-2x-light), rgba($primary-color, $q-2x-light));
+  z-index: 1;
+
+  .filter-form {
+    background-color: transparent;
+  }
+}
+
+// Небольшой заголовок модального окна
+.modal__title {
+  margin-top: -($indent-difference-small);
+  padding-bottom: $basic-value * 8 - rem-to-px($indent-difference-small) - rem-to-px($indent-difference-p);
+  font: #{$font-size-small}/#{$line-height-small} $font-bold;
+  text-transform: uppercase;
+  color: $secondary-text-color-light-back;
+
+  & + .modal__notice {
+    margin-top: rem-to-px($indent-difference-p);
+  }
+}
+
+// Заголовок модального окна
+.modal__heading {
+  margin-top: -$indent-difference-h2;
+  padding-left: $basic-value * 5;
+  padding-right: $basic-value * 5;
+  padding-bottom: $basic-value * 15 - rem-to-px($indent-difference-h2) - rem-to-px($indent-difference-small);
+  text-transform: uppercase;
+  text-align: center;
+  overflow: hidden;
+  font: #{$font-size-h2}/#{$line-height-h2} $font-light;
+}
+
+@include media-breakpoint-between(xs, md) {
+  .modal__heading {
+    margin-top: 0;
+    margin-bottom: $basic-value * 6 - rem-to-px($indent-difference-p);
+    padding: 0;
+    font: #{$font-size-p}/#{$line-height-p} $font-bold;
+  }
+}
+
+.modal__switch-link {
+  padding-left: $basic-value * 5;
+  padding-right: $basic-value * 5;
+  text-align: center;
+
+  span {
+    font: #{$font-size-small}/#{$line-height-small} $font-light;
+    color: $secondary-text-color-light-back;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover, &:focus, &:active {
+      color: $primary-text-color-light-back;
+    }
+  }
+}
+
+// Выделенный блок с примечанием
+.modal__notice {
+  margin-bottom: $basic-value * 8 - rem-to-px($indent-difference-small);
+  margin-left: -$basic-value * 5 + 1;
+  margin-right: -$basic-value * 5 + 1;
+  padding-left: $basic-value * 5 - 1;
+  padding-right: $basic-value * 5 - 1;
+  padding-top: $basic-value * 6 - rem-to-px($indent-difference-small);
+  padding-bottom: $basic-value * 6 - rem-to-px($indent-difference-p);
+  background-color: rgba($warning-color, $q-middle);
+}
+
+.modal__notice_success {
+  display: none;
+  background-color: rgba($success-color, $q-middle);
+}
+
+.modal__notice-title {
+  font: #{$font-size-small}/#{$line-height-small} $font-bold;
+  color: $secondary-text-color-light-back;
+  text-transform: uppercase;
+}
+
+.modal__notice-text {}
+
+// Небольшое всплывающее модальное окно коммерческого запроса
+.modal[data-type="request"] {
+  position: absolute;
+  z-index: 10;
+  width: $basic-value * 161;
+}
+
+// Элемент для закрытия окна
+.modal [data-action="filter-form-close"] {
+  position: absolute;
+  top: $basic-value * 8;
+  right: $basic-value * 5;
+}
